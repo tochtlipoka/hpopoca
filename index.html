@@ -163,15 +163,32 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .cases-bg{background:var(--surface);border-top:1px solid var(--line)}
 .case{display:flex;flex-wrap:wrap;gap:40px;padding-top:32px;border-top:1px solid var(--rule)}
 .case:first-of-type{border-top:2px solid var(--ink)}
-.case .panel{flex:1 1 340px;min-width:0;min-height:260px;display:grid;align-content:space-between;gap:28px;padding:32px}
-.case .panel .big{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3rem);line-height:1}
-.case .panel small{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
-.panel-canasta{background:#EFE3CF;color:#5A3A1E}
-.panel-canasta .big{color:#7A3E17}
-.panel-wrea{background:var(--forest);color:var(--on-forest-muted)}
-.panel-wrea .big{color:var(--on-forest)}
-.panel-wrea .phases-mini{display:flex;flex-wrap:wrap;gap:8px}
-.panel-wrea .phases-mini span{border:1px solid var(--forest-line);padding:6px 10px;font-size:.8rem;color:var(--on-forest)}
+.case .flyer{flex:1.3 1 400px;min-width:0;position:relative;display:grid;gap:18px;align-content:start;padding:28px 28px 34px;overflow:hidden}
+.flyer .top-line{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.flyer .title{font-size:clamp(1.9rem,3.6vw,2.6rem);line-height:1;margin:0}
+.flyer .browser{position:relative;background:#FFFFFF;border-radius:8px;box-shadow:0 18px 40px -16px rgba(0,0,0,.45);overflow:hidden;transform:rotate(-1.5deg)}
+.flyer .bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#F1F1EF;border-bottom:1px solid #E2E2DE}
+.flyer .bar i{width:9px;height:9px;border-radius:50%;background:#D0CFCB;display:block}
+.flyer .bar span{margin-left:10px;font-size:.72rem;color:#55524C;background:#FFFFFF;border-radius:4px;padding:2px 10px;font-family:var(--sans)}
+.flyer .browser img{width:100%;height:auto;display:block}
+.flyer .sticker{position:absolute;right:20px;bottom:18px;z-index:2;width:104px;height:104px;border-radius:50%;display:grid;place-content:center;text-align:center;font-weight:700;line-height:1.05;transform:rotate(8deg);box-shadow:0 10px 24px -10px rgba(0,0,0,.5)}
+.flyer .sticker b{display:block;font-size:1.6rem}
+.flyer .sticker small{display:block;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase}
+.flyer-canasta{background:#E8641E;color:#FFF6EC}
+.flyer-canasta::before{content:"";position:absolute;top:0;right:-60px;width:46%;height:100%;background:#F29A3C;transform:skewX(-12deg);opacity:.55}
+.flyer-canasta>*{position:relative}
+.flyer-canasta .title{font-family:var(--sans);font-weight:800;text-transform:uppercase;letter-spacing:-.01em;color:#FFFFFF}
+.flyer-canasta .title span{color:#2B2B2E}
+.flyer-canasta .sticker{background:#2B2B2E;color:#F6A33C}
+.flyer-wrea{background-color:#FBFBFE;background-image:repeating-linear-gradient(180deg,transparent 0 31px,#E1E5F2 31px 32px);color:#1E2A5A;border:1px solid #E1E5F2}
+.flyer-wrea::after{content:"";position:absolute;top:0;bottom:0;left:22px;width:1px;background:#E9A3AE}
+.flyer-wrea>*{position:relative;z-index:1}
+.flyer-wrea .top-line{color:#C9405A;padding-left:14px}
+.flyer-wrea .title{font-family:var(--serif);font-weight:500;color:#1E2A5A;padding-left:14px}
+.flyer-wrea .title em{color:#C9405A}
+.flyer-wrea .browser{transform:rotate(1.2deg)}
+.flyer-wrea .sticker{background:#2F5BE0;color:#FFFFFF}
+@media (max-width:520px){.flyer .sticker{width:84px;height:84px;right:12px;bottom:12px}.flyer .sticker b{font-size:1.25rem}}
 .case .info{flex:999 1 440px;min-width:0;display:grid;gap:14px;align-content:start}
 .case h3{font-size:2rem}
 .case dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:.98rem}
@@ -359,7 +376,12 @@ footer .legal a{text-decoration:underline}
       </div>
       <div>
         <article class="case">
-          <div class="panel panel-canasta" aria-hidden="true"><small>Catering · CDMX</small><span class="big">De Canasta</span><small>100 a 500 tacos por pedido</small></div>
+          <figure class="flyer flyer-canasta" style="margin:0">
+            <div class="top-line"><span>Catering · CDMX</span><span>decanasta.com</span></div>
+            <p class="title">Tacos de <span>canasta</span></p>
+            <div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>decanasta.com</span></div><img src="img/decanasta.jpg" alt="Página de inicio de De Canasta: tacos de canasta para tu evento en CDMX, desde 10 pesos por taco" width="1244" height="631" loading="lazy"></div>
+            <div class="sticker" aria-hidden="true"><small>Desde</small><b>$10</b><small>por taco</small></div>
+          </figure>
           <div class="info">
             <span class="kicker">Empresarial · Emprendimiento propio</span>
             <h3>De Canasta</h3>
@@ -372,7 +394,12 @@ footer .legal a{text-decoration:underline}
           </div>
         </article>
         <article class="case" style="margin-top:40px">
-          <div class="panel panel-wrea" aria-hidden="true"><small>Inglés · IA + profesor</small><span class="big">Wrealispec</span><span class="phases-mini"><span>Escribe y corrijo</span><span>Escucha y repite</span><span>Graba y te dicto</span><span>Conversemos</span></span></div>
+          <figure class="flyer flyer-wrea" style="margin:0">
+            <div class="top-line"><span>Inglés con IA y profesor</span></div>
+            <p class="title">Aprende inglés con <em>tu propia historia</em>.</p>
+            <div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>wrealispec.com</span></div><img src="img/wrealispec.jpg" alt="Página de Wrealispec: aprende inglés con tu propia historia, método con IA y profesor" width="960" height="617" loading="lazy"></div>
+            <div class="sticker" aria-hidden="true"><small>Método</small><b>4</b><small>fases</small></div>
+          </figure>
           <div class="info">
             <span class="kicker">Académico · Emprendimiento personal · En desarrollo</span>
             <h3>Wrealispec</h3>
