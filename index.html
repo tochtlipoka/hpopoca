@@ -45,7 +45,7 @@ a{color:var(--forest-2)}
 .wrap{max-width:1180px;margin-inline:auto;padding-left:max(clamp(20px,6vw,72px),env(safe-area-inset-left,0px));padding-right:max(clamp(20px,6vw,72px),env(safe-area-inset-right,0px))}
 section[id],div[id]{scroll-margin-top:84px}
 section.block[id]{scroll-margin-top:16px}
-#casos{scroll-margin-top:96px}
+#casos,#preguntas{scroll-margin-top:96px}
 /* Movimiento sutil de botones */
 .btn,.top nav a.cta{transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
 .btn:hover,.top nav a.cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px -10px rgba(0,0,0,.45)}
@@ -210,6 +210,17 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .ask .note{color:var(--ink)}
 .contact .note{color:var(--on-forest)}
 
+
+/* Preguntas frecuentes */
+.faq{max-width:820px;margin-inline:auto;width:100%;border-top:1px solid var(--line-green)}
+.faq details{border-bottom:1px solid var(--line-green)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 2px;font-weight:600;color:var(--ink);font-size:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:0 0 auto;width:28px;height:28px;border-radius:50%;display:grid;place-content:center;background:var(--forest);color:var(--gold);font-weight:500;font-size:1.1rem;line-height:1;transition:transform .2s ease}
+.faq details[open] summary::after{content:"−"}
+.faq summary:hover{color:var(--forest-2)}
+.faq details p{color:var(--text);padding:0 44px 18px 2px;font-size:.95rem}
+
 /* Pie */
 footer{background:var(--night);color:var(--on-night-2);font-size:.9rem;margin-top:72px}
 footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:36px;padding-block:56px 36px}
@@ -222,6 +233,7 @@ footer .legal{border-top:1px solid var(--night-line);padding-block:18px 32px;dis
 footer .legal nav{flex-direction:row;flex-wrap:wrap;gap:8px 22px}
 footer .legal a{text-decoration:underline}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "es", "mainEntity": [{"@type": "Question", "name": "¿Cómo funciona “Emprende conmigo”?", "acceptedAnswer": {"@type": "Answer", "text": "Primero evaluamos tu negocio sin compromiso. Si tiene potencial, acordamos por escrito qué hago yo, qué haces tú y cómo cobro: por prospecto o por venta cerrada. Tú te encargas del producto y yo de traer los clientes con marketing digital, SEO y automatización."}}, {"@type": "Question", "name": "¿Con qué negocios trabajas?", "acceptedAnswer": {"@type": "Answer", "text": "Con negocios locales que ya tienen un producto o servicio que funciona y capacidad para atender más pedidos: comida y catering, hospedaje, talleres, servicios a domicilio y más. Trabajo con pocos a la vez para dar un seguimiento real."}}, {"@type": "Question", "name": "¿Cómo sabemos cuántas ventas vinieron de mí?", "acceptedAnswer": {"@type": "Answer", "text": "Los pedidos entran por la página, el formulario o el WhatsApp que configuramos, así que cada prospecto queda registrado. Así los dos vemos los mismos números y el acuerdo es transparente."}}, {"@type": "Question", "name": "¿Necesito saber de tecnología?", "acceptedAnswer": {"@type": "Answer", "text": "No. Yo me encargo de la parte digital y te explico lo necesario con palabras sencillas. Enseñar es parte de mi trabajo."}}, {"@type": "Question", "name": "¿En cuánto tiempo se ven resultados?", "acceptedAnswer": {"@type": "Answer", "text": "Los primeros cambios, como tu perfil en Google Maps y tu WhatsApp, se notan en pocas semanas. La base completa queda lista en uno a tres meses y a partir de ahí medimos juntos cómo crecen tus ventas."}}, {"@type": "Question", "name": "¿Trabajas a distancia?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, trabajo 100% en línea. Las reuniones son por videollamada y el contacto diario por WhatsApp, así que no importa dónde esté tu negocio."}}, {"@type": "Question", "name": "¿Qué es Wrealispec y cuándo estará listo?", "acceptedAnswer": {"@type": "Answer", "text": "Es un método para mejorar el inglés con inteligencia artificial y un profesor, pensado para profesionales y académicos que buscan movilidad internacional. Está en desarrollo; si te interesa, déjame tus datos en el formulario y te aviso cuando abra."}}]}</script>
 </head>
 <body>
 
@@ -391,6 +403,24 @@ footer .legal a{text-decoration:underline}
     </div>
   </section>
 
+  <section class="block" id="preguntas" aria-labelledby="faq-t" style="padding-top:0">
+    <div class="wrap">
+      <div class="head center">
+        <span class="eyebrow">Preguntas frecuentes</span>
+        <h2 class="h2" id="faq-t">Lo que me preguntan antes de empezar</h2>
+      </div>
+      <div class="faq">
+        <details><summary>¿Cómo funciona “Emprende conmigo”?</summary><p>Primero evaluamos tu negocio sin compromiso. Si tiene potencial, acordamos por escrito qué hago yo, qué haces tú y cómo cobro: por prospecto o por venta cerrada. Tú te encargas del producto y yo de traer los clientes con marketing digital, SEO y automatización.</p></details>
+        <details><summary>¿Con qué negocios trabajas?</summary><p>Con negocios locales que ya tienen un producto o servicio que funciona y capacidad para atender más pedidos: comida y catering, hospedaje, talleres, servicios a domicilio y más. Trabajo con pocos a la vez para dar un seguimiento real.</p></details>
+        <details><summary>¿Cómo sabemos cuántas ventas vinieron de mí?</summary><p>Los pedidos entran por la página, el formulario o el WhatsApp que configuramos, así que cada prospecto queda registrado. Así los dos vemos los mismos números y el acuerdo es transparente.</p></details>
+        <details><summary>¿Necesito saber de tecnología?</summary><p>No. Yo me encargo de la parte digital y te explico lo necesario con palabras sencillas. Enseñar es parte de mi trabajo.</p></details>
+        <details><summary>¿En cuánto tiempo se ven resultados?</summary><p>Los primeros cambios, como tu perfil en Google Maps y tu WhatsApp, se notan en pocas semanas. La base completa queda lista en uno a tres meses y a partir de ahí medimos juntos cómo crecen tus ventas.</p></details>
+        <details><summary>¿Trabajas a distancia?</summary><p>Sí, trabajo 100% en línea. Las reuniones son por videollamada y el contacto diario por WhatsApp, así que no importa dónde esté tu negocio.</p></details>
+        <details><summary>¿Qué es Wrealispec y cuándo estará listo?</summary><p>Es un método para mejorar el inglés con inteligencia artificial y un profesor, pensado para profesionales y académicos que buscan movilidad internacional. Está en desarrollo; si te interesa, déjame tus datos en el formulario y te aviso cuando abra.</p></details>
+      </div>
+    </div>
+  </section>
+
   <section id="contacto" aria-labelledby="cont-t">
     <div class="wrap">
       <div class="contact">
@@ -427,7 +457,7 @@ footer .legal a{text-decoration:underline}
   <div class="wrap">
     <div class="cols">
       <div class="brand"><span class="name">Héctor Popoca</span><p>Socio de emprendimiento y desarrollador EdTech.</p></div>
-      <nav aria-labelledby="f-mapa"><h2 id="f-mapa">Mapa del sitio</h2><a href="#inicio">Inicio</a><a href="#caminos">Emprende conmigo</a><a href="#casos">Casos</a><a href="#quien-soy">Quién soy</a><a href="#contacto">Contacto</a></nav>
+      <nav aria-labelledby="f-mapa"><h2 id="f-mapa">Mapa del sitio</h2><a href="#inicio">Inicio</a><a href="#caminos">Emprende conmigo</a><a href="#casos">Casos</a><a href="#quien-soy">Quién soy</a><a href="#preguntas">Preguntas frecuentes</a><a href="#contacto">Contacto</a></nav>
       <nav aria-labelledby="f-proy"><h2 id="f-proy">Proyectos</h2><a href="https://decanasta.com" target="_blank" rel="noopener">De Canasta</a><a href="#wrealispec">Wrealispec</a></nav>
       <nav aria-labelledby="f-cont"><h2 id="f-cont">Contacto</h2><a href="mailto:contacto@hpopoca.com">contacto@hpopoca.com</a><span>100% en línea</span></nav>
     </div>

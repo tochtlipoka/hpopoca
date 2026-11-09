@@ -45,7 +45,7 @@ a{color:var(--forest-2)}
 .wrap{max-width:1180px;margin-inline:auto;padding-left:max(clamp(20px,6vw,72px),env(safe-area-inset-left,0px));padding-right:max(clamp(20px,6vw,72px),env(safe-area-inset-right,0px))}
 section[id],div[id]{scroll-margin-top:84px}
 section.block[id]{scroll-margin-top:16px}
-#casos{scroll-margin-top:96px}
+#casos,#preguntas{scroll-margin-top:96px}
 /* Movimiento sutil de botones */
 .btn,.top nav a.cta{transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
 .btn:hover,.top nav a.cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px -10px rgba(0,0,0,.45)}
@@ -210,6 +210,17 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .ask .note{color:var(--ink)}
 .contact .note{color:var(--on-forest)}
 
+
+/* Preguntas frecuentes */
+.faq{max-width:820px;margin-inline:auto;width:100%;border-top:1px solid var(--line-green)}
+.faq details{border-bottom:1px solid var(--line-green)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 2px;font-weight:600;color:var(--ink);font-size:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:0 0 auto;width:28px;height:28px;border-radius:50%;display:grid;place-content:center;background:var(--forest);color:var(--gold);font-weight:500;font-size:1.1rem;line-height:1;transition:transform .2s ease}
+.faq details[open] summary::after{content:"−"}
+.faq summary:hover{color:var(--forest-2)}
+.faq details p{color:var(--text);padding:0 44px 18px 2px;font-size:.95rem}
+
 /* Pie */
 footer{background:var(--night);color:var(--on-night-2);font-size:.9rem;margin-top:72px}
 footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:36px;padding-block:56px 36px}
@@ -222,6 +233,7 @@ footer .legal{border-top:1px solid var(--night-line);padding-block:18px 32px;dis
 footer .legal nav{flex-direction:row;flex-wrap:wrap;gap:8px 22px}
 footer .legal a{text-decoration:underline}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "How does “Partner with me” work?", "acceptedAnswer": {"@type": "Answer", "text": "First we assess your business, with no commitment. If it has potential, we agree in writing on what I do, what you do and how I charge: per lead or per closed sale. You take care of the product and I bring the customers with digital marketing, SEO and automation."}}, {"@type": "Question", "name": "What kinds of businesses do you work with?", "acceptedAnswer": {"@type": "Answer", "text": "Local businesses that already have a product or service that works and the capacity to handle more orders: food and catering, lodging, repair shops, home services and more. I work with only a few at a time to give real follow-up."}}, {"@type": "Question", "name": "How do we know which sales came from me?", "acceptedAnswer": {"@type": "Answer", "text": "Orders come in through the website, form or WhatsApp we set up, so every lead is recorded. That way we both see the same numbers and the agreement stays transparent."}}, {"@type": "Question", "name": "Do I need to know about technology?", "acceptedAnswer": {"@type": "Answer", "text": "No. I handle the digital side and explain what you need to know in plain words. Teaching is part of my job."}}, {"@type": "Question", "name": "How soon will I see results?", "acceptedAnswer": {"@type": "Answer", "text": "The first changes, like your Google Maps profile and WhatsApp, show within a few weeks. The full foundation is ready in one to three months, and from there we track your sales growth together."}}, {"@type": "Question", "name": "Do you work remotely?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, I work 100% online. Meetings are by video call and day-to-day contact is by WhatsApp, so it does not matter where your business is."}}, {"@type": "Question", "name": "What is Wrealispec and when will it be ready?", "acceptedAnswer": {"@type": "Answer", "text": "It is a method to improve English with artificial intelligence and a teacher, designed for professionals and academics seeking international mobility. It is in development; if you are interested, leave your details in the form and I will let you know when it opens."}}]}</script>
 </head>
 <body>
 
@@ -391,6 +403,24 @@ footer .legal a{text-decoration:underline}
     </div>
   </section>
 
+  <section class="block" id="preguntas" aria-labelledby="faq-t" style="padding-top:0">
+    <div class="wrap">
+      <div class="head center">
+        <span class="eyebrow">FAQ</span>
+        <h2 class="h2" id="faq-t">What people ask before we start</h2>
+      </div>
+      <div class="faq">
+        <details><summary>How does “Partner with me” work?</summary><p>First we assess your business, with no commitment. If it has potential, we agree in writing on what I do, what you do and how I charge: per lead or per closed sale. You take care of the product and I bring the customers with digital marketing, SEO and automation.</p></details>
+        <details><summary>What kinds of businesses do you work with?</summary><p>Local businesses that already have a product or service that works and the capacity to handle more orders: food and catering, lodging, repair shops, home services and more. I work with only a few at a time to give real follow-up.</p></details>
+        <details><summary>How do we know which sales came from me?</summary><p>Orders come in through the website, form or WhatsApp we set up, so every lead is recorded. That way we both see the same numbers and the agreement stays transparent.</p></details>
+        <details><summary>Do I need to know about technology?</summary><p>No. I handle the digital side and explain what you need to know in plain words. Teaching is part of my job.</p></details>
+        <details><summary>How soon will I see results?</summary><p>The first changes, like your Google Maps profile and WhatsApp, show within a few weeks. The full foundation is ready in one to three months, and from there we track your sales growth together.</p></details>
+        <details><summary>Do you work remotely?</summary><p>Yes, I work 100% online. Meetings are by video call and day-to-day contact is by WhatsApp, so it does not matter where your business is.</p></details>
+        <details><summary>What is Wrealispec and when will it be ready?</summary><p>It is a method to improve English with artificial intelligence and a teacher, designed for professionals and academics seeking international mobility. It is in development; if you are interested, leave your details in the form and I will let you know when it opens.</p></details>
+      </div>
+    </div>
+  </section>
+
   <section id="contacto" aria-labelledby="cont-t">
     <div class="wrap">
       <div class="contact">
@@ -427,7 +457,7 @@ footer .legal a{text-decoration:underline}
   <div class="wrap">
     <div class="cols">
       <div class="brand"><span class="name">Héctor Popoca</span><p>Business-building partner and EdTech developer.</p></div>
-      <nav aria-labelledby="f-mapa"><h2 id="f-mapa">Site map</h2><a href="#inicio">Home</a><a href="#caminos">Partner with me</a><a href="#casos">Work</a><a href="#quien-soy">About me</a><a href="#contacto">Contact</a></nav>
+      <nav aria-labelledby="f-mapa"><h2 id="f-mapa">Site map</h2><a href="#inicio">Home</a><a href="#caminos">Partner with me</a><a href="#casos">Work</a><a href="#quien-soy">About me</a><a href="#preguntas">FAQ</a><a href="#contacto">Contact</a></nav>
       <nav aria-labelledby="f-proy"><h2 id="f-proy">Projects</h2><a href="https://decanasta.com" target="_blank" rel="noopener">De Canasta</a><a href="#wrealispec">Wrealispec</a></nav>
       <nav aria-labelledby="f-cont"><h2 id="f-cont">Contact</h2><a href="mailto:contacto@hpopoca.com">contacto@hpopoca.com</a><span>100% online</span></nav>
     </div>
