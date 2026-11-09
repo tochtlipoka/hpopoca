@@ -9,235 +9,206 @@
 <link rel="alternate" hreflang="x-default" href="https://hpopoca.com/">
 <link rel="icon" href="../img/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../img/favicon.png">
-<title>Héctor Popoca | EdTech digital entrepreneur and growth partner</title>
-<meta name="description" content="Héctor Popoca designs digital platforms and strategies built on teaching and learning methods: growth partnership, web design, local SEO and learning platforms.">
-<meta property="og:title" content="Héctor Popoca | EdTech digital entrepreneur">
-<meta property="og:description" content="I build digital solutions that teach and help you grow: growth partnership, web design, local SEO and learning platforms.">
-<meta property="og:image" content="https://hpopoca.com/img/logo-popoca.png">
+<title>Héctor Popoca | Business-building partner and EdTech developer</title>
+<meta name="description" content="I partner with local businesses to sell their products from anywhere with digital marketing, SEO and automation, and I teach how it was done in my training center.">
+<meta property="og:title" content="Héctor Popoca | I grow businesses and teach how it was done">
+<meta property="og:description" content="Business-building partner and EdTech developer: sales, automation, SEO, reseller businesses and international mobility.">
+<meta property="og:image" content="https://hpopoca.com/img/hero-hector-1200.jpg">
 <meta property="og:url" content="https://hpopoca.com/en/">
+<meta name="theme-color" content="#080C0B">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600;700&display=swap">
 <style>
-/* Opción A · Consultoría clásica: verde bosque, oro apagado, marfil. Títulos con serifa (Newsreader), texto en Inter. */
+/* Opción D · estilo A: encabezado oscuro con verde neón; contenido marfil con verde bosque y oro */
 :root{
-  --bg:#F6F4EE; --surface:#FFFFFF; --alt:#EFECE3; --line:#E2DED3; --rule:#D8D3C6;
-  --ink:#12352B; --fg:#2E3A34; --muted:#4D5A53;
-  --forest:#12352B; --forest-2:#2B5E4C; --forest-deep:#0C2620; --gold:#C9A15B;
-  --on-forest:#F6F4EE; --on-forest-muted:#C9D3CC; --forest-line:#2B5E4C; --field-line:#5E8A79;
+  --night:#080C0B; --night-line:#18221C; --lime:#B6F35A; --on-night:#F2F6F3; --on-night-2:#B7C2BC; --on-night-3:#8D9A93;
+  --bg:#F6F4EE; --band:#EFECE3; --white:#FFFFFF; --line:#E2DED3; --line-green:#B9CDBF;
+  --forest:#12352B; --forest-2:#2B5E4C; --forest-3:#1C4638; --deep:#0C2620; --deep-line:#1F4A3D;
+  --gold:#C9A15B; --gold-dark:#8A6420; --gold-num:#A9782A;
+  --ink:#12352B; --text:#3A4640; --muted:#4D5A53; --on-forest:#F6F4EE; --on-forest-2:#C9D3CC; --on-forest-3:#A9BCB1;
   --serif:"Newsreader",Georgia,"Times New Roman",serif;
   --sans:"Inter","Segoe UI",system-ui,sans-serif;
+  --display:"Sora","Inter",system-ui,sans-serif;
+  color-scheme:light;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#111816; --surface:#18211E; --alt:#151E1B; --line:#26332E; --rule:#2E3D37;
-  --ink:#E9EFEB; --fg:#D6DED9; --muted:#A7B5AE;
-  --forest:#0E2A22; --forest-deep:#091C17; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#111816; --surface:#18211E; --alt:#151E1B; --line:#26332E; --rule:#2E3D37;
-  --ink:#E9EFEB; --fg:#D6DED9; --muted:#A7B5AE;
-  --forest:#0E2A22; --forest-deep:#091C17; color-scheme:dark}
-
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:17px;line-height:1.65}
-h1,h2,h3{margin:0;font-family:var(--serif);font-weight:500;color:var(--ink);line-height:1.12;text-wrap:balance}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6}
+h1,h2,h3{margin:0;text-wrap:balance}
 p{margin:0}
-a{color:inherit}
 img{max-width:100%;height:auto;display:block}
+a{color:var(--forest-2)}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.wrap{max-width:1200px;margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-.kicker{display:block;font-size:.76rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--forest-2)}
-.dark .kicker{color:var(--gold)}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:2px;font-family:var(--sans);font-weight:600;font-size:.95rem;text-decoration:none;border:0;cursor:pointer}
-.btn-gold{background:var(--gold);color:#12352B}
-.btn-gold:hover{filter:brightness(1.07)}
-.link-line{font-weight:600;font-size:.95rem;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:3px}
-section[id]{scroll-margin-top:90px}
-.dark{background:var(--forest);color:var(--on-forest)}
-.dark h1,.dark h2,.dark h3{color:var(--on-forest)}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .kicker{color:#7FB59C}}
-:root[data-theme="dark"] .kicker{color:#7FB59C}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .dark .kicker{color:var(--gold)}}
+.wrap{max-width:1240px;margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+section[id],div[id]{scroll-margin-top:84px}
+.eyebrow{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--forest-2)}
+.h2{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4vw,2.75rem);line-height:1.1;color:var(--ink)}
+.center{text-align:center;align-items:center}
+.head{display:flex;flex-direction:column;gap:14px}
+.head p{color:var(--text);max-width:40rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;border-radius:999px;font-family:var(--sans);font-weight:700;font-size:.95rem;text-decoration:none;border:0;cursor:pointer;white-space:nowrap}
+.btn-lime{background:var(--lime);color:#0A100C}
+.btn-gold{background:var(--gold);color:var(--forest)}
+.btn-ghost{border:1.5px solid #3A4D40;color:var(--on-night)}
+.btn-ghost-gold{border:1.5px solid var(--gold);color:var(--on-forest)}
+.btn:hover{filter:brightness(1.06)}
+
+/* Menú */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--night)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--night);border-bottom:1px solid var(--night-line)}
+.top .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;padding-block:12px}
+.top .logo{height:44px;width:auto;color:#E8EEEA;display:block}
+.top .logo .eye{fill:var(--lime)}
+.top nav{display:flex;flex-wrap:wrap;align-items:center;gap:6px 26px;font-size:.9rem}
+.top nav a{color:#E8EEEA;text-decoration:none;padding:6px 0}
+.top nav a:hover{color:var(--lime)}
+.top nav a.lang{color:var(--on-night-3)}
+.top nav a.cta{background:var(--lime);color:#0A100C;font-weight:600;padding:11px 20px;border-radius:999px}
+@media (max-width:900px){.top{position:static}.top .wrap{justify-content:center}.top nav{justify-content:center;gap:4px 16px;font-size:.84rem}.top nav a.cta{padding:9px 16px}.top .logo{height:38px}}
 
 /* Encabezado */
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--forest)}
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--forest);color:var(--on-forest);border-bottom:1px solid var(--forest-line)}
-.top .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;padding-block:12px}
-.top .logo{height:46px;width:auto;color:var(--on-forest);display:block}
-.top .logo .eye{fill:var(--gold)}
-.top nav{display:flex;flex-wrap:wrap;align-items:center;gap:6px 26px;font-size:.9rem}
-.top nav a{text-decoration:none;color:var(--on-forest);padding:6px 0;position:relative}
-.top nav a:not(.cta):not(.lang)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:var(--gold);transform:scaleX(0);transition:transform .25s ease}
-.top nav a:not(.cta):not(.lang):hover::after,.top nav a.active::after{transform:scaleX(1)}
-.top nav a.lang{color:var(--gold);font-weight:600}
-.top nav a.cta{background:var(--gold);color:#12352B;font-weight:600;padding:11px 18px;border-radius:2px}
-@media (max-width:860px){.top .wrap{justify-content:center}.top nav{justify-content:center;gap:4px 16px;font-size:.84rem}.top nav a.cta{padding:9px 14px}.top .logo{height:38px}}
-@media (prefers-reduced-motion:reduce){.top nav a::after{transition:none}}
+.hero{position:relative;overflow:hidden;background:var(--night);color:var(--on-night-2);min-height:760px}
+.hero picture img{position:absolute;top:0;right:0;height:100%;width:auto;max-width:none}
+.hero .wrap{position:relative;padding-top:112px;padding-bottom:132px}
+.hero-copy{max-width:600px;display:flex;flex-direction:column;gap:26px}
+.badge{align-self:flex-start;display:flex;align-items:center;gap:10px;border:1px solid #2A3A2F;background:#0F1612;border-radius:999px;padding:8px 16px 8px 12px;font-size:.82rem;color:#E8EEEA}
+.badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);flex:0 0 auto}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.5rem,5.4vw,4rem);line-height:1.02;letter-spacing:-.03em;color:var(--on-night)}
+.hero h1 span{color:var(--lime)}
+.hero .lead{font-size:clamp(1.05rem,1.5vw,1.2rem);max-width:36rem}
+.checks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px;max-width:520px;font-size:.95rem;color:#E8EEEA}
+.checks li{display:flex;gap:10px;align-items:center}
+.checks svg{flex:0 0 auto}
+.actions{display:flex;flex-wrap:wrap;gap:14px}
+@media (max-width:900px){
+  .hero{min-height:0}
+  .hero picture img{position:static;width:100%;height:auto;aspect-ratio:5/4;object-fit:cover;object-position:82% 70%}
+  .hero .wrap{padding-top:36px;padding-bottom:64px}
+  .hero-copy{max-width:none}
+}
+@media (max-width:480px){.checks{grid-template-columns:minmax(0,1fr)}}
 
-/* Hero */
-.hero .wrap{display:flex;flex-wrap:wrap;gap:56px;align-items:center;padding-block:clamp(56px,8vw,88px) clamp(96px,11vw,136px)}
-.hero .copy{flex:999 1 520px;min-width:0;display:grid;gap:26px}
-.hero h1{font-size:clamp(2.4rem,5.6vw,4.1rem);line-height:1.04}
-.hero h1 em{color:var(--gold);font-style:italic}
-.hero .lead{font-size:clamp(1.05rem,1.6vw,1.2rem);color:var(--on-forest-muted);max-width:36rem}
-.hero .actions{display:flex;flex-wrap:wrap;gap:16px 26px;align-items:center}
-.hero .actions .link-line{color:var(--on-forest)}
-.hero .photo{flex:1 1 300px;min-width:0;max-width:420px;margin:0 auto;position:relative}
-.hero .photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%}
-.hero .photo::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--gold);z-index:0}
-.hero .photo img{position:relative;z-index:1}
-.chips{display:flex;flex-wrap:wrap;gap:8px 22px;list-style:none;padding:0;margin:0;font-size:.82rem;color:var(--on-forest-muted)}
-.chips li{display:flex;align-items:center;gap:8px}
-.chips li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold)}
+/* Bloques */
+.block{padding-block:clamp(72px,9vw,104px)}
+.block > .wrap{display:flex;flex-direction:column;gap:40px}
+.band{background:var(--band);border-block:1px solid var(--line)}
+.grid{display:grid;gap:20px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.card-forest{background:var(--forest);color:var(--on-forest-2);border-radius:24px;padding:clamp(28px,4vw,44px);display:flex;flex-direction:column;gap:18px}
+.card-forest h3{font-family:var(--serif);font-weight:500;color:var(--on-forest);font-size:clamp(1.8rem,3vw,2.25rem);line-height:1.08}
+.card-forest .tag{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--gold)}
+.card-forest .card-note{font-size:.95rem;font-weight:600;color:var(--on-forest);border-top:1px solid var(--forest-2);padding-top:16px}
+.card-forest .btn{align-self:flex-start}
 
-/* Resultados */
-.results{position:relative;margin-top:-64px}
-.results ul{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--line);display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-.results li{padding:32px 28px;display:grid;gap:8px;align-content:start;border-left:1px solid var(--line);min-width:0}
-.results li:first-child{border-left:0}
-.results .num{font-family:var(--serif);font-size:clamp(2rem,3.4vw,2.9rem);font-weight:500;color:var(--ink);line-height:1.05;font-variant-numeric:tabular-nums}
-.results .what{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--forest-2)}
-.results p{font-size:.94rem;line-height:1.5;color:var(--muted)}
-.results li.inst{background:var(--alt)}
-.results li.inst h3{font-size:1.4rem}
-.results .foot{margin-top:18px;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--muted);text-align:center}
-@media (max-width:980px){.results ul{grid-template-columns:repeat(2,minmax(0,1fr))}.results li:nth-child(3){border-left:0}.results li:nth-child(n+3){border-top:1px solid var(--line)}}
-@media (max-width:560px){.results ul{grid-template-columns:minmax(0,1fr)}.results li{border-left:0!important}.results li+li{border-top:1px solid var(--line)}}
+.step .top-row{display:flex;justify-content:space-between;align-items:center}
+.step .num{font-family:var(--serif);font-size:3.5rem;line-height:1;color:var(--gold)}
+.step h3{font-size:2.1rem}
+.step ul{list-style:none;margin:0;padding:18px 0 0;border-top:1px solid var(--forest-2);display:flex;flex-direction:column;gap:10px;font-size:.95rem;color:var(--on-forest)}
+.step li{display:flex;gap:10px;align-items:baseline}
+.step li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);flex:0 0 auto;transform:translateY(-2px)}
 
-/* Secciones */
-.section .wrap{padding-block:clamp(72px,10vw,112px);display:grid;gap:44px}
-.head{display:grid;gap:14px;max-width:44rem}
-.head h2{font-size:clamp(1.9rem,3.8vw,2.8rem)}
-.head p{font-size:1.08rem;color:var(--muted)}
+/* Capacitación */
+.cap-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters button{font:inherit;font-size:.88rem;font-weight:600;padding:9px 16px;border-radius:999px;border:1px solid var(--forest);background:transparent;color:var(--forest);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--forest);color:var(--on-forest)}
+.mat{border-radius:20px;padding:28px;gap:14px}
+.mat .meta{display:flex;justify-content:space-between;gap:10px;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.mat .meta span:last-child{color:var(--on-forest-3)}
+.mat h3{font-size:1.5rem;line-height:1.2}
+.mat p{font-size:.95rem;flex-grow:1}
+.mat .buy{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--forest-2);padding-top:16px}
+.mat .price{color:var(--on-forest);font-weight:600}
+.mat .price small{color:var(--on-forest-3);font-weight:400;font-size:.8rem}
+.mat .btn{min-height:40px;padding:0 16px;font-size:.82rem;align-self:auto}
+.mat[hidden]{display:none}
+.disclaimer{font-size:.82rem;color:var(--muted)}
+.ask{background:var(--white);border:1px solid var(--line-green);border-radius:24px;padding:clamp(24px,4vw,40px);display:flex;flex-wrap:wrap;gap:32px 40px}
+.ask .intro{flex:1 1 280px;display:flex;flex-direction:column;gap:12px}
+.ask h3{font-family:var(--serif);font-weight:500;font-size:1.9rem;line-height:1.15;color:var(--ink)}
+.ask form{flex:999 1 440px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.ask fieldset{border:0;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px 24px}
+.ask legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.chk{display:flex;gap:10px;align-items:center;font-size:.95rem;color:#2E3A34}
+.chk input{width:18px;height:18px;margin:0;accent-color:var(--forest);flex:0 0 auto}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+.row label{flex:1 1 240px}
+.lbl{display:flex;flex-direction:column;gap:6px;font-size:.82rem;font-weight:600;color:#2E3A34}
+.lbl input,.lbl select,.lbl textarea{font:inherit;font-size:1rem;font-weight:400;color:#1A2520;background:#FFFFFF;border:1px solid var(--line-green);border-radius:12px;min-height:48px;padding:10px 14px;width:100%}
+.lbl textarea{min-height:96px;resize:vertical}
 
-.sectors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid var(--ink)}
-.sectors article{padding:32px 32px 8px;border-left:1px solid var(--rule);display:grid;gap:12px;align-content:start;min-width:0}
-.sectors article:first-child{border-left:0;padding-left:0}
-.sectors .n{font-family:var(--serif);font-size:1.1rem;color:var(--forest-2)}
-.sectors h3{font-size:1.75rem}
-.sectors p{color:var(--fg);font-size:1rem}
-.sectors .ex{font-size:.84rem;font-weight:600;color:var(--forest-2)}
-@media (max-width:860px){.sectors{grid-template-columns:minmax(0,1fr)}.sectors article{border-left:0;padding:28px 0;border-bottom:1px solid var(--rule)}}
+/* Cifras */
+.stat{background:var(--white);border:1px solid var(--line-green);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:8px;text-align:center}
+.stat .n{font-family:var(--serif);font-weight:500;font-size:clamp(2.1rem,3.4vw,2.6rem);color:var(--gold-num);line-height:1.1;font-variant-numeric:tabular-nums}
+.stat p{font-size:.9rem;color:var(--text)}
 
-.feature{display:flex;flex-wrap:wrap;gap:44px;padding:clamp(32px,5vw,56px)}
-.feature .main{flex:999 1 440px;min-width:0;display:grid;gap:18px;align-content:start}
-.feature h2{font-size:clamp(2rem,4vw,2.8rem)}
-.feature .main p{color:var(--on-forest-muted);font-size:1.08rem}
-.feature .quote{font-family:var(--serif);font-style:italic;font-size:1.3rem;line-height:1.45;color:var(--gold)}
-.feature .side{flex:1 1 260px;min-width:0;display:grid;gap:12px;align-content:start;border-left:1px solid var(--forest-line);padding-left:32px}
-.feature .side ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
-.feature .side li{display:flex;gap:12px;align-items:baseline}
-.feature .side li::before{content:"";flex:0 0 auto;width:12px;height:1px;background:var(--gold);transform:translateY(-4px)}
-.feature .side .btn{justify-self:start;margin-top:10px}
-@media (max-width:640px){.feature .side{border-left:0;padding-left:0;border-top:1px solid var(--forest-line);padding-top:24px}}
+/* Casos */
+.case{background:var(--white);border:1px solid var(--line-green);border-radius:24px;overflow:hidden;display:flex;flex-direction:column}
+.case .shot{height:260px;overflow:hidden;padding:26px 26px 0}
+.case .shot img{width:100%;border-radius:10px 10px 0 0}
+.shot-canasta{background:#E8641E}
+.shot-wrea{background:#EEF1FA}
+.case .body{padding:30px;display:flex;flex-direction:column;gap:12px}
+.case .meta{display:flex;justify-content:space-between;gap:12px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.case .meta span:first-child{color:var(--gold-dark)}
+.case .meta span:last-child{color:var(--muted)}
+.case h3{font-family:var(--serif);font-weight:500;font-size:1.7rem;color:var(--ink)}
+.case p{font-size:.95rem}
+.case a{font-weight:600;font-size:.9rem}
 
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
-.services article{background:var(--surface);border:1px solid var(--line);padding:30px;display:grid;gap:12px;align-content:start}
-.services h3{font-size:1.45rem}
-.services p{font-size:.98rem;color:var(--muted)}
-.services article.soon{background:transparent;border-style:dashed}
-.services .soon-tag{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+/* Wrealispec */
+.wrea{flex-direction:row;flex-wrap:wrap;align-items:center;gap:40px;border-radius:28px}
+.wrea .txt{flex:999 1 480px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.wrea h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,3.4vw,2.5rem);line-height:1.1;color:var(--on-forest)}
+.wrea .txt p{font-size:1.08rem}
+.wrea .mob{flex:1 1 400px;min-width:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.wrea .mob div{background:var(--forest-3);border:1px solid var(--forest-2);border-radius:16px;padding:20px 12px;text-align:center;display:flex;flex-direction:column;gap:6px}
+.wrea .mob b{font-family:var(--serif);font-weight:500;color:var(--gold);font-size:1.15rem}
+.wrea .mob span{font-size:.82rem}
+@media (max-width:420px){.wrea .mob{grid-template-columns:minmax(0,1fr)}}
 
-.process{background:var(--alt);border-block:1px solid var(--line)}
-.phases{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
-.phases li{border-top:1px solid var(--ink);padding-top:20px;display:grid;gap:12px;align-content:start;min-width:0}
-.phases .roman{font-family:var(--serif);font-size:3.2rem;line-height:1;color:var(--gold)}
-.phases h3{font-family:var(--sans);font-size:1.15rem;font-weight:600}
-.phases p{font-size:.98rem;color:var(--fg)}
-.phases .get{font-size:.92rem;color:var(--muted);padding-top:10px;border-top:1px solid var(--rule)}
-.phases .get b{color:var(--ink)}
-.phases .opt{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-@media (max-width:860px){.phases{grid-template-columns:minmax(0,1fr)}}
-.phase-note{font-size:1rem;color:var(--fg);max-width:46rem}
-.phase-note b{color:var(--ink)}
-
-.about{display:flex;flex-wrap:wrap;gap:56px}
-.about .left{flex:1 1 300px;min-width:0;display:grid;gap:16px;align-content:start}
-.about h2{font-size:clamp(1.9rem,3.4vw,2.5rem)}
-.about .right{flex:999 1 480px;min-width:0;display:grid;gap:18px;font-size:1.05rem;line-height:1.75}
-.creds{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:6px 0 0}
-.creds li{border:1px solid var(--ink);padding:8px 14px;font-size:.84rem;color:var(--ink);line-height:1.3}
-
-.cases-bg{background:var(--surface);border-top:1px solid var(--line)}
-.case{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:40px;align-items:stretch;padding-top:32px;border-top:1px solid var(--rule)}
-@media (max-width:860px){.case{grid-template-columns:minmax(0,1fr)}}
-.case:first-of-type{border-top:2px solid var(--ink)}
-.case .flyer{position:relative;min-height:240px;overflow:hidden;display:flex;padding:22px 26px 22px 22px}
-.flyer .browser{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;background:#FFFFFF;border-radius:8px;box-shadow:0 16px 34px -14px rgba(0,0,0,.45);overflow:hidden;transform:rotate(-1.5deg)}
-.flyer .bar{flex:0 0 auto;display:flex;align-items:center;gap:6px;padding:8px 12px;background:#F1F1EF;border-bottom:1px solid #E2E2DE}
-.flyer .bar i{width:8px;height:8px;border-radius:50%;background:#D0CFCB;display:block}
-.flyer .bar span{margin-left:8px;font-size:.7rem;color:#55524C;background:#FFFFFF;border-radius:4px;padding:1px 9px;font-family:var(--sans)}
-.flyer .browser img{flex:1 1 0;min-height:0;width:100%;height:100%;object-fit:cover;object-position:top left;display:block}
-.flyer .sticker{position:absolute;right:10px;bottom:8px;z-index:2;width:92px;height:92px;border-radius:50%;display:grid;place-content:center;text-align:center;font-weight:700;line-height:1.05;transform:rotate(8deg);box-shadow:0 10px 24px -10px rgba(0,0,0,.5)}
-.flyer .sticker b{display:block;font-size:1.45rem}
-.flyer .sticker small{display:block;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase}
-@media (max-width:860px){.case .flyer{aspect-ratio:16/11;min-height:0}}
-.flyer-canasta{background:#E8641E;color:#FFF6EC}
-.flyer-canasta::before{content:"";position:absolute;top:0;right:-60px;width:46%;height:100%;background:#F29A3C;transform:skewX(-12deg);opacity:.55}
-.flyer-canasta>*{position:relative}
-.flyer-canasta .sticker{background:#2B2B2E;color:#F6A33C}
-.flyer-wrea{background-color:#FBFBFE;background-image:repeating-linear-gradient(180deg,transparent 0 31px,#E1E5F2 31px 32px);color:#1E2A5A;border:1px solid #E1E5F2}
-.flyer-wrea::after{content:"";position:absolute;top:0;bottom:0;left:12px;width:1px;background:#E9A3AE}
-.flyer-wrea>*{position:relative;z-index:1}
-.flyer-wrea .browser{transform:rotate(1.2deg)}
-.flyer-wrea .sticker{background:#2F5BE0;color:#FFFFFF}
-.case .info{min-width:0;display:grid;gap:14px;align-content:start}
-.case h3{font-size:2rem}
-.case dl{margin:0;display:grid;grid-template-columns:6.5rem minmax(0,1fr);gap:10px 18px;font-size:.98rem}
-.case dt{font-weight:600;color:var(--ink)}
-.case dd{margin:0;color:var(--fg)}
-.case .go{font-weight:600;font-size:.92rem;color:var(--ink)}
-@media (max-width:520px){.case dl{grid-template-columns:minmax(0,1fr);gap:2px}.case dd{margin-bottom:10px}}
-
-.faq{display:grid;max-width:48rem;border-top:1px solid var(--rule)}
-.faq details{border-bottom:1px solid var(--rule)}
-.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:20px 2px;font-weight:600;color:var(--ink)}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";color:var(--forest-2);font-weight:500;font-size:1.3rem;line-height:1}
-.faq details[open] summary::after{content:"−"}
-.faq details p{color:var(--muted);padding:0 2px 22px}
+/* Historia */
+.story{display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start}
+.story .pic{flex:0 0 200px;height:200px;border-radius:50%;overflow:hidden;border:3px solid var(--gold);margin-inline:auto}
+.story .pic img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.story .txt{flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:16px;font-size:1.05rem;line-height:1.7}
+.story h2{font-family:var(--serif);font-weight:500;font-size:2rem;color:var(--ink)}
+.story .last{color:#17211D}
 
 /* Contacto */
-.contact .wrap{padding-block:clamp(72px,10vw,104px);display:flex;flex-wrap:wrap;gap:56px}
-.contact .intro{flex:1 1 320px;min-width:0;display:grid;gap:18px;align-content:start}
-.contact h2{font-size:clamp(2rem,4vw,2.8rem)}
-.contact .intro p{color:var(--on-forest-muted);font-size:1.05rem}
-.how{list-style:none;margin:10px 0 0;padding:22px 0 0;border-top:1px solid var(--forest-line);display:grid;gap:14px;counter-reset:h}
-.how li{display:flex;gap:14px;counter-increment:h;color:var(--on-forest-muted);font-size:.98rem;line-height:1.5}
-.how li::before{content:counter(h);font-family:var(--serif);font-size:1.4rem;color:var(--gold);line-height:1;min-width:16px}
-.contact .mail{color:var(--gold);font-size:.95rem}
-form{flex:999 1 480px;min-width:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-content:start}
-@media (max-width:600px){form{grid-template-columns:minmax(0,1fr)}}
-.field{display:grid;gap:8px;min-width:0}
+.contact{background:var(--forest);color:var(--on-forest);border-radius:28px;padding:clamp(28px,5vw,56px);display:flex;flex-wrap:wrap;gap:40px 48px}
+.contact .intro{flex:1 1 300px;display:flex;flex-direction:column;gap:16px}
+.contact h2{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,4vw,2.75rem);line-height:1.04;color:var(--on-forest)}
+.contact .intro p{color:var(--on-forest-2)}
+.contact .intro a{color:var(--gold);font-weight:600}
+.contact form{flex:999 1 460px;min-width:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:600px){.contact form{grid-template-columns:minmax(0,1fr)}}
+.contact .lbl{color:var(--on-forest)}
+.contact .lbl input,.contact .lbl select,.contact .lbl textarea{border-color:transparent}
 .full{grid-column:1/-1}
-form label{font-size:.84rem;color:var(--on-forest-muted)}
-form input,form select,form textarea{font:inherit;font-size:1rem;color:var(--on-forest);background:transparent;border:1px solid var(--field-line);border-radius:0;min-height:50px;padding:10px 14px;width:100%}
-form select{background:var(--forest)}
-form select option{background:var(--forest);color:var(--on-forest)}
-form textarea{min-height:110px;resize:vertical}
-form input:focus,form select:focus,form textarea:focus{outline:none;border-color:var(--gold)}
-form input::placeholder{color:#8FA79B}
-.consent{display:flex;gap:12px;align-items:flex-start;font-size:.88rem;line-height:1.5;color:var(--on-forest-muted)}
-.consent input{width:20px;height:20px;min-height:0;padding:0;margin:2px 0 0;flex:0 0 auto;accent-color:var(--gold)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;line-height:1.5;color:var(--on-forest-2)}
+.consent input{width:18px;height:18px;margin:2px 0 0;accent-color:var(--gold);flex:0 0 auto}
 .consent a{color:var(--gold)}
-form .btn{justify-self:start}
-.note{grid-column:1/-1;font-size:.95rem;padding:12px 14px;background:rgba(201,161,91,.16);color:var(--on-forest);border-left:2px solid var(--gold)}
+.contact .btn{justify-self:start}
+.note{font-size:.92rem;padding:12px 14px;border-left:2px solid var(--gold);background:rgba(201,161,91,.16)}
+.ask .note{color:var(--ink)}
+.contact .note{color:var(--on-forest)}
 
-/* Pie de página */
-footer{background:var(--forest-deep);color:var(--on-forest-muted);font-size:.92rem}
-footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;padding-block:64px 44px}
-footer .brand{display:grid;gap:14px;align-content:start}
-footer .conejo{width:46px;height:auto;color:var(--on-forest)}
-footer .conejo .eye{fill:var(--gold)}
-footer .name{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--on-forest)}
-footer h2{font-family:var(--sans);font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-footer nav{display:grid;gap:10px;align-content:start}
-footer a{color:var(--on-forest-muted);text-decoration:none}
+/* Pie */
+footer{background:var(--deep);color:var(--on-forest-2);font-size:.92rem;margin-top:96px}
+footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:36px;padding-block:56px 36px}
+footer .name{font-family:var(--serif);font-weight:500;font-size:1.4rem;color:var(--on-forest)}
+footer h2{font-family:var(--sans);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--gold);margin-bottom:4px}
+footer nav,footer .brand{display:flex;flex-direction:column;gap:10px}
+footer a{color:var(--on-forest-2);text-decoration:none}
 footer a:hover{color:var(--on-forest);text-decoration:underline}
-footer .legal{border-top:1px solid #1F4A3D;padding-block:22px 34px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;font-size:.84rem}
-footer .legal nav{display:flex;flex-wrap:wrap;gap:8px 24px}
+footer .legal{border-top:1px solid var(--deep-line);padding-block:18px 32px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;font-size:.84rem;color:var(--on-forest-3)}
+footer .legal nav{flex-direction:row;flex-wrap:wrap;gap:8px 22px}
 footer .legal a{text-decoration:underline}
 </style>
 </head>
@@ -247,215 +218,247 @@ footer .legal a{text-decoration:underline}
   <div class="wrap">
     <a href="#inicio" aria-label="Héctor Popoca, home"><svg class="logo" viewBox="300 380 1980 680" role="img" aria-label="Popoca, socio de crecimiento"><g transform="translate(320,400)"><path d="M219.0 71.5 L218.2 73.2 L221.2 81.2 L231.8 103.2 L236.8 112.0 L248.2 128.5 L258.5 141.0 L271.8 154.8 L282.8 164.5 L293.2 172.5 L305.0 180.0 L320.8 188.2 L336.2 194.5 L349.8 198.8 L365.8 202.2 L384.0 204.8 L395.0 205.5 L414.2 205.8 L414.8 206.2 L414.8 208.0 L410.5 220.8 L408.8 230.0 L408.0 237.5 L405.8 246.2 L403.2 251.2 L400.0 255.5 L392.2 261.8 L382.2 266.8 L368.2 270.8 L358.5 272.2 L343.8 273.2 L324.2 273.0 L296.2 270.5 L275.0 270.8 L250.5 273.8 L229.2 278.8 L206.0 287.2 L187.2 296.8 L172.5 305.8 L163.0 312.8 L152.2 321.8 L140.2 333.5 L133.2 341.5 L121.5 357.2 L116.2 365.5 L109.5 378.0 L101.0 397.5 L96.8 410.2 L93.2 423.8 L89.5 445.0 L87.8 464.0 L88.2 488.0 L87.2 488.8 L77.2 489.8 L69.8 491.8 L60.8 495.8 L55.2 499.2 L47.8 505.5 L43.8 509.8 L37.5 518.5 L33.8 525.5 L31.2 532.0 L29.5 539.8 L29.0 546.8 L29.2 553.5 L30.2 560.2 L32.2 567.0 L37.5 577.8 L44.2 587.0 L50.0 592.5 L57.2 598.0 L67.0 602.8 L75.5 605.2 L81.2 606.2 L416.0 606.8 L417.2 605.8 L417.2 602.5 L415.2 585.0 L412.2 574.2 L408.8 567.0 L403.0 558.5 L396.2 551.5 L388.5 545.8 L377.2 539.8 L377.2 538.8 L378.5 537.8 L395.2 531.5 L410.8 524.0 L412.8 523.8 L414.2 525.0 L455.0 588.5 L459.8 594.5 L464.2 599.0 L470.0 603.0 L476.0 605.5 L482.8 606.8 L573.0 606.8 L573.8 605.8 L573.8 593.5 L572.5 583.2 L569.0 572.2 L563.8 562.2 L559.2 556.2 L554.0 551.0 L549.2 547.2 L542.8 543.2 L535.8 540.0 L529.0 537.8 L520.5 536.0 L512.5 535.5 L510.8 534.2 L494.8 494.0 L489.5 477.2 L488.8 472.0 L504.0 455.2 L516.5 439.2 L526.0 424.5 L533.0 411.2 L540.8 392.8 L547.2 372.8 L552.8 348.0 L554.8 331.2 L556.2 330.0 L569.8 326.5 L579.5 322.8 L587.8 318.8 L594.2 314.5 L602.2 308.2 L610.0 300.2 L616.2 291.8 L619.8 285.2 L623.5 275.2 L625.5 266.5 L626.2 260.8 L626.0 247.8 L624.0 238.2 L621.2 230.8 L617.8 223.5 L611.8 213.5 L601.8 199.5 L594.8 191.5 L584.8 181.8 L569.8 170.0 L558.2 163.0 L550.2 159.0 L543.0 156.0 L533.2 153.0 L525.8 151.2 L517.0 150.0 L501.0 149.5 L482.8 151.5 L481.5 150.0 L476.2 135.2 L468.5 119.8 L455.5 99.5 L442.8 84.0 L428.2 70.2 L410.8 57.8 L393.2 48.0 L377.0 41.2 L364.0 37.2 L347.0 33.5 L329.0 31.2 L312.2 30.2 L311.2 31.5 L312.0 40.8 L314.2 56.8 L317.2 70.5 L317.0 72.0 L316.0 72.8 L293.8 68.5 L273.8 66.5 L255.8 66.5 L245.5 67.2 L233.5 68.8ZM392.0 582.5 L391.8 584.2 L389.5 585.0 L143.8 584.8 L143.0 584.2 L143.0 582.8 L311.8 414.0 L313.5 414.0 L315.2 415.8 L322.8 426.8 L327.5 436.8 L330.8 447.2 L332.5 458.8 L332.8 472.0 L331.8 480.2 L329.5 489.2 L324.8 500.2 L317.8 512.0 L311.2 519.5 L300.2 530.5 L292.2 536.8 L266.5 552.8 L262.2 556.0 L262.8 556.5 L339.2 556.8 L359.8 557.2 L370.0 560.5 L380.0 566.5 L386.8 573.5ZM294.2 398.8 L294.2 400.5 L174.0 520.5 L125.0 570.0 L116.8 576.8 L109.5 581.0 L103.8 583.0 L94.0 584.8 L85.5 584.8 L79.0 583.5 L70.2 580.0 L64.0 575.8 L58.8 570.2 L54.0 562.0 L52.2 557.0 L51.2 550.8 L51.2 545.0 L52.0 540.0 L53.8 534.2 L57.2 527.5 L60.5 523.2 L64.8 519.0 L68.5 516.2 L72.8 514.0 L78.2 512.0 L85.8 510.5 L106.2 511.0 L108.5 509.8 L165.0 455.5 L207.0 414.0 L219.0 403.5 L227.8 397.8 L236.2 393.8 L246.2 390.8 L255.2 389.5 L265.0 389.5 L277.0 391.5 L288.2 395.2 L293.2 397.8ZM531.2 334.5 L532.5 335.8 L532.2 340.2 L530.8 349.5 L527.2 364.2 L521.5 382.5 L513.2 401.2 L505.0 416.8 L497.0 429.0 L489.2 439.2 L482.5 447.0 L473.2 456.5 L465.5 463.8 L465.5 467.5 L468.8 482.5 L474.5 501.0 L482.0 521.5 L488.2 535.5 L492.5 547.2 L494.5 551.0 L497.2 554.0 L501.0 556.0 L505.0 556.8 L514.5 556.8 L520.0 557.5 L527.0 559.8 L534.0 563.2 L539.2 567.2 L545.0 574.0 L549.2 581.8 L549.5 584.0 L547.8 585.0 L485.5 585.0 L480.8 583.0 L478.2 581.2 L472.0 574.5 L453.0 545.5 L436.0 518.0 L427.2 502.2 L421.2 489.8 L415.2 473.5 L411.8 458.0 L410.2 442.0 L410.5 431.2 L411.5 423.0 L413.5 414.0 L416.5 405.0 L420.8 396.2 L424.8 389.8 L434.5 377.5 L442.0 370.0 L452.5 361.8 L467.2 352.5 L486.0 343.5 L493.8 341.0 L505.8 338.2ZM402.0 283.0 L401.8 285.5 L398.0 294.0 L394.8 299.2 L390.2 305.0 L312.2 382.5 L310.2 382.8 L299.8 376.5 L287.8 371.8 L277.5 369.2 L268.0 368.0 L256.5 367.8 L243.8 369.2 L235.2 371.2 L222.2 376.2 L210.0 383.5 L197.8 393.0 L112.2 476.5 L110.8 476.5 L110.2 476.0 L110.0 462.2 L110.5 454.8 L112.2 440.8 L115.0 426.8 L120.5 408.2 L124.5 397.8 L130.8 384.8 L137.8 372.5 L143.5 363.8 L156.5 348.0 L172.8 332.8 L188.8 321.0 L201.8 313.2 L218.5 305.5 L235.5 299.5 L253.8 295.2 L268.5 293.0 L284.2 292.0 L298.5 292.2 L328.0 295.0 L342.2 295.2 L353.5 294.8 L364.5 293.5 L376.2 291.2 L390.2 287.0 L400.2 282.5ZM554.0 185.8 L566.5 194.8 L579.8 207.2 L586.0 214.8 L593.0 224.8 L600.8 239.0 L604.0 249.0 L604.5 258.2 L602.5 269.0 L600.0 275.5 L597.0 281.0 L592.8 286.8 L585.5 294.0 L578.2 299.2 L571.0 303.0 L562.5 306.2 L554.0 308.5 L528.8 313.2 L499.8 317.5 L487.2 320.5 L478.0 323.5 L464.2 329.2 L447.0 338.8 L434.8 347.2 L424.0 356.5 L417.8 362.8 L410.5 371.5 L401.0 386.5 L397.0 394.8 L393.8 403.8 L390.0 420.2 L388.8 438.8 L389.0 450.0 L390.0 459.2 L391.8 468.8 L394.8 480.0 L397.8 488.5 L403.2 501.2 L403.2 502.8 L401.8 504.2 L396.0 507.2 L372.2 517.0 L352.8 523.2 L337.2 527.5 L335.5 527.5 L335.0 525.8 L339.8 518.5 L346.0 506.5 L351.0 492.0 L354.0 475.5 L354.2 458.5 L353.2 449.5 L351.5 441.0 L346.8 426.8 L339.2 412.2 L333.2 403.8 L329.0 398.5 L329.0 397.2 L402.2 323.5 L411.2 313.2 L415.5 306.8 L422.0 292.5 L426.5 276.8 L428.2 264.5 L429.8 238.0 L432.5 223.5 L436.2 213.2 L441.2 204.2 L447.2 196.0 L453.0 190.2 L462.8 183.0 L476.2 176.2 L490.5 172.5 L499.8 171.5 L511.0 171.5 L523.8 173.2 L538.2 177.8 L545.5 181.0ZM250.2 89.8 L252.0 88.8 L268.5 88.2 L285.5 89.2 L303.5 91.8 L315.5 94.5 L324.8 97.5 L336.0 102.0 L347.2 107.5 L355.8 112.5 L372.0 124.0 L382.2 133.0 L392.0 142.8 L400.2 152.2 L407.0 161.2 L418.5 179.8 L419.0 181.8 L418.0 182.8 L414.5 183.2 L395.8 183.5 L380.2 182.2 L366.8 180.2 L355.5 177.8 L342.2 173.5 L330.8 168.8 L320.2 163.5 L313.5 159.5 L299.8 150.0 L289.8 141.5 L279.2 131.2 L268.0 118.5 L259.5 107.2 L253.8 98.2 L250.2 91.2ZM336.5 55.0 L337.2 54.5 L339.2 54.5 L353.5 57.2 L366.2 60.8 L377.2 64.8 L388.8 70.2 L398.0 75.5 L406.0 80.8 L414.0 87.0 L421.0 93.2 L429.5 102.0 L437.0 111.0 L445.0 122.5 L451.5 133.8 L457.2 145.5 L461.5 156.5 L461.5 158.5 L460.2 159.8 L454.5 162.8 L441.2 171.0 L439.0 170.8 L428.0 153.2 L419.0 141.2 L408.0 128.2 L397.8 117.8 L386.5 107.8 L375.2 99.2 L363.0 91.5 L343.8 81.2 L342.5 80.0 L340.5 74.2 L336.2 57.0Z" fill="currentColor" fill-rule="evenodd"/><path class="eye" d="M525.0 210.8 L519.8 212.5 L517.2 214.2 L514.8 217.0 L512.8 221.5 L512.5 228.2 L514.0 231.8 L516.2 234.8 L518.2 236.5 L523.5 239.0 L525.5 239.5 L528.8 239.5 L533.8 238.0 L538.8 233.8 L541.0 229.2 L541.5 227.0 L541.5 223.0 L540.8 220.0 L539.0 216.5 L535.5 213.0 L531.5 211.2Z"/></g><path d="M1066.832540653814 801.0V618.3H1135.0489270746018Q1158.382283319363 618.3 1175.0993005029338 625.7732854149203Q1191.8163176865046 633.2465708298407 1200.799049455155 647.2230880134116Q1209.7817812238054 661.1996051969824 1209.7817812238054 680.8441760268231Q1209.7817812238054 700.2277468566639 1200.799049455155 714.2608176865047Q1191.8163176865046 728.2938885163453 1175.0993005029338 735.7671739312657Q1158.382283319363 743.2404593461861 1135.0489270746018 743.2404593461861H1077.3939614417436L1085.9544551550712 734.2362875104777V801.0ZM1085.9544551550712 735.7847854149204 1077.3939614417436 726.4500427493713H1134.6835708298408Q1162.054004191115 726.4500427493713 1176.2829891031015 714.4787187761945Q1190.511974015088 702.5073948030176 1190.511974015088 680.8441760268231Q1190.511974015088 658.9199572506286 1176.2829891031015 647.0051869237217Q1162.054004191115 635.0904165968147 1134.6835708298408 635.0904165968147H1077.3939614417436L1085.9544551550712 625.7556739312657ZM1334.3838512727752 802.6703562447611Q1313.7274535933295 802.6703562447611 1296.156102320554 795.679909891031Q1278.5847510477786 788.6894635373009 1265.6304656328582 776.0875171835708Q1252.6761802179378 763.4855708298408 1245.4812875104776 746.5959799812633Q1238.2863948030176 729.7063891326858 1238.2863948030176 709.65Q1238.2863948030176 689.5936108673143 1245.4812875104776 672.7040200187367Q1252.6761802179378 655.8144291701592 1265.6492765474036 643.1911425935406Q1278.6223728768693 630.567856016922 1296.1427400847047 623.5987498860804Q1313.6631072925397 616.6296437552389 1334.3516781223805 616.6296437552389Q1355.0402489522212 616.6296437552389 1372.5181294392728 623.5724468206597Q1389.9960099263246 630.5152498860805 1402.9376466228437 643.0908931743897Q1415.879283319363 655.666536462699 1423.0741760268231 672.6071647946353Q1430.2690687342833 689.5477931265716 1430.2690687342833 709.664789270746Q1430.2690687342833 729.7817854149204 1423.0741760268231 746.7076244761106Q1415.879283319363 763.6334635373009 1402.9376466228437 776.2091068256102Q1389.9960099263246 788.7847501139196 1372.5181294392728 795.7275531793404Q1355.0402489522212 802.6703562447611 1334.3838512727752 802.6703562447611ZM1334.3516781223805 785.4362615255658Q1350.7773948030176 785.4362615255658 1364.7519592064823 779.7765911968754Q1378.726523609947 774.1169208681849 1389.0947488125175 763.8163208699684Q1399.462974015088 753.5157208717519 1405.2311177703268 739.7510719211122Q1410.9992615255658 725.9864229704724 1410.9992615255658 709.6053531449177Q1410.9992615255658 693.2242833193629 1405.2477349284686 679.5169819334157Q1399.4962083313712 665.8096805474684 1389.1209054503329 655.5008836373758Q1378.7456025692945 645.1920867272831 1364.761498686156 639.5279126008586Q1350.7773948030176 633.8637384744342 1334.3516781223805 633.8637384744342Q1317.9259614417435 633.8637384744342 1303.9075154317788 639.5327092563764Q1289.8890694218144 645.2016800383187 1279.4882868982922 655.5192068614538Q1269.0875043747703 665.8367336845887 1263.3218531932525 679.555642976889Q1257.556202011735 693.2745522691894 1257.556202011735 709.6011881211831Q1257.556202011735 725.9278239731768 1263.3150378343366 739.6924729238166Q1269.073873656938 753.4571218744563 1279.4623618075134 763.8090479447721Q1289.8508499580887 774.160974015088 1303.8884056999161 779.7986177703269Q1317.9259614417435 785.4362615255658 1334.3516781223805 785.4362615255658ZM1474.033540653814 801.0V618.3H1542.2499270746018Q1565.583283319363 618.3 1582.3003005029339 625.7732854149203Q1599.0173176865046 633.2465708298407 1608.000049455155 647.2230880134116Q1616.9827812238054 661.1996051969824 1616.9827812238054 680.8441760268231Q1616.9827812238054 700.2277468566639 1608.000049455155 714.2608176865047Q1599.0173176865046 728.2938885163453 1582.3003005029339 735.7671739312657Q1565.583283319363 743.2404593461861 1542.2499270746018 743.2404593461861H1484.5949614417436L1493.1554551550712 734.2362875104777V801.0ZM1493.1554551550712 735.7847854149204 1484.5949614417436 726.4500427493713H1541.8845708298409Q1569.255004191115 726.4500427493713 1583.4839891031015 714.4787187761945Q1597.712974015088 702.5073948030176 1597.712974015088 680.8441760268231Q1597.712974015088 658.9199572506286 1583.4839891031015 647.0051869237217Q1569.255004191115 635.0904165968147 1541.8845708298409 635.0904165968147H1484.5949614417436L1493.1554551550712 625.7556739312657ZM1741.5848512727753 802.6703562447611Q1720.9284535933296 802.6703562447611 1703.357102320554 795.679909891031Q1685.7857510477786 788.6894635373009 1672.8314656328582 776.0875171835708Q1659.8771802179378 763.4855708298408 1652.6822875104776 746.5959799812633Q1645.4873948030177 729.7063891326858 1645.4873948030177 709.65Q1645.4873948030177 689.5936108673143 1652.6822875104776 672.7040200187367Q1659.8771802179378 655.8144291701592 1672.8502765474036 643.1911425935406Q1685.8233728768694 630.567856016922 1703.3437400847047 623.5987498860804Q1720.8641072925398 616.6296437552389 1741.5526781223805 616.6296437552389Q1762.2412489522212 616.6296437552389 1779.7191294392728 623.5724468206597Q1797.1970099263247 630.5152498860805 1810.1386466228437 643.0908931743897Q1823.080283319363 655.666536462699 1830.2751760268231 672.6071647946353Q1837.4700687342834 689.5477931265716 1837.4700687342834 709.664789270746Q1837.4700687342834 729.7817854149204 1830.2751760268231 746.7076244761106Q1823.080283319363 763.6334635373009 1810.1386466228437 776.2091068256102Q1797.1970099263247 788.7847501139196 1779.7191294392728 795.7275531793404Q1762.2412489522212 802.6703562447611 1741.5848512727753 802.6703562447611ZM1741.5526781223805 785.4362615255658Q1757.9783948030176 785.4362615255658 1771.9529592064823 779.7765911968754Q1785.927523609947 774.1169208681849 1796.2957488125176 763.8163208699684Q1806.6639740150881 753.5157208717519 1812.4321177703268 739.7510719211122Q1818.2002615255658 725.9864229704724 1818.2002615255658 709.6053531449177Q1818.2002615255658 693.2242833193629 1812.4487349284686 679.5169819334157Q1806.6972083313713 665.8096805474684 1796.321905450333 655.5008836373758Q1785.9466025692946 645.1920867272831 1771.962498686156 639.5279126008586Q1757.9783948030176 633.8637384744342 1741.5526781223805 633.8637384744342Q1725.1269614417436 633.8637384744342 1711.1085154317789 639.5327092563764Q1697.0900694218144 645.2016800383187 1686.6892868982923 655.5192068614538Q1676.2885043747704 665.8367336845887 1670.5228531932526 679.555642976889Q1664.757202011735 693.2745522691894 1664.757202011735 709.6011881211831Q1664.757202011735 725.9278239731768 1670.5160378343367 739.6924729238166Q1676.274873656938 753.4571218744563 1686.6633618075134 763.8090479447721Q1697.0518499580887 774.160974015088 1711.0894056999161 779.7986177703269Q1725.1269614417436 785.4362615255658 1741.5526781223805 785.4362615255658ZM1960.5 802.6703562447611Q1939.9593218776195 802.6703562447611 1922.494090108969 795.7538562447611Q1905.0288583403185 788.837356244761 1892.1485192791283 776.2354098910309Q1879.268180217938 763.6334635373009 1872.0732875104777 746.7076244761106Q1864.8783948030177 729.7817854149204 1864.8783948030177 709.65Q1864.8783948030177 689.5182145850796 1872.0732875104777 672.5923755238894Q1879.268180217938 655.666536462699 1892.2224656328583 643.064590108969Q1905.1767510477787 630.4626437552389 1922.6419828164292 623.546143755239Q1940.1072145850796 616.6296437552389 1960.6478927074602 616.6296437552389Q1980.7273906119028 616.6296437552389 1998.0925322715843 623.3329463537301Q2015.4576739312658 630.0362489522213 2027.6463520536463 643.4080687342832L2015.3450041911149 655.6398457669741Q2004.1480385582565 644.2254165968147 1990.528126571668 639.0445775356245Q1976.9082145850796 633.8637384744342 1961.3873562447611 633.8637384744342Q1944.813746856664 633.8637384744342 1930.7022447611066 639.557935875943Q1916.590742665549 645.2521332774518 1906.137616093881 655.5008134953898Q1895.684489522213 665.7494937133278 1889.916345766974 679.5434421626153Q1884.148202011735 693.3373906119027 1884.148202011735 709.65Q1884.148202011735 725.9626093880972 1889.916345766974 739.7565578373847Q1895.684489522213 753.5505062866722 1906.137616093881 763.7991865046101Q1916.590742665549 774.0478667225482 1930.7022447611066 779.7420641240569Q1944.813746856664 785.4362615255658 1961.3873562447611 785.4362615255658Q1976.9082145850796 785.4362615255658 1990.528126571668 780.1988688181057Q2004.1480385582565 774.9614761106454 2015.3450041911149 763.399154233026L2027.6463520536463 775.6309312657166Q2015.4576739312658 789.0027510477787 1998.0925322715843 795.83655364627Q1980.7273906119028 802.6703562447611 1960.5 802.6703562447611ZM2037.4372875104777 801.0 2120.931253143336 618.3H2139.9052749371335L2223.547133277452 801.0H2203.198540653814L2126.377248952221 629.4269572506287H2134.311386420788L2057.4900947191954 801.0ZM2070.244746856664 752.2883864207879 2075.9604937133277 736.5332187761944H2182.2487510477786L2188.112390611903 752.2883864207879Z" fill="currentColor"/><path d="M1057.4179301972686 898.55468892261Q1052.8312412746586 898.55468892261 1048.62931107739 897.2396540212443Q1044.4273808801213 895.9246191198786 1041.9469681335356 893.8400667678301L1044.4964127465857 888.206282245827Q1046.857584218513 890.0740758725342 1050.3259635811837 891.2978694992413Q1053.7943429438544 892.5216631259484 1057.4324127465857 892.5216631259484Q1060.50662215478 892.5216631259484 1062.4031411229134 891.8552139605463Q1064.2996600910471 891.1887647951442 1065.1937298937785 890.0301426403641Q1066.0877996965098 888.8715204855843 1066.0877996965098 887.4193808801214Q1066.0877996965098 885.624 1064.8142822458271 884.5447921092564Q1063.5407647951442 883.4655842185128 1061.4868679817905 882.8017905918057Q1059.432971168437 882.1379969650986 1056.9419362670715 881.5888588770865Q1054.4509013657057 881.0397207890744 1051.9562458270107 880.280100151745Q1049.4615902883156 879.5204795144158 1047.4076934749621 878.3056176024279Q1045.3537966616086 877.0907556904401 1044.0802792109257 875.088273141123Q1042.8067617602428 873.0857905918058 1042.8067617602428 869.9497905918058Q1042.8067617602428 866.7486191198786 1044.5094506828527 864.0939301972686Q1046.2121396054629 861.4392412746586 1049.7114142640364 859.8422761760243Q1053.21068892261 858.2453110773899 1058.57606676783 858.2453110773899Q1062.1132382397573 858.2453110773899 1065.5871684370259 859.1340698027313Q1069.0610986342945 860.0228285280729 1071.6535113808802 861.7100698027314L1069.3353080424886 867.3853717754173Q1066.7158603945372 865.783095599393 1063.926722306525 865.0307162367224Q1061.137584218513 864.2783368740515 1058.5128254931715 864.2783368740515Q1055.5361335356602 864.2783368740515 1053.6359939301974 865.004406676783Q1051.7358543247344 865.7304764795144 1050.869784522003 866.924339908953Q1050.0037147192716 868.1182033383915 1050.0037147192716 869.6191016691957Q1050.0037147192716 871.4072412746585 1051.2772321699545 872.4828285280728Q1052.5507496206374 873.5584157814872 1054.6046464339909 874.1942094081942Q1056.6585432473444 874.8300030349013 1059.1531987860394 875.3998998482549Q1061.6478543247345 875.9697966616085 1064.1388892261002 876.705037936267Q1066.6299241274658 877.4402792109256 1068.6838209408193 878.6307617602428Q1070.737717754173 879.8212443095599 1072.011235204856 881.8201062215478Q1073.2847526555388 883.8189681335357 1073.2847526555388 886.8989681335356Q1073.2847526555388 890.0441396054629 1071.557684370258 892.6988285280729Q1069.8306160849772 895.3535174506828 1066.3105827010622 896.9541031866464Q1062.7905493171472 898.55468892261 1057.4179301972686 898.55468892261ZM1123.5668989910284 898.55468892261Q1119.0089204163671 898.55468892261 1115.1333481564307 897.0426889226101Q1111.257775896494 895.53068892261 1108.4116727098476 892.8074476479514Q1105.565569523201 890.0842063732929 1103.9867076112132 886.4175020228425Q1102.4078456992252 882.7507976723922 1102.4078456992252 878.3965862562324Q1102.4078456992252 874.0423748400726 1103.9867315889437 870.3806359351024Q1105.5656174786623 866.7188970301322 1108.417898455275 863.9870683987622Q1111.2701794318878 861.2552397673921 1115.128420555518 859.750275422391Q1118.9866616791483 858.2453110773899 1123.5526711923967 858.2453110773899Q1128.1248775656895 858.2453110773899 1131.966012818465 859.7416035685551Q1135.8071480712404 861.2378960597204 1138.6490571260151 863.9540171822556Q1141.4909661807897 866.6701383047908 1143.0698520705082 870.3487037502709Q1144.6487379602268 874.0272691957512 1144.6487379602268 878.4014621287665Q1144.6487379602268 882.7756550617819 1143.069876048239 886.4543100802081Q1141.4910141362511 890.1329650986343 1138.6490811037456 892.847534519457Q1135.8071480712404 895.5621039402797 1131.966012818465 897.0583964314449Q1128.1248775656895 898.55468892261 1123.5668989910284 898.55468892261ZM1123.552346956218 892.198215477997Q1126.5221218752495 892.198215477997 1129.0237700514986 891.1776424627901Q1131.5254182277477 890.1570694475834 1133.3840492624242 888.2948473186323Q1135.2426802971008 886.4326251896813 1136.2803707371615 883.9152834197039Q1137.3180611772223 881.3979416497266 1137.3180611772223 878.3852803848026Q1137.3180611772223 875.3726191198786 1136.2858492456269 872.8741842602137Q1135.2536373140315 870.375749400549 1133.392672840564 868.5108248329066Q1131.5317083670968 866.6459002652642 1129.0272393573518 865.6238423936336Q1126.522770347607 864.6017845220031 1123.5529954285755 864.6017845220031Q1120.583220509544 864.6017845220031 1118.0671050127921 865.6254238022979Q1115.55098951604 866.6490630825926 1113.681624662926 868.516865814004Q1111.8122598098116 870.3846685454151 1110.7753911460209 872.8869304140472Q1109.7385224822299 875.3891922826793 1109.7385224822299 878.3839072187296Q1109.7385224822299 881.3786221547799 1110.7731441913252 883.8959639247573Q1111.8077659004202 886.4133056947347 1113.673077423495 888.2924495089758Q1115.5383889465697 890.1715933232169 1118.060480491878 891.1849044006069Q1120.5825720371865 892.198215477997 1123.552346956218 892.198215477997ZM1195.2531360115008 898.55468892261Q1190.7441709128664 898.55468892261 1186.9108264515614 897.0706889226101Q1183.0774819902565 895.58668892261 1180.2593788036102 892.8670682852808Q1177.4412756169636 890.1474476479515 1175.8660343423048 886.4685857359636Q1174.2907930676463 882.7897238239757 1174.2907930676463 878.4Q1174.2907930676463 874.0102761760243 1175.8660343423048 870.3314142640364Q1177.4412756169636 866.6525523520486 1180.2837581662807 863.9329317147193Q1183.1262407155978 861.21331107739 1186.9595851769027 859.72931107739Q1190.7929296382079 858.2453110773899 1195.301894736842 858.2453110773899Q1200.0947202300135 858.2453110773899 1204.0835123392699 859.8956206373293Q1208.0723044485264 861.5459301972686 1210.7892695471608 864.7688254931714L1206.1021739477678 869.2425432473444Q1203.9761041450363 866.9122670713202 1201.3397581662807 865.7570257966617Q1198.703412187525 864.6017845220031 1195.6325836594522 864.6017845220031Q1192.5854091526237 864.6017845220031 1190.027752096478 865.615095599393Q1187.4700950403324 866.628406676783 1185.5834728855525 868.4771320182094Q1183.6968507307724 870.3258573596358 1182.6591602907117 872.8528588770865Q1181.621469850651 875.3798603945372 1181.621469850651 878.4Q1181.621469850651 881.4201396054629 1182.6591602907117 883.9471411229135Q1183.6968507307724 886.4741426403642 1185.5834728855525 888.3228679817905Q1187.4700950403324 890.1715933232169 1190.027752096478 891.1849044006069Q1192.5854091526237 892.198215477997 1195.6325836594522 892.198215477997Q1198.703412187525 892.198215477997 1201.3397581662807 891.0429742033384Q1203.9761041450363 889.8877329286798 1206.1021739477678 887.5086980273142L1210.7892695471608 891.9824157814871Q1208.0723044485264 895.1980698027314 1204.0835123392699 896.8763793626707Q1200.0947202300135 898.55468892261 1195.2531360115008 898.55468892261ZM1242.0654672949447 898.0V858.8H1249.3329028032906V898.0ZM1302.9837410962919 898.55468892261Q1298.4257625216305 898.55468892261 1294.5501902616938 897.0426889226101Q1290.6746180017574 895.53068892261 1287.8285148151108 892.8074476479514Q1284.9824116284644 890.0842063732929 1283.4035497164764 886.4175020228425Q1281.8246878044886 882.7507976723922 1281.8246878044886 878.3965862562324Q1281.8246878044886 874.0423748400726 1283.4035736942071 870.3806359351024Q1284.9824595839257 866.7188970301322 1287.8347405605384 863.9870683987622Q1290.6870215371512 861.2552397673921 1294.5452626607814 859.750275422391Q1298.4035037844117 858.2453110773899 1302.9695132976601 858.2453110773899Q1307.541719670953 858.2453110773899 1311.3828549237282 859.7416035685551Q1315.2239901765038 861.2378960597204 1318.0658992312783 863.9540171822556Q1320.907808286053 866.6701383047908 1322.4866941757716 870.3487037502709Q1324.0655800654902 874.0272691957512 1324.0655800654902 878.4014621287665Q1324.0655800654902 882.7756550617819 1322.4867181535024 886.4543100802081Q1320.9078562415145 890.1329650986343 1318.0659232090093 892.847534519457Q1315.2239901765038 895.5621039402797 1311.3828549237282 897.0583964314449Q1307.541719670953 898.55468892261 1302.9837410962919 898.55468892261ZM1302.9691890614813 892.198215477997Q1305.9389639805129 892.198215477997 1308.440612156762 891.1776424627901Q1310.942260333011 890.1570694475834 1312.8008913676877 888.2948473186323Q1314.6595224023642 886.4326251896813 1315.697212842425 883.9152834197039Q1316.7349032824857 881.3979416497266 1316.7349032824857 878.3852803848026Q1316.7349032824857 875.3726191198786 1315.7026913508903 872.8741842602137Q1314.670479419295 870.375749400549 1312.8095149458277 868.5108248329066Q1310.9485504723602 866.6459002652642 1308.4440814626155 865.6238423936336Q1305.9396124528705 864.6017845220031 1302.969837533839 864.6017845220031Q1300.0000626148073 864.6017845220031 1297.4839471180553 865.6254238022979Q1294.9678316213035 866.6490630825926 1293.0984667681892 868.516865814004Q1291.229101915075 870.3846685454151 1290.192233251284 872.8869304140472Q1289.1553645874933 875.3891922826793 1289.1553645874933 878.3839072187296Q1289.1553645874933 881.3786221547799 1290.1899862965884 883.8959639247573Q1291.2246080056836 886.4133056947347 1293.0899195287584 888.2924495089758Q1294.9552310518332 890.1715933232169 1297.4773225971417 891.1849044006069Q1299.99941414245 892.198215477997 1302.9691890614813 892.198215477997ZM1396.730309400208 898.0V858.8H1413.8561667598437Q1420.213131858478 858.8 1425.026476319783 861.2531380880121Q1429.839820781088 863.7062761760243 1432.542303330405 868.098655538695Q1435.2447858797223 872.4910349013657 1435.2447858797223 878.4Q1435.2447858797223 884.3017238239757 1432.542303330405 888.6977238239757Q1429.839820781088 893.0937238239757 1425.026476319783 895.5468619119879Q1420.213131858478 898.0 1413.8561667598437 898.0ZM1403.9977449085538 891.8404916540212H1413.4912016612093Q1417.9002395974765 891.8404916540212 1421.1216902803294 890.1670075872535Q1424.3431409631821 888.4935235204856 1426.12862502995 885.4671077389985Q1427.9141090967178 882.4406919575114 1427.9141090967178 878.4Q1427.9141090967178 874.3033080424887 1426.12862502995 871.3048922610016Q1424.3431409631821 868.3064764795145 1421.1216902803294 866.6329924127466Q1417.9002395974765 864.9595083459787 1413.4912016612093 864.9595083459787H1403.9977449085538ZM1467.717256768629 898.0V858.8H1496.3144221707535V864.9160606980273H1474.9557271783408V891.8839393019726H1497.091180896095V898.0ZM1474.4010382557308 881.0759271623672V875.1153141122913H1493.9209047200707V881.0759271623672ZM1588.2817675904485 898.55468892261Q1583.772802491814 898.55468892261 1579.939458030509 897.0706889226101Q1576.1061135692041 895.58668892261 1573.2880103825578 892.8670682852808Q1570.4699071959112 890.1474476479515 1568.8946659212525 886.4685857359636Q1567.319424646594 882.7897238239757 1567.319424646594 878.4Q1567.319424646594 874.0102761760243 1568.8946659212525 870.3314142640364Q1570.4699071959112 866.6525523520486 1573.3123897452283 863.9329317147193Q1576.1548722945454 861.21331107739 1579.9882167558503 859.72931107739Q1583.8215612171555 858.2453110773899 1588.3305263157897 858.2453110773899Q1593.1233518089612 858.2453110773899 1597.1121439182175 859.8956206373293Q1601.100936027474 861.5459301972686 1603.8179011261084 864.7688254931714L1599.1308055267154 869.2425432473444Q1597.004735723984 866.9122670713202 1594.3683897452283 865.7570257966617Q1591.7320437664725 864.6017845220031 1588.6612152383998 864.6017845220031Q1585.6140407315713 864.6017845220031 1583.0563836754256 865.615095599393Q1580.49872661928 866.628406676783 1578.6121044645001 868.4771320182094Q1576.72548230972 870.3258573596358 1575.6877918696593 872.8528588770865Q1574.6501014295986 875.3798603945372 1574.6501014295986 878.4Q1574.6501014295986 881.4201396054629 1575.6877918696593 883.9471411229135Q1576.72548230972 886.4741426403642 1578.6121044645001 888.3228679817905Q1580.49872661928 890.1715933232169 1583.0563836754256 891.1849044006069Q1585.6140407315713 892.198215477997 1588.6612152383998 892.198215477997Q1591.7320437664725 892.198215477997 1594.3683897452283 891.0429742033384Q1597.004735723984 889.8877329286798 1599.1308055267154 887.5086980273142L1603.8179011261084 891.9824157814871Q1601.100936027474 895.1980698027314 1597.1121439182175 896.8763793626707Q1593.1233518089612 898.55468892261 1588.2817675904485 898.55468892261ZM1635.0940988738923 898.0V858.8H1651.1144387828451Q1658.960229374651 858.8 1663.4204357479439 862.5078270106221Q1667.8806421212366 866.2156540212443 1667.8806421212366 872.7551016691957Q1667.8806421212366 877.0473080424886 1665.8672976599316 880.1526525037937Q1663.8539531986266 883.2579969650986 1660.1181261880047 884.9208588770865Q1656.3822991773825 886.5837207890744 1651.186851529431 886.5837207890744H1639.1145055506752L1642.3615343822382 883.2971047040971V898.0ZM1660.703482788915 898.0 1650.7789304368664 883.7687587253414H1658.5865723185054L1668.5743659452125 898.0ZM1642.3615343822382 884.0704825493171 1639.1145055506752 880.5651775417299H1650.8831975081866Q1655.6750639725265 880.5651775417299 1658.1125146553793 878.5042792109257Q1660.5499653382321 876.4433808801214 1660.5499653382321 872.7551016691957Q1660.5499653382321 869.0180637329287 1658.1125146553793 866.9815447647952Q1655.6750639725265 864.9450257966616 1650.8831975081866 864.9450257966616H1639.1145055506752L1642.3615343822382 861.3909620637329ZM1700.7610462423133 898.0V858.8H1729.3582116444377V864.9160606980273H1707.999516652025V891.8839393019726H1730.1349703697792V898.0ZM1707.444827729415 881.0759271623672V875.1153141122913H1726.964694193755V881.0759271623672ZM1781.1386096957117 898.55468892261Q1776.6296445970772 898.55468892261 1772.7963001357723 897.0706889226101Q1768.9629556744674 895.58668892261 1766.144852487821 892.8670682852808Q1763.3267493011745 890.1474476479515 1761.7515080265157 886.4685857359636Q1760.1762667518572 882.7897238239757 1760.1762667518572 878.4Q1760.1762667518572 874.0102761760243 1761.7515080265157 870.3314142640364Q1763.3267493011745 866.6525523520486 1766.1692318504915 863.9329317147193Q1769.0117143998086 861.21331107739 1772.8450588611136 859.72931107739Q1776.6784033224187 858.2453110773899 1781.187368421053 858.2453110773899Q1785.9801939142244 858.2453110773899 1789.9689860234807 859.8956206373293Q1793.9577781327373 861.5459301972686 1796.6747432313716 864.7688254931714L1791.9876476319787 869.2425432473444Q1789.8615778292472 866.9122670713202 1787.2252318504916 865.7570257966617Q1784.5888858717358 864.6017845220031 1781.518057343663 864.6017845220031Q1778.4708828368346 864.6017845220031 1775.913225780689 865.615095599393Q1773.3555687245432 866.628406676783 1771.4689465697634 868.4771320182094Q1769.5823244149833 870.3258573596358 1768.5446339749226 872.8528588770865Q1767.5069435348619 875.3798603945372 1767.5069435348619 878.4Q1767.5069435348619 881.4201396054629 1768.5446339749226 883.9471411229135Q1769.5823244149833 886.4741426403642 1771.4689465697634 888.3228679817905Q1773.3555687245432 890.1715933232169 1775.913225780689 891.1849044006069Q1778.4708828368346 892.198215477997 1781.518057343663 892.198215477997Q1784.5888858717358 892.198215477997 1787.2252318504916 891.0429742033384Q1789.8615778292472 889.8877329286798 1791.9876476319787 887.5086980273142L1796.6747432313716 891.9824157814871Q1793.9577781327373 895.1980698027314 1789.9689860234807 896.8763793626707Q1785.9801939142244 898.55468892261 1781.1386096957117 898.55468892261ZM1827.9509409791556 898.0V858.8H1835.2183764875015V898.0ZM1870.5458883475767 898.0V858.8H1876.534015813434L1893.6767775736769 887.4150409711684H1890.500231291431L1907.3900279530394 858.8H1913.3781554188968L1913.4413966935554 898.0H1906.521062854405L1906.4578215797467 869.6301911987861H1907.9229930516738L1893.6062950243597 893.5455842185129H1890.3177487421137L1875.7968443415068 869.6301911987861H1877.4662221867268V898.0ZM1948.7568357159978 898.0V858.8H1956.0242712243437V898.0ZM1991.351783084419 898.0V858.8H2019.9489484865433V864.9160606980273H1998.5902534941306V891.8839393019726H2020.7257072118848V898.0ZM1998.0355645715206 881.0759271623672V875.1153141122913H2017.5554310358605V881.0759271623672ZM2053.6027304528398 898.0V858.8H2059.590857918697L2084.158936826133 888.9946342943854H2081.1668032904727V858.8H2088.3907911508672V898.0H2082.40266368501L2057.8345847775745 867.8053657056146H2060.8267183132343V898.0ZM2131.620573117164 898.0V864.9522670713202H2118.6290526315797V858.8H2151.879529111094V864.9522670713202H2138.88800862551V898.0ZM2200.4599516226076 898.55468892261Q2195.9019730479467 898.55468892261 2192.02640078801 897.0426889226101Q2188.1508285280734 895.53068892261 2185.304725341427 892.8074476479514Q2182.45862215478 890.0842063732929 2180.879760242792 886.4175020228425Q2179.3008983308046 882.7507976723922 2179.3008983308046 878.3965862562324Q2179.3008983308046 874.0423748400726 2180.879784220523 870.3806359351024Q2182.4586701102417 866.7188970301322 2185.3109510868544 863.9870683987622Q2188.163232063467 861.2552397673921 2192.0214731870974 859.750275422391Q2195.8797143107276 858.2453110773899 2200.445723823976 858.2453110773899Q2205.017930197269 858.2453110773899 2208.859065450044 859.7416035685551Q2212.7002007028195 861.2378960597204 2215.5421097575945 863.9540171822556Q2218.384018812369 866.6701383047908 2219.9629047020876 870.3487037502709Q2221.541790591806 874.0272691957512 2221.541790591806 878.4014621287665Q2221.541790591806 882.7756550617819 2219.962928679818 886.4543100802081Q2218.3840667678305 890.1329650986343 2215.542133735325 892.847534519457Q2212.7002007028195 895.5621039402797 2208.859065450044 897.0583964314449Q2205.017930197269 898.55468892261 2200.4599516226076 898.55468892261ZM2200.4453995877975 892.198215477997Q2203.415174506829 892.198215477997 2205.916822683078 891.1776424627901Q2208.418470859327 890.1570694475834 2210.277101894004 888.2948473186323Q2212.13573292868 886.4326251896813 2213.173423368741 883.9152834197039Q2214.2111138088017 881.3979416497266 2214.2111138088017 878.3852803848026Q2214.2111138088017 875.3726191198786 2213.178901877206 872.8741842602137Q2212.146689945611 870.375749400549 2210.2857254721434 868.5108248329066Q2208.424760998676 866.6459002652642 2205.9202919889312 865.6238423936336Q2203.4158229791865 864.6017845220031 2200.4460480601547 864.6017845220031Q2197.4762731411233 864.6017845220031 2194.960157644371 865.6254238022979Q2192.4440421476193 866.6490630825926 2190.574677294505 868.516865814004Q2188.705312441391 870.3846685454151 2187.6684437776003 872.8869304140472Q2186.631575113809 875.3891922826793 2186.631575113809 878.3839072187296Q2186.631575113809 881.3786221547799 2187.6661968229046 883.8959639247573Q2188.7008185319996 886.4133056947347 2190.5661300550746 888.2924495089758Q2192.431441578149 890.1715933232169 2194.9535331234574 891.1849044006069Q2197.4756246687657 892.198215477997 2200.4453995877975 892.198215477997Z" fill="currentColor"/></svg></a>
     <nav aria-label="Main">
-      <a href="#quien-soy">About</a>
-      <a href="#servicios">Services</a>
-      <a href="#metodo">Method</a>
+      <a href="#caminos">Partner with me</a>
+      <a href="#capacitacion">Training</a>
       <a href="#casos">Work</a>
+      <a href="#wrealispec">Wrealispec</a>
       <a class="lang" href="../" hreflang="es" lang="es" aria-label="Versión en español">ES</a>
-      <a class="cta" href="#contacto">Assess my business</a>
+      <a class="cta" href="#contacto">Let’s talk</a>
     </nav>
   </div>
 </header>
 
 <main id="inicio">
-  <section class="hero dark" aria-labelledby="hero-t">
+  <section class="hero" aria-labelledby="hero-t">
+    <picture>
+      <source media="(max-width: 900px)" srcset="../img/hero-hector-1200.jpg">
+      <img src="../img/hero-hector.jpg" alt="Héctor Popoca working on his laptop, surrounded by sales, automation and artificial intelligence panels" width="2400" height="1792" fetchpriority="high">
+    </picture>
     <div class="wrap">
-      <div class="copy">
-        <span class="kicker">Héctor Popoca · EdTech digital entrepreneur</span>
-        <h1 id="hero-t">I build digital solutions that <em>teach</em> and help you grow.</h1>
-        <p class="lead">I design digital platforms and strategies built on teaching and learning methods for the academic, professional and business sectors.</p>
+      <div class="hero-copy">
+        <span class="badge">Business-building partner · Digital solutions that teach and help you grow</span>
+        <h1 id="hero-t">I grow businesses and <span>teach how it was done.</span></h1>
+        <p class="lead">I partner with local businesses to sell their products from anywhere with digital marketing, SEO and automation. What works, I turn into learning platforms so more people can start their own business.</p>
+        <ul class="checks">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B6F35A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"></path></svg>Sell from anywhere</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B6F35A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"></path></svg>Digital marketing and SEO</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B6F35A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"></path></svg>AI-powered automation</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B6F35A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"></path></svg>Learn the whole process</li>
+        </ul>
         <div class="actions">
+          <a class="btn btn-lime" href="#caminos">Partner with me</a>
+          <a class="btn btn-ghost" href="#capacitacion">Learn how to do it</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="caminos" aria-labelledby="caminos-t">
+    <div class="wrap">
+      <div class="head center">
+        <span class="eyebrow">Two paths</span>
+        <h2 class="h2" id="caminos-t">We build it together, or you learn how</h2>
+      </div>
+      <div class="grid g2">
+        <article class="card-forest">
+          <span class="tag">For businesses</span>
+          <h3>Partner with me</h3>
+          <p>You bring the product; I bring the customers with digital marketing, SEO and automation, so you can sell from anywhere with minimal effort. It is performance marketing: I charge per lead or per closed sale.</p>
+          <p class="card-note">I work with only a few businesses at a time. First, we assess whether your business has potential.</p>
           <a class="btn btn-gold" href="#contacto">Assess my business</a>
-          <a class="link-line" href="#casos">See my work</a>
-        </div>
-        <ul class="chips" aria-label="How I work"><li>100% online</li><li>Based in Mexico City</li><li>Service in Spanish</li></ul>
-      </div>
-      <figure class="photo" style="margin:0"><img src="../img/hector.jpg" alt="Héctor Popoca smiling, wearing a plaid shirt" width="900" height="900"></figure>
-    </div>
-  </section>
-
-  <div class="results">
-    <div class="wrap">
-      <ul aria-label="Results">
-        <li><span class="what">Print shop</span><span class="num">$390,000</span><p>Mexican pesos in Mercado Libre sales in the first six months, run from my living room.</p></li>
-        <li><span class="what">Taco business</span><span class="num">75 → 2,000</span><p>tacos a day, with a team of 15 people.</p></li>
-        <li><span class="what">Fresh drinks</span><span class="num">30 → 600</span><p>drinks a day.</p></li>
-        <li class="inst"><span class="what">In institutions</span><h3>Higher productivity</h3><p>Improvements to operational and administrative processes that raised productivity in the public and private sectors.</p></li>
-      </ul>
-      <p class="foot">I grew my businesses until I could sell them, and they still run today under their new owners.</p>
-    </div>
-  </div>
-
-  <section class="section" aria-labelledby="sect-t">
-    <div class="wrap">
-      <div class="head">
-        <span class="kicker">Sectors</span>
-        <h2 id="sect-t">Three sectors, one method: teach so the results last.</h2>
-      </div>
-      <div class="sectors">
-        <article><span class="n">01</span><h3>Academic</h3><p>Learning platforms that combine artificial intelligence with guidance from a teacher.</p><span class="ex">Example: Wrealispec</span></article>
-        <article><span class="n">02</span><h3>Professional</h3><p>Data analysis training with Excel, Access and dashboards, so decisions are based on information.</p><span class="ex">Courses and training</span></article>
-        <article><span class="n">03</span><h3>Business</h3><p>Local SEO and process automation, so you sell more and spend less time on day-to-day operations.</p><span class="ex">Example: De Canasta</span></article>
+        </article>
+        <article class="card-forest">
+          <span class="tag">For entrepreneurs</span>
+          <h3>Learn how to do it</h3>
+          <p>I teach you the whole process, from selling to automation, using real cases from the businesses I grow. Step by step, no jargon.</p>
+          <p class="card-note">Training center · Growing every month</p>
+          <a class="btn btn-ghost-gold" href="#capacitacion">See materials</a>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="section" id="servicios" aria-labelledby="serv-t" style="padding-top:0">
-    <div class="wrap" style="padding-top:0">
-      <span class="kicker">Services</span>
-      <div class="feature dark">
-        <div class="main">
-          <span class="kicker">Full service</span>
-          <h2 id="serv-t">Growth partner</h2>
-          <p>I work alongside you to increase your sales: website, Google Maps, WhatsApp, reviews and a monthly results report.</p>
-          <p class="quote">I work with only a few businesses at a time. First, we assess whether your business has room to grow.</p>
-        </div>
-        <div class="side">
-          <ul>
-            <li>Business assessment</li>
-            <li>Website, Google Maps and WhatsApp</li>
-            <li>Local SEO strategy</li>
-            <li>Reviews and monthly report</li>
-            <li>Training for you and your team</li>
-          </ul>
-          <a class="btn btn-gold" href="#contacto">Request an assessment</a>
-        </div>
+  <section class="block" aria-labelledby="pasos-t" style="padding-top:0">
+    <div class="wrap">
+      <div class="head center">
+        <span class="eyebrow">How I grow a business</span>
+        <h2 class="h2" id="pasos-t">Three steps to sell from anywhere</h2>
+        <p>It is the same process I use with the businesses I partner with, and the one I teach in my training center.</p>
       </div>
-      <div class="services">
-        <article><h3>Web design for your business</h3><p>A fast mobile website that explains what you sell and takes customers straight to messaging you.</p></article>
-        <article><h3>SEO strategy</h3><p>So people find you on Google and on the map when they search for what you sell nearby.</p></article>
-        <article><h3>Learning platforms</h3><p>Online courses and AI-powered platforms for schools, teachers and companies that train their staff.</p></article>
-        <article class="soon"><span class="soon-tag">Coming soon</span><h3>Process automation</h3><p>Orders, quotes and customer follow-up that run on their own, so you serve more people without more work.</p></article>
+      <div class="grid g3">
+        <article class="card-forest step">
+          <div class="top-row"><span class="num">01</span><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#C9A15B" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h2l2.5 12h11L21 7H7"></path><circle cx="10" cy="20" r="1.5"></circle><circle cx="17" cy="20" r="1.5"></circle></svg></div>
+          <h3>Sell</h3>
+          <p>Get found and get bought.</p>
+          <ul><li>Sales through WhatsApp</li><li>Digital marketing</li><li>SEO</li></ul>
+        </article>
+        <article class="card-forest step">
+          <div class="top-row"><span class="num">02</span><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#C9A15B" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v6h6"></path><path d="M20 20v-6h-6"></path><path d="M5.5 15a7 7 0 0 0 12.2 2.5L20 14"></path><path d="M18.5 9A7 7 0 0 0 6.3 6.5L4 10"></path></svg></div>
+          <h3>Automate</h3>
+          <p>Let it run on its own and decide with data.</p>
+          <ul><li>Artificial intelligence</li><li>Process automation</li><li>Data analysis</li></ul>
+        </article>
+        <article class="card-forest step">
+          <div class="top-row"><span class="num">03</span><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#C9A15B" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"></path></svg></div>
+          <h3>Build</h3>
+          <p>Grow without taking on too much risk.</p>
+          <ul><li>Reseller businesses</li><li>Small-scale production</li><li>Hybrid models like catering</li></ul>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="section process" id="metodo" aria-labelledby="met-t">
+  <section class="block band" id="capacitacion" aria-labelledby="cap-t">
     <div class="wrap">
-      <div class="head">
-        <span class="kicker">Method</span>
-        <h2 id="met-t">How we work</h2>
-        <p>From day one you know what happens in each phase and what you get.</p>
+      <div class="cap-head">
+        <div class="head" style="max-width:680px">
+          <span class="eyebrow">Training center</span>
+          <h2 class="h2" id="cap-t">Learn from what already worked</h2>
+          <p>Practical guides I write while growing businesses and building my own path. I only publish what I have already tested.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filter materials">
+          <button type="button" data-f="todos" aria-pressed="true">All</button>
+          <button type="button" data-f="negocios" aria-pressed="false">Business</button>
+          <button type="button" data-f="movilidad" aria-pressed="false">Mobility</button>
+          <button type="button" data-f="idiomas" aria-pressed="false">Languages</button>
+          <button type="button" data-f="automatizacion" aria-pressed="false">Automation</button>
+        </div>
       </div>
-      <ol class="phases">
-        <li><span class="roman" aria-hidden="true">I</span><h3>Assessment</h3><p>I review how customers see you today on Google Maps, social media and WhatsApp, read your reviews and look at what your competitors do.</p><p class="get"><b>You get:</b> your assessment and a written proposal with solutions, price and timeline.</p></li>
-        <li><span class="roman" aria-hidden="true">II</span><h3>Setup and follow-up</h3><p>I optimize your Google Maps profile, set up your WhatsApp, build or improve your website and start asking for reviews. We measure and adjust.</p><p class="get"><b>You get:</b> everything up and running, a results report and training for the parts you handle.</p></li>
-        <li><span class="roman" aria-hidden="true">III</span><span class="opt">Optional</span><h3>New strategies</h3><p>We review what worked, design new strategies to bring in more customers and measure the results.</p><p class="get"><b>You get:</b> a growth plan tailored to your business.</p></li>
-      </ol>
-      <p class="phase-note"><b>Phases I and II take 1 to 3 months,</b> depending on what your business needs. Phase III is up to you: we build a solid foundation first, because new strategies only pay off once the basics work.</p>
+      <div class="grid g3" id="mats">
+        <article class="card-forest mat" data-cat="negocios"><div class="meta"><span class="tag">Business</span><span>Coming soon</span></div><h3>Catering as a reseller</h3><p>How to sell tacos for events without a kitchen: suppliers, pricing, a quote calculator and WhatsApp orders. The real case of De Canasta.</p><div class="buy"><span class="price">USD 9.99 <small>· MXN 199</small></span><a class="btn btn-gold" href="#pide">Notify me</a></div></article>
+        <article class="card-forest mat" data-cat="negocios"><div class="meta"><span class="tag">Business</span><span>Coming soon</span></div><h3>From reseller to producer</h3><p>When a business is ready for you to produce it yourself, and how to scale on a small budget without too much risk.</p><div class="buy"><span class="price">USD 9.99 <small>· MXN 199</small></span><a class="btn btn-gold" href="#pide">Notify me</a></div></article>
+        <article class="card-forest mat" data-cat="movilidad"><div class="meta"><span class="tag">Mobility</span><span>Coming soon</span></div><h3>I left my office job to build a business from Ireland</h3><p>My story: why I chose Ireland over the US, how I planned it and what I would do differently. For young people ready to take the leap.</p><div class="buy"><span class="price">USD 9.99 <small>· MXN 199</small></span><a class="btn btn-gold" href="#pide">Notify me</a></div></article>
+        <article class="card-forest mat" data-cat="movilidad"><div class="meta"><span class="tag">Mobility</span><span>Coming soon</span></div><h3>Ireland step by step: study English and work</h3><p>Schools, costs, paperwork and the first months, from my own experience and with links to official sources.</p><div class="buy"><span class="price">USD 9.99 <small>· MXN 199</small></span><a class="btn btn-gold" href="#pide">Notify me</a></div></article>
+        <article class="card-forest mat" data-cat="idiomas"><div class="meta"><span class="tag">Languages</span><span>Coming soon</span></div><h3>Learn English with your own story</h3><p>The 4-phase Wrealispec method: write, listen, record and talk. Practice on your own or with your teacher.</p><div class="buy"><span class="price">USD 9.99 <small>· MXN 199</small></span><a class="btn btn-gold" href="#pide">Notify me</a></div></article>
+        <article class="card-forest mat" data-cat="automatizacion"><div class="meta"><span class="tag">Automation</span><span>Coming soon</span></div><h3>Automate your business form</h3><p>A form that builds the order and sends it to you on WhatsApp, like the ones on my sites. Step by step, no coding.</p><div class="buy"><span class="price">USD 9.99 <small>· MXN 199</small></span><a class="btn btn-gold" href="#pide">Notify me</a></div></article>
+      </div>
+      <p class="disclaimer">The mobility guides share my personal experience and are not immigration advice. Requirements change; always check official sources.</p>
+      <div class="ask" id="pide">
+        <div class="intro">
+          <h3>Which material should we prepare?</h3>
+          <p>Pick the topics you are interested in. The most requested ones come out first, and I will let you know when they are ready.</p>
+        </div>
+        <form id="form-pide" novalidate>
+          <fieldset>
+            <legend>Topics</legend>
+            <label class="chk"><input type="checkbox" name="tema" value="Mobility in Ireland">Mobility in Ireland</label>
+            <label class="chk"><input type="checkbox" name="tema" value="How to get to Ireland">How to get to Ireland</label>
+            <label class="chk"><input type="checkbox" name="tema" value="The strategy behind a business">The strategy behind a business</label>
+            <label class="chk"><input type="checkbox" name="tema" value="Automating a form for my business">Automating a form for my business</label>
+            <label class="chk"><input type="checkbox" name="tema" value="Learning English with Wrealispec">Learning English with Wrealispec</label>
+            <label class="chk"><input type="checkbox" name="tema" value="Another topic">Another topic</label>
+          </fieldset>
+          <div class="row">
+            <label class="lbl">Your name<input name="nombre" autocomplete="name"></label>
+            <label class="lbl">Your email<input name="correo" type="email" autocomplete="email"></label>
+            <button class="btn btn-gold" type="submit">I want this</button>
+          </div>
+          <p class="note" id="note-pide" role="status" hidden></p>
+        </form>
+      </div>
     </div>
   </section>
 
-  <section class="section" id="quien-soy" aria-labelledby="quien-t">
+  <section class="block" aria-labelledby="num-t">
     <div class="wrap">
-      <div class="about">
-        <div class="left">
-          <span class="kicker">About me</span>
-          <h2 id="quien-t">Teaching and process improvement, in one person.</h2>
-        </div>
-        <div class="right">
-          <p>For almost 20 years I have brought two worlds together: teaching, and improving administrative and operational processes in the public and private sectors. I hold a degree in Industrial Management from IPN, a master’s in Learning Management in Virtual Environments from the University of Guadalajara, and I am a CONOCER-certified instructor.</p>
-          <p>In 2006 I created Guía Binaria, an interactive math course registered with INDAUTOR, Mexico’s copyright office. I was an instructor at IPN’s CIITEC and a facilitator for SEP’s online high school program. And as the son of merchants, I have run my own businesses all my life: I know what it takes to meet payroll, negotiate with suppliers and have no time for anything else.</p>
-          <ul class="creds" aria-label="Education and certifications"><li>IPN</li><li>University of Guadalajara</li><li>CONOCER</li><li>INDAUTOR</li></ul>
-        </div>
+      <h2 class="h2" id="num-t" style="text-align:center">I know how to grow a business because I have done it</h2>
+      <div class="grid g4">
+        <div class="stat"><span class="n">$390,000</span><p>Mexican pesos in Mercado Libre sales in six months, run from my living room</p></div>
+        <div class="stat"><span class="n">75 → 2,000</span><p>tacos a day, with a team of 15 people</p></div>
+        <div class="stat"><span class="n">30 → 600</span><p>fresh drinks a day in my production business</p></div>
+        <div class="stat"><span class="n">~20 years</span><p>teaching and improving processes in the public and private sectors</p></div>
       </div>
     </div>
   </section>
 
-  <section class="section cases-bg" id="casos" aria-labelledby="casos-t">
+  <section class="block" id="casos" aria-labelledby="casos-t" style="padding-top:0">
     <div class="wrap">
-      <div class="head">
-        <span class="kicker">Work</span>
-        <h2 id="casos-t">Live projects and projects in progress</h2>
+      <div class="head center">
+        <span class="eyebrow">Work</span>
+        <h2 class="h2" id="casos-t">What I am building</h2>
       </div>
-      <div>
+      <div class="grid g2">
         <article class="case">
-          <figure class="flyer flyer-canasta" style="margin:0">
-            <div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>decanasta.com</span></div><img src="../img/decanasta.jpg" alt="De Canasta home page: tacos de canasta for your event in Mexico City, from 10 pesos per taco" width="1244" height="631"></div>
-            <div class="sticker" aria-hidden="true"><small>From</small><b>$10</b><small>per taco</small></div>
-          </figure>
-          <div class="info">
-            <span class="kicker">Business · My own venture</span>
+          <div class="shot shot-canasta"><img src="../img/decanasta.jpg" alt="De Canasta home page: tacos de canasta for your event in Mexico City" width="1244" height="631" loading="lazy"></div>
+          <div class="body">
+            <div class="meta"><span>Reseller · Catering</span><span>Live</span></div>
             <h3>De Canasta</h3>
-            <dl>
-              <dt>Challenge</dt><dd>Take orders of 100 to 500 tacos without phone calls or back-and-forth.</dd>
-              <dt>Solution</dt><dd>A website with a quote calculator that works out tacos per guest and sends the complete order by WhatsApp.</dd>
-              <dt>Status</dt><dd>Live. Full process automation is in progress.</dd>
-            </dl>
-            <a class="go" href="https://decanasta.com" target="_blank" rel="noopener">Visit decanasta.com</a>
+            <p>Tacos de canasta for events of 100 to 500 tacos. Suppliers cook; I sell with a website that quotes on its own and sends the complete order by WhatsApp.</p>
+            <a href="https://decanasta.com" target="_blank" rel="noopener">Visit decanasta.com</a>
           </div>
         </article>
-        <article class="case" style="margin-top:40px">
-          <figure class="flyer flyer-wrea" style="margin:0">
-            <div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>wrealispec.com</span></div><img src="../img/wrealispec.jpg" alt="Wrealispec page: learn English with your own story, a method with AI and a teacher" width="960" height="617"></div>
-            <div class="sticker" aria-hidden="true"><small>Method</small><b>4</b><small>phases</small></div>
-          </figure>
-          <div class="info">
-            <span class="kicker">Academic · Personal venture · In development</span>
+        <article class="case">
+          <div class="shot shot-wrea"><img src="../img/wrealispec.jpg" alt="Wrealispec page: learn English with your own story" width="960" height="617" loading="lazy"></div>
+          <div class="body">
+            <div class="meta"><span>EdTech · Languages</span><span>In development</span></div>
             <h3>Wrealispec</h3>
-            <dl>
-              <dt>What</dt><dd>A 4-phase method to improve English: writing, reading, listening, speaking and conversation.</dd>
-              <dt>How</dt><dd>Artificial intelligence corrects and supports practice; the teacher guides the student and holds the conversation.</dd>
-              <dt>For</dt><dd>English teachers who want to offer their students a complete method.</dd>
-            </dl>
+            <p>A 4-phase method to improve English with AI and a teacher: write and correct, listen and repeat, record and dictate, and talk.</p>
+            <a href="#wrealispec">Read the thesis</a>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="faq-t" style="border-top:1px solid var(--line)">
+  <section id="wrealispec" aria-labelledby="wrea-t">
     <div class="wrap">
-      <div class="head">
-        <span class="kicker">FAQ</span>
-        <h2 id="faq-t">What people ask before we start</h2>
-      </div>
-      <div class="faq">
-        <details><summary>What kinds of businesses do you work with?</summary><p>Businesses that serve customers in their area and need to be found: restaurants, hotels and hostels, repair shops, clinics, beauty salons, cleaning companies and many more. I also work with schools, teachers and companies that want to bring their teaching or training onto a digital platform.</p></details>
-        <details><summary>How much does it cost?</summary><p>It depends on what your business needs. That is why I start with an assessment: afterwards you get a written proposal with the exact price, no surprises.</p></details>
-        <details><summary>Why do you only work with a few businesses at a time?</summary><p>Because the support is personal. I would rather give real follow-up to a few businesses with room to grow than half-serve many. That is why the assessment comes first.</p></details>
-        <details><summary>Where are you based?</summary><p>I am based in Mexico City and work 100% online. Meetings are by video call and day-to-day contact is by WhatsApp, so it does not matter where your business is.</p></details>
-        <details><summary>Do I need to know about technology?</summary><p>No. I handle the digital side and explain what you need to know in plain words. Teaching is part of my job.</p></details>
-        <details><summary>How soon will I see results?</summary><p>The first changes, like your Google Maps profile and WhatsApp, show within a few weeks. The solid foundation is ready in 1 to 3 months, and from there we track together how your customers and reviews grow in each report.</p></details>
-        <details><summary>Can you run ad campaigns to bring in customers?</summary><p>Yes, but first we build and unify your image. If your information does not match across platforms or you have unanswered negative reviews, a campaign can hurt you instead of helping. With the foundation in place, every dollar you spend on ads goes further.</p></details>
+      <div class="card-forest wrea">
+        <div class="txt">
+          <span class="tag">My biggest bet</span>
+          <h2 id="wrea-t">Language is the door to mobility.</h2>
+          <p>With Wrealispec I help professionals and academics build the language skills to study, work and start businesses abroad. I am building it while learning English in Ireland myself.</p>
+        </div>
+        <div class="mob">
+          <div><b>Academic</b><span>Master’s degrees and exchanges</span></div>
+          <div><b>Professional</b><span>Global work</span></div>
+          <div><b>Business</b><span>Business without borders</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="contact dark" id="contacto" aria-labelledby="cont-t">
+  <section class="block" aria-labelledby="hist-t">
     <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Contact</span>
-        <h2 id="cont-t">How can I help you?</h2>
-        <p>Leave your details and tell me a little about your business. I will get back to you within 24 hours to schedule a free, no-obligation assessment.</p>
-        <ol class="how">
-          <li>You send me your details with this form.</li>
-          <li>I message you by WhatsApp or email to schedule a video call.</li>
-          <li>Together we assess whether your business has room to grow.</li>
-        </ol>
-        <a class="mail" href="mailto:contacto@hpopoca.com">contacto@hpopoca.com</a>
-      </div>
-      <form id="form" novalidate>
-        <div class="field"><label for="nombre">Full name</label><input id="nombre" name="nombre" autocomplete="name" required></div>
-        <div class="field"><label for="negocio">Business or institution</label><input id="negocio" name="negocio" autocomplete="organization" required></div>
-        <div class="field"><label for="tel">WhatsApp</label><input id="tel" name="tel" type="tel" autocomplete="tel" placeholder="+1 555 000 0000"></div>
-        <div class="field"><label for="correo">Email</label><input id="correo" name="correo" type="email" autocomplete="email"></div>
-        <div class="field"><label for="pais">Country</label><input id="pais" name="pais" autocomplete="country-name"></div>
-        <div class="field"><label for="ciudad">City</label><input id="ciudad" name="ciudad" autocomplete="address-level2"></div>
-        <div class="field full"><label for="interes">What are you interested in?</label>
-          <select id="interes" name="interes">
-            <option>Growth partner: I help you increase your sales</option>
-            <option>Web design for your business</option>
-            <option>SEO strategy</option>
-            <option>Learning platform</option>
-            <option>Other / Not sure</option>
-          </select>
+      <div class="story">
+        <div class="pic"><img src="../img/hector.jpg" alt="Héctor Popoca" width="900" height="900" loading="lazy"></div>
+        <div class="txt">
+          <h2 id="hist-t">From street stall to platform</h2>
+          <p>I am the son of street vendors and grew up among stalls selling candy, jewelry and cosmetics. Then I had my own: breakfast and torta stalls, a print shop that started in my living room, a taco business that reached 2,000 tacos a day with 15 people, and a fresh-drinks business that went from 30 to 600 a day. I grew them until I could sell them, and they still run today under their new owners.</p>
+          <p>At the same time, I have spent almost 20 years teaching and improving administrative and operational processes in the public and private sectors. I hold a degree in Industrial Management from IPN, a master’s in Learning Management in Virtual Environments from the University of Guadalajara, and I am a CONOCER-certified instructor. I taught at IPN’s CIITEC, was a facilitator for SEP’s online high school program, and trained government employees in computing.</p>
+          <p class="last">Today I bring both together: I partner with businesses to help them grow, and I turn what we learn into platforms so more people can start their own.</p>
         </div>
-        <div class="field full"><label for="mensaje">What would you like to improve?</label><textarea id="mensaje" name="mensaje"></textarea></div>
-        <label class="consent full"><input type="checkbox" id="acepto" name="acepto"><span>I agree to be contacted by WhatsApp or email about my request, as described in the <a href="../privacidad.html#english">privacy policy</a>.</span></label>
-        <button class="btn btn-gold full" type="submit">Send my details</button>
-        <p class="note" id="note" role="status" hidden></p>
-      </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" aria-labelledby="cont-t">
+    <div class="wrap">
+      <div class="contact">
+        <div class="intro">
+          <h2 id="cont-t">How can I help you?</h2>
+          <p>Leave your details and I will get back to you within 24 hours to talk about your business or what you want to learn.</p>
+          <a href="mailto:contacto@hpopoca.com">contacto@hpopoca.com</a>
+        </div>
+        <form id="form" novalidate>
+          <label class="lbl">Full name<input id="nombre" autocomplete="name"></label>
+          <label class="lbl">Business or institution<input id="negocio" autocomplete="organization"></label>
+          <label class="lbl">WhatsApp<input id="tel" type="tel" autocomplete="tel" placeholder="+1 555 000 0000"></label>
+          <label class="lbl">Email<input id="correo" type="email" autocomplete="email"></label>
+          <label class="lbl full">What are you interested in?
+            <select id="interes">
+              <option>Partner with you to grow my business</option>
+              <option>Learn how to do it: training center</option>
+              <option>A website or SEO for my business</option>
+              <option>Wrealispec</option>
+              <option>Other / Not sure</option>
+            </select>
+          </label>
+          <label class="lbl full">Tell me a little<textarea id="mensaje"></textarea></label>
+          <label class="consent full"><input type="checkbox" id="acepto"><span>I agree to be contacted by WhatsApp or email about my request, as described in the <a href="../privacidad.html#english">privacy policy</a>.</span></label>
+          <button class="btn btn-gold full" type="submit">Send my details</button>
+          <p class="note full" id="note" role="status" hidden></p>
+        </form>
+      </div>
     </div>
   </section>
 </main>
@@ -463,86 +466,72 @@ footer .legal a{text-decoration:underline}
 <footer>
   <div class="wrap">
     <div class="cols">
-      <div class="brand">
-        <svg class="conejo" viewBox="10 10 640 620" aria-hidden="true"><path d="M219.0 71.5 L218.2 73.2 L221.2 81.2 L231.8 103.2 L236.8 112.0 L248.2 128.5 L258.5 141.0 L271.8 154.8 L282.8 164.5 L293.2 172.5 L305.0 180.0 L320.8 188.2 L336.2 194.5 L349.8 198.8 L365.8 202.2 L384.0 204.8 L395.0 205.5 L414.2 205.8 L414.8 206.2 L414.8 208.0 L410.5 220.8 L408.8 230.0 L408.0 237.5 L405.8 246.2 L403.2 251.2 L400.0 255.5 L392.2 261.8 L382.2 266.8 L368.2 270.8 L358.5 272.2 L343.8 273.2 L324.2 273.0 L296.2 270.5 L275.0 270.8 L250.5 273.8 L229.2 278.8 L206.0 287.2 L187.2 296.8 L172.5 305.8 L163.0 312.8 L152.2 321.8 L140.2 333.5 L133.2 341.5 L121.5 357.2 L116.2 365.5 L109.5 378.0 L101.0 397.5 L96.8 410.2 L93.2 423.8 L89.5 445.0 L87.8 464.0 L88.2 488.0 L87.2 488.8 L77.2 489.8 L69.8 491.8 L60.8 495.8 L55.2 499.2 L47.8 505.5 L43.8 509.8 L37.5 518.5 L33.8 525.5 L31.2 532.0 L29.5 539.8 L29.0 546.8 L29.2 553.5 L30.2 560.2 L32.2 567.0 L37.5 577.8 L44.2 587.0 L50.0 592.5 L57.2 598.0 L67.0 602.8 L75.5 605.2 L81.2 606.2 L416.0 606.8 L417.2 605.8 L417.2 602.5 L415.2 585.0 L412.2 574.2 L408.8 567.0 L403.0 558.5 L396.2 551.5 L388.5 545.8 L377.2 539.8 L377.2 538.8 L378.5 537.8 L395.2 531.5 L410.8 524.0 L412.8 523.8 L414.2 525.0 L455.0 588.5 L459.8 594.5 L464.2 599.0 L470.0 603.0 L476.0 605.5 L482.8 606.8 L573.0 606.8 L573.8 605.8 L573.8 593.5 L572.5 583.2 L569.0 572.2 L563.8 562.2 L559.2 556.2 L554.0 551.0 L549.2 547.2 L542.8 543.2 L535.8 540.0 L529.0 537.8 L520.5 536.0 L512.5 535.5 L510.8 534.2 L494.8 494.0 L489.5 477.2 L488.8 472.0 L504.0 455.2 L516.5 439.2 L526.0 424.5 L533.0 411.2 L540.8 392.8 L547.2 372.8 L552.8 348.0 L554.8 331.2 L556.2 330.0 L569.8 326.5 L579.5 322.8 L587.8 318.8 L594.2 314.5 L602.2 308.2 L610.0 300.2 L616.2 291.8 L619.8 285.2 L623.5 275.2 L625.5 266.5 L626.2 260.8 L626.0 247.8 L624.0 238.2 L621.2 230.8 L617.8 223.5 L611.8 213.5 L601.8 199.5 L594.8 191.5 L584.8 181.8 L569.8 170.0 L558.2 163.0 L550.2 159.0 L543.0 156.0 L533.2 153.0 L525.8 151.2 L517.0 150.0 L501.0 149.5 L482.8 151.5 L481.5 150.0 L476.2 135.2 L468.5 119.8 L455.5 99.5 L442.8 84.0 L428.2 70.2 L410.8 57.8 L393.2 48.0 L377.0 41.2 L364.0 37.2 L347.0 33.5 L329.0 31.2 L312.2 30.2 L311.2 31.5 L312.0 40.8 L314.2 56.8 L317.2 70.5 L317.0 72.0 L316.0 72.8 L293.8 68.5 L273.8 66.5 L255.8 66.5 L245.5 67.2 L233.5 68.8ZM392.0 582.5 L391.8 584.2 L389.5 585.0 L143.8 584.8 L143.0 584.2 L143.0 582.8 L311.8 414.0 L313.5 414.0 L315.2 415.8 L322.8 426.8 L327.5 436.8 L330.8 447.2 L332.5 458.8 L332.8 472.0 L331.8 480.2 L329.5 489.2 L324.8 500.2 L317.8 512.0 L311.2 519.5 L300.2 530.5 L292.2 536.8 L266.5 552.8 L262.2 556.0 L262.8 556.5 L339.2 556.8 L359.8 557.2 L370.0 560.5 L380.0 566.5 L386.8 573.5ZM294.2 398.8 L294.2 400.5 L174.0 520.5 L125.0 570.0 L116.8 576.8 L109.5 581.0 L103.8 583.0 L94.0 584.8 L85.5 584.8 L79.0 583.5 L70.2 580.0 L64.0 575.8 L58.8 570.2 L54.0 562.0 L52.2 557.0 L51.2 550.8 L51.2 545.0 L52.0 540.0 L53.8 534.2 L57.2 527.5 L60.5 523.2 L64.8 519.0 L68.5 516.2 L72.8 514.0 L78.2 512.0 L85.8 510.5 L106.2 511.0 L108.5 509.8 L165.0 455.5 L207.0 414.0 L219.0 403.5 L227.8 397.8 L236.2 393.8 L246.2 390.8 L255.2 389.5 L265.0 389.5 L277.0 391.5 L288.2 395.2 L293.2 397.8ZM531.2 334.5 L532.5 335.8 L532.2 340.2 L530.8 349.5 L527.2 364.2 L521.5 382.5 L513.2 401.2 L505.0 416.8 L497.0 429.0 L489.2 439.2 L482.5 447.0 L473.2 456.5 L465.5 463.8 L465.5 467.5 L468.8 482.5 L474.5 501.0 L482.0 521.5 L488.2 535.5 L492.5 547.2 L494.5 551.0 L497.2 554.0 L501.0 556.0 L505.0 556.8 L514.5 556.8 L520.0 557.5 L527.0 559.8 L534.0 563.2 L539.2 567.2 L545.0 574.0 L549.2 581.8 L549.5 584.0 L547.8 585.0 L485.5 585.0 L480.8 583.0 L478.2 581.2 L472.0 574.5 L453.0 545.5 L436.0 518.0 L427.2 502.2 L421.2 489.8 L415.2 473.5 L411.8 458.0 L410.2 442.0 L410.5 431.2 L411.5 423.0 L413.5 414.0 L416.5 405.0 L420.8 396.2 L424.8 389.8 L434.5 377.5 L442.0 370.0 L452.5 361.8 L467.2 352.5 L486.0 343.5 L493.8 341.0 L505.8 338.2ZM402.0 283.0 L401.8 285.5 L398.0 294.0 L394.8 299.2 L390.2 305.0 L312.2 382.5 L310.2 382.8 L299.8 376.5 L287.8 371.8 L277.5 369.2 L268.0 368.0 L256.5 367.8 L243.8 369.2 L235.2 371.2 L222.2 376.2 L210.0 383.5 L197.8 393.0 L112.2 476.5 L110.8 476.5 L110.2 476.0 L110.0 462.2 L110.5 454.8 L112.2 440.8 L115.0 426.8 L120.5 408.2 L124.5 397.8 L130.8 384.8 L137.8 372.5 L143.5 363.8 L156.5 348.0 L172.8 332.8 L188.8 321.0 L201.8 313.2 L218.5 305.5 L235.5 299.5 L253.8 295.2 L268.5 293.0 L284.2 292.0 L298.5 292.2 L328.0 295.0 L342.2 295.2 L353.5 294.8 L364.5 293.5 L376.2 291.2 L390.2 287.0 L400.2 282.5ZM554.0 185.8 L566.5 194.8 L579.8 207.2 L586.0 214.8 L593.0 224.8 L600.8 239.0 L604.0 249.0 L604.5 258.2 L602.5 269.0 L600.0 275.5 L597.0 281.0 L592.8 286.8 L585.5 294.0 L578.2 299.2 L571.0 303.0 L562.5 306.2 L554.0 308.5 L528.8 313.2 L499.8 317.5 L487.2 320.5 L478.0 323.5 L464.2 329.2 L447.0 338.8 L434.8 347.2 L424.0 356.5 L417.8 362.8 L410.5 371.5 L401.0 386.5 L397.0 394.8 L393.8 403.8 L390.0 420.2 L388.8 438.8 L389.0 450.0 L390.0 459.2 L391.8 468.8 L394.8 480.0 L397.8 488.5 L403.2 501.2 L403.2 502.8 L401.8 504.2 L396.0 507.2 L372.2 517.0 L352.8 523.2 L337.2 527.5 L335.5 527.5 L335.0 525.8 L339.8 518.5 L346.0 506.5 L351.0 492.0 L354.0 475.5 L354.2 458.5 L353.2 449.5 L351.5 441.0 L346.8 426.8 L339.2 412.2 L333.2 403.8 L329.0 398.5 L329.0 397.2 L402.2 323.5 L411.2 313.2 L415.5 306.8 L422.0 292.5 L426.5 276.8 L428.2 264.5 L429.8 238.0 L432.5 223.5 L436.2 213.2 L441.2 204.2 L447.2 196.0 L453.0 190.2 L462.8 183.0 L476.2 176.2 L490.5 172.5 L499.8 171.5 L511.0 171.5 L523.8 173.2 L538.2 177.8 L545.5 181.0ZM250.2 89.8 L252.0 88.8 L268.5 88.2 L285.5 89.2 L303.5 91.8 L315.5 94.5 L324.8 97.5 L336.0 102.0 L347.2 107.5 L355.8 112.5 L372.0 124.0 L382.2 133.0 L392.0 142.8 L400.2 152.2 L407.0 161.2 L418.5 179.8 L419.0 181.8 L418.0 182.8 L414.5 183.2 L395.8 183.5 L380.2 182.2 L366.8 180.2 L355.5 177.8 L342.2 173.5 L330.8 168.8 L320.2 163.5 L313.5 159.5 L299.8 150.0 L289.8 141.5 L279.2 131.2 L268.0 118.5 L259.5 107.2 L253.8 98.2 L250.2 91.2ZM336.5 55.0 L337.2 54.5 L339.2 54.5 L353.5 57.2 L366.2 60.8 L377.2 64.8 L388.8 70.2 L398.0 75.5 L406.0 80.8 L414.0 87.0 L421.0 93.2 L429.5 102.0 L437.0 111.0 L445.0 122.5 L451.5 133.8 L457.2 145.5 L461.5 156.5 L461.5 158.5 L460.2 159.8 L454.5 162.8 L441.2 171.0 L439.0 170.8 L428.0 153.2 L419.0 141.2 L408.0 128.2 L397.8 117.8 L386.5 107.8 L375.2 99.2 L363.0 91.5 L343.8 81.2 L342.5 80.0 L340.5 74.2 L336.2 57.0Z" fill="currentColor" fill-rule="evenodd"/><path class="eye" d="M525.0 210.8 L519.8 212.5 L517.2 214.2 L514.8 217.0 L512.8 221.5 L512.5 228.2 L514.0 231.8 L516.2 234.8 L518.2 236.5 L523.5 239.0 L525.5 239.5 L528.8 239.5 L533.8 238.0 L538.8 233.8 L541.0 229.2 L541.5 227.0 L541.5 223.0 L540.8 220.0 L539.0 216.5 L535.5 213.0 L531.5 211.2Z"/></svg>
-        <span class="name">Héctor Popoca</span>
-        <p>EdTech digital entrepreneur. Solutions that teach and help businesses, professionals and institutions grow.</p>
-      </div>
-      <nav aria-labelledby="f-mapa">
-        <h2 id="f-mapa">Site map</h2>
-        <a href="#inicio">Home</a>
-        <a href="#quien-soy">About</a>
-        <a href="#servicios">Services</a>
-        <a href="#metodo">How we work</a>
-        <a href="#casos">Work</a>
-        <a href="#contacto">Contact</a>
-      </nav>
-      <nav aria-labelledby="f-serv">
-        <h2 id="f-serv">Services</h2>
-        <a href="#servicios">Growth partner</a>
-        <a href="#servicios">Web design for your business</a>
-        <a href="#servicios">SEO strategy</a>
-        <a href="#servicios">Learning platforms</a>
-      </nav>
-      <nav aria-labelledby="f-proy">
-        <h2 id="f-proy">Projects and contact</h2>
-        <a href="https://decanasta.com" target="_blank" rel="noopener">De Canasta</a>
-        <a href="#casos">Wrealispec</a>
-        <a href="mailto:contacto@hpopoca.com">contacto@hpopoca.com</a>
-        <span>100% online · Based in Mexico City</span>
-      </nav>
+      <div class="brand"><span class="name">Héctor Popoca</span><p>Business-building partner and EdTech developer.</p></div>
+      <nav aria-labelledby="f-mapa"><h2 id="f-mapa">Site map</h2><a href="#inicio">Home</a><a href="#caminos">Partner with me</a><a href="#capacitacion">Training center</a><a href="#casos">Work</a><a href="#contacto">Contact</a></nav>
+      <nav aria-labelledby="f-proy"><h2 id="f-proy">Projects</h2><a href="https://decanasta.com" target="_blank" rel="noopener">De Canasta</a><a href="#wrealispec">Wrealispec</a></nav>
+      <nav aria-labelledby="f-cont"><h2 id="f-cont">Contact</h2><a href="mailto:contacto@hpopoca.com">contacto@hpopoca.com</a><span>100% online · Based in Mexico City</span></nav>
     </div>
     <div class="legal">
       <span>© 2026 Héctor Popoca. All rights reserved.</span>
-      <nav aria-label="Legal">
-        <a href="../privacidad.html#english">Privacy policy</a>
-        <a href="../sitemap.xml">Site map (XML)</a>
-        <a href="../" hreflang="es" lang="es">Español</a>
-      </nav>
+      <nav aria-label="Legal"><a href="../privacidad.html#english">Privacy policy</a><a href="../sitemap.xml">Site map (XML)</a><a href="../" hreflang="es" lang="es">Español</a></nav>
     </div>
   </div>
 </footer>
 
 <script>
 const WHATSAPP = "525530337547"; // country code + number, no + or spaces
+const T = {
+  needName: 'Please enter your name and your business or institution to continue.',
+  needContact: 'Please leave your WhatsApp number or email so I can reach you.',
+  needConsent: 'To continue, please agree to be contacted as described in the privacy policy.',
+  needTopic: 'Please choose at least one topic.',
+  opened: 'Done! WhatsApp opened in a new tab. Just press send.',
+  fallback: 'Opening WhatsApp… If it does not open, email me at contacto@hpopoca.com.',
+  hi: (n, b) => `Hi Héctor, I am ${n} from ${b}.`,
+  interest: i => `I am interested in: ${i}.`,
+  msg: m => `About me: ${m}`,
+  wa: t => `My WhatsApp: ${t}`,
+  mail: c => `My email: ${c}`,
+  askHi: n => `Hi Héctor${n ? `, I am ${n}` : ''}. I would like you to prepare these materials:`,
+};
 
-// Subraya en el menú la sección que se está viendo
-const links = [...document.querySelectorAll('.top nav a[href^="#"]:not(.cta)')];
-const byId = Object.fromEntries(links.map(a => [a.getAttribute('href').slice(1), a]));
-if ('IntersectionObserver' in window) {
-  const spy = new IntersectionObserver(entries => {
-    entries.forEach(en => {
-      const a = byId[en.target.id];
-      if (!a) return;
-      if (en.isIntersecting) { links.forEach(l => l.classList.remove('active')); a.classList.add('active'); }
-      else a.classList.remove('active');
-    });
-  }, { rootMargin: '-40% 0px -55% 0px' });
-  Object.keys(byId).forEach(id => { const s = document.getElementById(id); if (s) spy.observe(s); });
+function openWA(lines, note) {
+  const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lines.filter(Boolean).join('\n'))}`;
+  const win = window.open(url, '_blank');
+  if (win) { win.opener = null; show(note, T.opened); }
+  else { show(note, T.fallback); window.location.href = url; }
 }
+function show(el, msg) { el.hidden = false; el.textContent = msg; }
 
-const form = document.getElementById('form');
-const note = document.getElementById('note');
+// Contact form
+const form = document.getElementById('form'), note = document.getElementById('note');
 form.addEventListener('submit', e => {
   e.preventDefault();
   const v = id => document.getElementById(id).value.trim();
-  const show = msg => { note.hidden = false; note.textContent = msg; };
-  if (!v('nombre') || !v('negocio')) return show('Please enter your name and your business or institution to continue.');
-  if (!v('tel') && !v('correo')) return show('Please leave your WhatsApp number or email so I can reach you.');
-  if (!document.getElementById('acepto').checked) return show('To continue, please agree to be contacted as described in the privacy policy.');
-  const lugar = [v('ciudad'), v('pais')].filter(Boolean).join(', ');
-  const lineas = [
-    `Hi Héctor, I am ${v('nombre')} from ${v('negocio')}${lugar ? ` (${lugar})` : ''}.`,
-    `I am interested in: ${v('interes')}.`,
-    v('mensaje') ? `I would like to improve: ${v('mensaje')}` : '',
-    v('tel') ? `My WhatsApp: ${v('tel')}` : '',
-    v('correo') ? `My email: ${v('correo')}` : ''
-  ].filter(Boolean);
-  const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lineas.join('\n'))}`;
-  const win = window.open(url, '_blank');
-  if (win) { win.opener = null; show('Done! WhatsApp opened in a new tab. Just press send.'); }
-  else { show('Opening WhatsApp… If it does not open, email me at contacto@hpopoca.com.'); window.location.href = url; }
+  if (!v('nombre') || !v('negocio')) return show(note, T.needName);
+  if (!v('tel') && !v('correo')) return show(note, T.needContact);
+  if (!document.getElementById('acepto').checked) return show(note, T.needConsent);
+  openWA([T.hi(v('nombre'), v('negocio')), T.interest(v('interes')), v('mensaje') && T.msg(v('mensaje')), v('tel') && T.wa(v('tel')), v('correo') && T.mail(v('correo'))], note);
 });
+
+// Which material should we prepare?
+const ask = document.getElementById('form-pide'), noteAsk = document.getElementById('note-pide');
+ask.addEventListener('submit', e => {
+  e.preventDefault();
+  const temas = [...ask.querySelectorAll('input[name="tema"]:checked')].map(i => i.value);
+  if (!temas.length) return show(noteAsk, T.needTopic);
+  const nombre = ask.nombre.value.trim(), correo = ask.correo.value.trim();
+  openWA([T.askHi(nombre), ...temas.map(t => `• ${t}`), correo && T.mail(correo)], noteAsk);
+});
+
+// Training center filters
+const btns = [...document.querySelectorAll('.filters button')];
+const mats = [...document.querySelectorAll('#mats .mat')];
+btns.forEach(b => b.addEventListener('click', () => {
+  btns.forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+  const f = b.dataset.f;
+  mats.forEach(m => { m.hidden = !(f === 'todos' || m.dataset.cat === f); });
+}));
 </script>
 
 </body>
