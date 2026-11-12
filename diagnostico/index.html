@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Diagnóstico de tu negocio · hpopoca</title>
+<meta name="description" content="Diagnóstico rápido para tu negocio: contesta escribiendo o hablando.">
+<meta name="theme-color" content="#0D1B16">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0D1B16; --bg2:#10231C; --card:#16291F; --card2:#1B3127; --line:#284536;
+    --mint:#8EDBB5; --mint-d:#5FA585; --lime:#C8F25A; --text:#EDF3EE; --muted:#9BB3A5; --dim:#6E8679;
+    --r:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:"DM Sans",system-ui,sans-serif;color:var(--text);
+    background:radial-gradient(120% 80% at 50% -10%,#173327 0%,var(--bg) 55%) fixed,var(--bg);
+    -webkit-font-smoothing:antialiased;
+  }
+  .app{
+    max-width:460px;min-height:100dvh;margin:0 auto;display:flex;flex-direction:column;
+    padding:calc(18px + env(safe-area-inset-top)) 22px calc(22px + env(safe-area-inset-bottom));
+  }
+  header{display:flex;align-items:center;justify-content:space-between;height:40px;flex-shrink:0}
+  .logo{color:var(--mint);height:30px;display:block}
+  .logo svg{height:100%;width:auto;display:block}
+  .dot{width:22px;height:22px;border-radius:50%;border:2px solid var(--mint);display:grid;place-items:center}
+  .dot::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--mint)}
+
+  .screen{display:none;flex:1;flex-direction:column;animation:in .35s ease}
+  .screen.on{display:flex}
+  @keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  h1,h2{font-family:"Fraunces",Georgia,serif;font-weight:500;letter-spacing:-.01em;line-height:1.12}
+  h1{font-size:clamp(34px,9vw,42px);text-align:center;margin-top:44px}
+  h2{font-size:clamp(26px,7vw,31px);text-align:center}
+  .meta{text-align:center;color:var(--muted);font-size:14px;margin-top:14px;line-height:1.5}
+  .illus{flex:1;display:grid;place-items:center;min-height:200px}
+  .illus svg{width:min(210px,60%);height:auto}
+
+  .btn{
+    font:600 16px "DM Sans",sans-serif;border:none;border-radius:999px;height:54px;padding:0 26px;
+    cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    transition:transform .12s, background .2s, opacity .2s, color .2s;text-decoration:none;
+  }
+  .btn:active{transform:scale(.97)}
+  .btn-main{background:var(--mint);color:#0D1B16;width:100%}
+  .btn-main:disabled{background:#2A3F35;color:var(--dim);cursor:not-allowed}
+  .btn-lime{background:var(--lime);color:#13200A;width:100%;box-shadow:0 0 0 0 rgba(200,242,90,.5);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(200,242,90,.35)}70%{box-shadow:0 0 0 14px rgba(200,242,90,0)}100%{box-shadow:0 0 0 0 rgba(200,242,90,0)}}
+  .btn-ghost{background:transparent;color:var(--text);border:1.5px solid var(--line)}
+  .btn-ghost.sel{border-color:var(--mint);color:var(--mint)}
+  .btn-mic{background:var(--mint);color:#0D1B16}
+  .link{background:none;border:none;color:var(--muted);font:500 15px "DM Sans",system-ui,sans-serif;cursor:pointer;text-decoration:underline;text-underline-offset:4px;padding:12px 6px}
+  .link:disabled{opacity:.3;cursor:default}
+
+  .progress{margin-top:16px}
+  .bar{height:5px;background:#22382D;border-radius:9px;overflow:hidden}
+  .bar i{display:block;height:100%;background:var(--mint);border-radius:9px;transition:width .4s ease}
+  .count{text-align:center;color:var(--muted);font-size:13px;margin-top:9px;letter-spacing:.02em}
+  .qwrap{margin-top:26px}
+  .help{text-align:center;color:var(--muted);font-size:14px;margin-top:10px;line-height:1.45}
+  textarea{
+    width:100%;margin-top:22px;min-height:150px;resize:vertical;border-radius:var(--r);
+    background:var(--card);border:1.5px solid var(--line);color:var(--text);
+    font:400 16.5px/1.5 "DM Sans",sans-serif;padding:16px 18px;outline:none;transition:border-color .2s;
+  }
+  textarea:focus{border-color:var(--mint-d)}
+  textarea::placeholder{color:var(--dim)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .chip{
+    background:var(--card2);border:1px solid var(--line);color:var(--text);border-radius:999px;
+    font:500 13.5px "DM Sans",system-ui,sans-serif;padding:8px 13px;cursor:pointer;transition:all .15s
+  }
+  .chip:hover{border-color:var(--mint-d)}
+  .chip.used{background:rgba(142,219,181,.14);border-color:var(--mint);color:var(--mint)}
+  .modes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+  .spacer{flex:1;min-height:20px}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .nav .btn-main{width:auto;min-width:150px}
+  .tip{
+    display:none;margin-top:14px;background:var(--card2);border:1px solid var(--line);border-left:3px solid var(--lime);
+    border-radius:12px;padding:12px 14px;font-size:14px;color:var(--muted);line-height:1.45
+  }
+  .tip.on{display:block}
+  .tip b{color:var(--text)}
+
+  /* Voz */
+  .voice{
+    position:fixed;inset:0;z-index:20;display:none;flex-direction:column;align-items:center;
+    background:rgba(13,27,22,.97);backdrop-filter:blur(6px);
+    padding:calc(70px + env(safe-area-inset-top)) 26px calc(34px + env(safe-area-inset-bottom));
+  }
+  .voice.on{display:flex;animation:in .25s ease}
+  .voice h2{color:var(--mint);margin-top:30px}
+  .viz{position:relative;width:100%;max-width:380px;height:190px;margin-top:40px;display:flex;align-items:center;justify-content:center}
+  .bars{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 4px}
+  .bars span{width:4px;border-radius:4px;background:var(--lime);opacity:.85;height:10px;animation:eq 1s ease-in-out infinite}
+  .bars span:nth-child(n+11):nth-child(-n+18){visibility:hidden}
+  @keyframes eq{0%,100%{height:8px}50%{height:var(--h,40px)}}
+  .micbig{
+    position:relative;z-index:2;width:104px;height:104px;border-radius:50%;background:var(--lime);
+    display:grid;place-items:center;box-shadow:0 0 50px 12px rgba(200,242,90,.35),0 0 0 12px rgba(200,242,90,.12);
+    animation:glow 1.6s ease-in-out infinite
+  }
+  @keyframes glow{50%{box-shadow:0 0 70px 18px rgba(200,242,90,.45),0 0 0 18px rgba(200,242,90,.08)}}
+  .live{
+    margin-top:36px;max-width:360px;text-align:center;font-style:italic;color:var(--muted);
+    font-size:16px;line-height:1.5;min-height:72px;max-height:30vh;overflow:auto
+  }
+  .live b{font-style:normal;color:var(--text);font-weight:400}
+
+  /* Resumen */
+  .cards{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 14px;
+    display:grid;grid-template-columns:1fr auto;gap:10px;align-items:start
+  }
+  .card .q{font-size:13px;color:var(--mint);font-weight:600;line-height:1.35}
+  .card .a{font-size:14.5px;color:var(--text);margin-top:4px;line-height:1.45;
+    display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-line}
+  .card .a.empty{color:var(--dim);font-style:italic}
+  .edit{background:none;border:none;color:var(--mint);cursor:pointer;padding:4px;border-radius:8px}
+  .edit:hover{background:var(--card2)}
+  .send{margin-top:22px;display:flex;flex-direction:column;gap:10px}
+  .note{text-align:center;color:var(--dim);font-size:12.5px;line-height:1.45}
+  .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);opacity:0;
+    background:var(--mint);color:#0D1B16;font-weight:600;font-size:14px;padding:11px 18px;border-radius:999px;transition:all .25s;z-index:30}
+  .toast.on{opacity:1;transform:translateX(-50%)}
+  .fine{text-align:center;color:var(--dim);font-size:12px;margin-top:16px}
+  .fine a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <span class="logo" aria-label="hpopoca"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98093 28700" fill="currentColor" fill-rule="evenodd" role="img"><title>hpopoca</title><path d="M5886.2 28544.73c-20.97,-164.21 117.78,-230.04 210.44,-324.13l7390.51 -7390.66c149.56,-149.01 944.82,-1020.38 1132.91,-1062.75 438.11,297.15 874.09,1396.16 969.02,2038.89 174.97,1184.62 -188.56,2557.93 -1039.88,3366.25 -260.22,247.08 -465.14,489.75 -754.18,727.62 -438.4,360.77 -1697.19,1005.85 -1758.13,1205.21 1351.53,3.69 2715.25,-1.57 4065.58,19.93 980.8,15.62 1520.43,-0.44 2246.93,774.49 107.54,114.71 373.57,469.2 300.57,648.52 -433.72,47.57 -2617.55,20.33 -3218.52,19.99l-9545.25 -23.36zm5604.24 -10013.97c709.66,-94.82 2282.13,206.33 2148.78,544.6 -26.4,66.95 -1242.3,1255.86 -1405.73,1418.04l-7054.98 7056.18c-436.2,446.78 -880.3,917.6 -1816.11,1003.85 -2387.03,220 -3000.86,-2849.81 -1049.99,-3658.17 457.42,-189.54 747.56,-160.9 1265.73,-145.85 530.21,15.4 376.18,66.81 948.45,-462.45l4293.35 -4173.18c203.43,-251.31 644.74,-619.09 916.08,-847.21 447.03,-375.85 1146.65,-654.6 1754.42,-735.81zm15278.3 10009.43c-127.99,47.3 -3059.91,61.6 -3285.73,13.23 -258.88,-55.44 -608.74,-429.5 -702.87,-568.51l-1433.24 -2235.88c-1160.44,-1840.82 -2221.17,-3947.62 -1460.4,-6245.97 214.97,-649.44 548.45,-1054.68 931.95,-1537.7 531.02,-668.81 1616.76,-1311.5 2406.45,-1684.09 543.41,-256.38 2258.03,-694.46 2665.57,-579.42 69.23,142.83 1.47,408.75 -22.82,572.16 -29.07,195.58 -66.63,337.83 -115.07,524.58 -399.67,1540.81 -1028.12,3046.53 -2037.49,4240.59 -309.73,366.41 -898.53,1059.63 -1233.7,1267.38 -20.69,595.64 620.17,2508 893.09,3108.6 147.38,324.31 260.16,578.37 386.4,917.85 457.45,1230.19 793.9,569.59 1751.13,895.25 462.81,157.44 915.27,488.85 1108.65,866.84l162.19 331.32c25.06,196.78 4.04,-169.28 -1.31,56.3l-12.8 57.47zm-22576.57 -5568.66c-119.63,-783.05 104.53,-2109.5 319.65,-2827.09 553.15,-1845.18 1345.66,-3194.97 2741.66,-4419.11 1696.54,-1487.68 3937.2,-2297.74 6414.23,-2233.93 1507.26,38.82 2755.87,375.46 4377.57,-97.4 322.21,-93.95 1049.35,-391.45 1148.08,-378.93 21.24,238.15 -253.72,695.24 -364.44,844.41 -230.65,310.75 -2622.69,2684.37 -3042.03,3096.37 -1666.84,1637.66 -996.14,1238.9 -1940.2,840.7 -928.32,-391.56 -1610.05,-480.09 -2648.48,-356.5 -592.31,70.49 -1122.49,299.72 -1560.13,563.96 -539.47,325.72 -759.18,515.95 -1171.88,909.12l-1336.12 1309.51c-92.82,95.58 -173.67,166.12 -270.6,258.85l-2386.48 2306.12c-101.38,96.64 -130.87,199.46 -280.83,183.92zm11257.35 -4042.61c96.9,-148.03 312.65,-336.01 436.71,-462.39 148.15,-150.92 271.67,-276 420.44,-426.27 289.27,-292.21 551.79,-559.73 840.65,-852.73 572.05,-580.24 1117.89,-1155.39 1698.65,-1723.43 180.44,-176.49 288.24,-241.53 442.24,-439.25 126.92,-162.97 258.78,-286.36 392.56,-454.38 486.74,-611.36 804.37,-1716.24 877.64,-2534.96 96.56,-1079.07 3.13,-1860.06 559.1,-2871.7 1181.47,-2149.81 4106.94,-2360.11 5929.7,-1144.56 615.97,410.77 1327.82,1023.13 1743.24,1642.98 203.87,304.19 497.27,740.49 647.64,1080.23 577.65,1305.12 -223.71,2693.22 -1479.13,3285.6 -1380.73,651.52 -3409.47,439.07 -5468.74,1340.16 -372.73,163.1 -1281.08,708.38 -1604.43,971.47 -797.43,648.82 -1413.74,1288.5 -1900.43,2369.8 -366.57,814.45 -523.42,1985.92 -440.14,2970.1 121.25,1432.69 706.5,2373.99 719.48,2646.83 -285.71,307.5 -2868.92,1253.11 -3491.27,1287.49 5.7,-163.52 235.1,-481.69 388.46,-768.84 687.34,-1286.99 811.06,-3241.17 146.71,-4536.79 -130.18,-253.88 -251.17,-508.59 -399.32,-727.81l-459.76 -651.55zm-955.02 -15676.87c1141.89,265.44 2011.69,742.44 2867.71,1363.59 388.36,281.8 1042.22,835.89 1344.8,1195 680.22,807.32 546.67,616.95 1079.89,1460.76 52.37,82.88 314.06,451.79 278.16,533.15 -71.42,161.84 -1393.94,71.54 -1601.26,53.5 -524.84,-45.66 -984.54,-116.47 -1481.64,-218.94 -1553.96,-320.33 -3174.4,-1406.91 -4211.85,-2558.22 -355.85,-394.91 -1359.16,-1586.46 -1372.83,-2031.08 706.15,-181.61 2369.78,33.19 3097.02,202.24zm7650.82 2930.14c96.34,236.5 225.85,403.79 6.69,523.9 -230,126.04 -863.92,534.02 -1005.56,538.91 -125.21,-93.68 -487.66,-746.33 -629.96,-950.22 -437.49,-626.8 -914,-1153.51 -1420.85,-1684.03l-404.79 -370.65c-930.97,-771.68 -1245.34,-961.74 -2347.29,-1534.81 -235.72,-122.59 -232.46,-190.43 -310.15,-465.54 -286.65,-1015.05 -303.04,-1033.4 108.23,-955.97 1630.18,306.91 3044.28,922.28 4157.18,2088.99 70.52,73.94 115.81,130.07 188.02,200.05 413.39,400.63 535.06,611.1 860.36,1079.99 274.05,395.04 603.41,1051.42 798.12,1529.38zm940.25 -622.02c-82.71,-230.76 -195.98,-434.2 -303.45,-649.25 -292.46,-585.23 -1053.4,-1739.14 -1537.31,-2202.32l-1554.05 -1267.74c-190.47,-121.94 -406.78,-228.02 -609.59,-343.1 -335.69,-190.49 -886.5,-448.27 -1296.79,-574.28 -661.84,-203.28 -2520.38,-622.67 -3230.77,-502.07 -50.07,274.61 62.28,836.51 101.74,1128.33 35.65,263.68 193.21,807.68 168.87,1014.72 -236.85,38.82 -907.21,-157.07 -1201.65,-196.66 -411.56,-55.32 -913.67,-97.33 -1330.84,-96.58 -445.84,0.81 -2233.11,76.97 -2521.26,288.32 -55.96,223.86 498.03,1234.57 620.41,1488.06 284.16,588.62 860.65,1394.81 1286.79,1890.04 215.18,250.07 807.35,889.09 1043.18,1073.17 110.06,85.9 171.34,165.18 277.92,250.98 1433.3,1153.76 2917.04,1799.06 4849.55,2067.36 332.93,46.22 628.81,78.73 968.91,93.86 187.16,8.32 896.23,-22.71 996.61,39.74 66.33,58.65 32.28,-17.1 43.61,86.66 2.24,20.45 -5.69,55.55 -11.13,77.67 -10.7,43.52 -48.45,135.17 -66.19,186.48 -435.27,1259.11 -29.42,1636.52 -924.45,2391.23 -687.77,579.94 -2005.87,720.09 -3106.73,706.87 -1612.28,-19.35 -1808.55,-265.54 -3647.36,-50.92 -2081.94,243 -3779.45,961.68 -5359.84,2223.81 -912.34,728.6 -1181.05,1096.48 -1827.77,1946.17 -993.28,1305.04 -1814.02,3590.88 -1885.5,5720.14 -53.88,1604.74 287.43,1167.14 -560.53,1329.14 -498.95,95.32 -1003.14,350.24 -1288.31,612.12 -763.89,701.51 -1244.71,1461.92 -1172.48,2611.6 51.15,814.1 590.3,1705.6 1205.42,2152.28 105.38,76.51 162.87,135.92 265.62,193.68 1022.85,575.05 2052.96,414.23 3334.64,417.61 1524.41,4.01 14912.82,105.25 15146.86,-0.41 91.82,-90.54 -86.24,-1145.19 -107.29,-1224.07 -118.09,-442.43 -192.1,-635.96 -408.71,-967.27 -292.13,-446.83 -609.79,-738.33 -1081.71,-999.62 -129.72,-71.83 -339.49,-155.99 -426.73,-244.5 81.94,-157.96 734.04,-330.06 924.46,-416.56 226.98,-103.11 690.96,-371.94 925.1,-394.01l1851.15 2860.28c988.98,1520.49 1140.14,1416.92 3285.2,1416.92 180.33,0 2875.95,28.61 3058.79,-17.43l54.94 -23.46c117.08,-325.05 -47.42,-1193.12 -152.73,-1517.06 -135.88,-417.98 -382.75,-861.55 -630.74,-1099 -302.26,-289.4 -525.73,-505.56 -1007.56,-721.14 -1728.34,-773.3 -1024.65,639.59 -2034.4,-1881.71 -178.1,-444.7 -496.9,-1209.66 -527.12,-1710.82 169.15,-131.86 195.6,-192.75 322.51,-341.4l320.07 -349.87c1523.43,-1682.55 2107.08,-3258.24 2600.8,-5443.49 51.86,-229.54 113.77,-992.09 182.67,-1120.37 109.34,-80.29 796.05,-229.89 996.13,-309.67 327.52,-130.6 594.15,-244.8 849.97,-419.39 1175.93,-802.56 1814.15,-1783.39 1794.54,-3293.5 -12.85,-989.29 -816.71,-2308.45 -1490.15,-2996.07 -601.45,-614.1 -945.71,-970.03 -1727.18,-1448.65 -1021.7,-625.77 -1779.41,-814.14 -2963.31,-851.45 -442.38,-13.94 -799.92,85.38 -1199.45,81.5 -135.79,-157.45 -204.65,-455.22 -283.38,-674.9z"/><path d="M66819.45 8940.84c1837.28,-129.27 3048.21,1060.57 3148.77,2789.99 98.63,1696.3 -714.79,3295.81 -2575.28,3453.9 -1825.99,155.15 -3090.33,-1149.4 -3184.72,-2844.31 -96.93,-1740.55 868.94,-3276.99 2611.23,-3399.58zm-2616.62 906.94l-8.76 -1679.8 -985.63 2.28 -0.35 11453.69 986.44 12.8 0.14 -5357.73c114.25,140.01 173.57,307.98 298.7,461.32 384.57,471.28 699.67,758.51 1321.8,1042.93 751.69,343.65 1846.82,374.26 2663.64,102.9 1509,-501.33 2504.04,-1842.82 2519.65,-3801.14 7.55,-946.49 -248.65,-1842.38 -669.5,-2475.36 -1407.57,-2117.06 -4924.6,-2124.94 -6126.13,238.11z"/><path d="M47793.69 8972.67c882.65,-164.18 1831.43,105.3 2353.05,570.11 587.88,523.86 919.37,1137 1016.51,1982.69 218.83,1905.13 -732.86,3385.23 -2357.24,3626.78 -1887.38,280.66 -3129.82,-947.05 -3364.82,-2561.22 -276.9,-1902.07 776.42,-3325.19 2352.5,-3618.36zm-2389.27 841.57l0 -1631.9 -986.06 -15.66 0 11469.01 986.1 -2.69 0.15 -5330.06c161.72,138.15 197.48,406.57 698.16,872.5 1965.93,1829.45 6075.14,907.79 6106.35,-3090.42 15.17,-1943.81 -969.96,-3337.65 -2434.69,-3828.14 -815.95,-273.24 -1916.91,-280.14 -2695.36,56.18 -445.52,192.48 -631.77,355.2 -948.44,604.41 -167.34,131.69 -414.16,420.59 -540.34,623.59l-185.87 273.18z"/><path d="M94004.35 8933.69c1781.41,-113.79 2974.95,1198.13 3073.87,2882.04 251.71,4285 -5549.45,4566.92 -5765.28,481.95 -100.33,-1898.92 909.41,-3250.16 2691.41,-3363.99zm3088.34 5330.36l1 1692.96 988.09 -0.01 10.92 -7788.62 -1000.63 0 -0.97 1678.75c-259.62,-626.06 -970.82,-1257.3 -1603.71,-1512.44 -2278.86,-918.64 -5210.98,348.13 -5199.37,3715.07 15.75,4570.59 5153.19,5024.5 6641.74,2475.58 65.34,-111.88 96.81,-183.29 162.93,-261.29z"/><path d="M35387.99 15957l989.64 0c117.95,-1076.7 -88.78,-3428.91 28.98,-4691.51 130.38,-1397.98 926.31,-2345.02 2378.67,-2370.89 1493.26,-26.59 2347.13,876.65 2427.2,2313.42 74.63,1339.02 -80.75,3693.09 18.64,4745.95l967.58 3.29c41.86,-380.87 10.35,-3142.21 10.05,-3766.4 -0.63,-1278.93 11.26,-2251.85 -706.39,-3104.21 -282.33,-335.32 -591.3,-625.12 -1085.04,-821.86 -955.98,-380.94 -2229.8,-314.52 -3097.39,238.61 -484.43,308.85 -596.93,495.15 -919.66,960.28l-12.91 -4064.59 -999.71 0 0.34 10557.91z"/><path d="M73402.82 12190.86c-181.39,-4241.85 5602.67,-4397.44 5737.79,-283.4 118.85,3618.81 -3635.04,3916.31 -4917.04,2486.74 -491.77,-548.38 -777.51,-1191.92 -820.75,-2203.34zm2411.88 -4115.45c-2188.27,175.59 -3622.04,2059.02 -3410.38,4469.07 188.79,2149.68 1939.18,3790.28 4340.69,3492.48 2189.8,-271.55 3623.49,-1971.29 3406.17,-4444.48 -196.52,-2236.44 -1887.29,-3713.6 -4336.48,-3517.07z"/><path d="M57115.53 8940.51c1826.78,-224.01 3068.5,1051.75 3218.13,2686.23 96.1,1049.69 -101.04,1726.34 -560.07,2431.38 -375.72,577.08 -1158.69,1022.11 -1878.51,1115.48 -1867.43,242.22 -3144.73,-1017.89 -3268.06,-2700.01 -141.93,-1935.77 752.64,-3320.21 2488.51,-3533.08zm-208.69 -844.9c-2366.61,374.86 -3543.17,2248.82 -3278.93,4569.98 243.21,2136.45 1997.84,3684.13 4440.04,3355.06 2145.98,-289.14 3563.3,-2080.88 3280.75,-4560.25 -142.18,-1247.63 -703,-2023.26 -1365.13,-2581.86 -672.2,-567.1 -1919.17,-966.28 -3076.73,-782.93z"/><path d="M88897.4 13416.18l-1005.39 0c-75.69,41.83 -30.71,1.75 -73.46,76.43 -19.78,34.57 -32.44,92.23 -44.73,132.34 -65.63,214.24 -193.94,461.85 -316.93,635.46 -1063.58,1501.28 -4823.98,1603.54 -4898.31,-2140.09 -31.73,-1598.12 699.88,-2783.03 2005.42,-3114.74 708.33,-179.98 1596.38,-92.86 2157.78,227.97 591.01,337.75 865.23,700.37 1114.57,1460.75l1049.75 6.84c-27.39,-555.01 -402,-1087.54 -688.34,-1461.16 -1504.56,-1963.2 -6654.37,-1796.34 -6655.41,2809.78 -1.15,5115.57 6605.24,5129.83 7355.05,1366.42z"/><path d="M25487.61 9322.29c-487.86,137.04 -671.02,526.26 -567.95,922.41 221.07,849.69 1684.98,612.58 1455.11,-391.05 -77.36,-337.78 -440.18,-656.9 -887.16,-531.36z"/></svg></span>
+    <span class="dot" aria-hidden="true"></span>
+  </header>
+
+  <!-- 01 Bienvenida -->
+  <section class="screen on" id="s-welcome">
+    <h1 id="w-title">Diagnóstico<br>de tu negocio</h1>
+    <p class="meta" id="w-meta"></p>
+    <div class="illus" aria-hidden="true">
+      <svg viewBox="0 0 220 200" fill="none" stroke="#8EDBB5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 186h192"/>
+        <rect x="34" y="138" width="22" height="48"/><rect x="72" y="118" width="22" height="68"/>
+        <rect x="110" y="96" width="22" height="90"/><rect x="148" y="70" width="22" height="116"/>
+        <path d="M24 128 70 92l34 18 66-62"/><path d="M150 46h22v22"/>
+        <path d="M150 14h50a8 8 0 0 1 8 8v24a8 8 0 0 1-8 8h-30l-12 11v-11h-8a8 8 0 0 1-8-8V22a8 8 0 0 1 8-8z"/>
+        <path d="M160 28h30M160 39h20"/>
+      </svg>
+    </div>
+    <button class="btn btn-main" id="start">Comenzar</button>
+    <p class="fine">Tus respuestas solo se envían cuando tú lo decides.</p>
+  </section>
+
+  <!-- 02 Pregunta -->
+  <section class="screen" id="s-question">
+    <div class="progress">
+      <div class="bar"><i id="bar"></i></div>
+      <p class="count" id="count"></p>
+    </div>
+    <div class="qwrap">
+      <h2 id="qtext"></h2>
+      <p class="help" id="qhelp"></p>
+    </div>
+    <textarea id="answer" placeholder="Escribe aquí tu respuesta…"></textarea>
+    <div class="chips" id="chips"></div>
+    <div class="modes">
+      <button class="btn btn-ghost sel" id="mode-write" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+        Escribir
+      </button>
+      <button class="btn btn-mic" id="mode-voice" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10a7 7 0 0 1-14 0M12 17v5"/></svg>
+        Hablar
+      </button>
+    </div>
+    <div class="tip" id="tip">
+      🎤 <b>Dicta con tu teclado:</b> toca el cuadro de texto y presiona el <b>micrófono de tu teclado</b> (en iPhone y Android). Habla y tu respuesta se escribe sola.
+    </div>
+    <div class="spacer"></div>
+    <div class="nav">
+      <button class="link" id="back">Atrás</button>
+      <button class="btn btn-main" id="next" disabled>Siguiente</button>
+    </div>
+  </section>
+
+  <!-- 04 Resumen -->
+  <section class="screen" id="s-summary">
+    <h2 style="margin-top:24px">¡Gracias! Revisa<br>tus respuestas</h2>
+    <p class="meta">Toca el lápiz si quieres corregir algo.</p>
+    <div class="cards" id="cards"></div>
+    <div class="send">
+      <a class="btn btn-lime" id="wa" href="#" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4ZM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+        <span id="wa-label">Enviar a Héctor</span>
+      </a>
+      <button class="btn btn-ghost" id="copy" type="button">Copiar mis respuestas</button>
+      <p class="note" id="wa-note"></p>
+    </div>
+  </section>
+</div>
+
+<!-- 03 Voz -->
+<div class="voice" id="voice" role="dialog" aria-modal="true" aria-label="Dictado por voz">
+  <h2>Te escucho…</h2>
+  <div class="viz">
+    <div class="bars" id="bars"></div>
+    <div class="micbig">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#13200A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10a7 7 0 0 1-14 0M12 17v5"/></svg>
+    </div>
+  </div>
+  <p class="live" id="live">Habla con calma, como si mandaras un audio.</p>
+  <div class="spacer"></div>
+  <button class="btn btn-ghost" id="done" style="min-width:150px">Listo</button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================================================
+   CONFIGURACIÓN — cambia esto para reutilizarlo con otro cliente
+   ============================================================ */
+const CONFIG = {
+  whatsapp: "525530337547",          // 52 + 10 dígitos, sin espacios
+  destinatario: "Héctor",
+  minutos: 5,
+  clave: "diag-huesped-del-valle",   // nombre para guardar el avance en el celular
+  preguntas: [
+    { q: "¿Algún departamento se renta completo a veces, o siempre por cuarto?",
+      chips: ["Siempre por cuarto", "A veces completo", "Depende de la temporada"] },
+    { q: "¿Cobras por noche, por semana o por mes? ¿Pides depósito?",
+      chips: ["Por noche", "Por semana", "Por mes", "Sí pido depósito", "No pido depósito"] },
+    { q: "¿Cómo te llegan hoy tus huéspedes?",
+      chips: ["WhatsApp", "Recomendaciones del hospital", "Airbnb", "Booking", "Facebook", "Llamadas"] },
+    { q: "¿Cómo te pagan tus huéspedes?",
+      chips: ["Efectivo", "Transferencia", "Tarjeta", "Link de pago"] },
+    { q: "¿Cómo llevas hoy el control de quién pagó y quién debe?",
+      chips: ["Libreta", "Excel", "De memoria", "En WhatsApp"] },
+    { q: "¿Cuántas personas te ayudan y qué hace cada una?",
+      help: "Por ejemplo: una persona de limpieza, alguien que me ayuda con los cobros…" },
+    { q: "¿Qué es lo que más te quita tiempo o te da dolores de cabeza?",
+      help: "Cuéntamelo con confianza: aquí está la clave de lo que vamos a resolver." },
+    { q: "Abre Google Maps y busca tu negocio. ¿Aparece?",
+      help: "Escribe el nombre en Google Maps, por ejemplo “Huésped del Valle”.",
+      chips: ["Sí aparece", "No aparece", "No estoy segura"] },
+    { q: "¿Cerca de qué hospital o lugares importantes está tu hospedaje?",
+      help: "Esto nos ayuda a que te encuentren en Google." }
+  ]
+};
+
+/* ============================================================ */
+const $ = id => document.getElementById(id);
+const P = CONFIG.preguntas, N = P.length;
+let answers = new Array(N).fill("");
+let i = 0, backToSummary = false;
+
+try { const s = JSON.parse(localStorage.getItem(CONFIG.clave)); if (Array.isArray(s) && s.length === N) answers = s; } catch(e){}
+const save = () => { try { localStorage.setItem(CONFIG.clave, JSON.stringify(answers)); } catch(e){} };
+
+$("w-meta").textContent = `${N} preguntas · ${CONFIG.minutos} minutos · contesta escribiendo o hablando`;
+$("wa-label").textContent = `Enviar a ${CONFIG.destinatario}`;
+
+function show(id){
+  document.querySelectorAll(".screen").forEach(s => s.classList.toggle("on", s.id === id));
+  window.scrollTo(0,0);
+}
+
+function render(){
+  const p = P[i];
+  $("bar").style.width = ((i+1)/N*100) + "%";
+  $("count").textContent = `Pregunta ${i+1} de ${N}`;
+  $("qtext").textContent = p.q;
+  $("qhelp").textContent = p.help || "";
+  $("qhelp").style.display = p.help ? "block" : "none";
+  $("answer").value = answers[i];
+  $("chips").innerHTML = "";
+  (p.chips || []).forEach(c => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.textContent = c;
+    if (answers[i].includes(c)) b.classList.add("used");
+    b.onclick = () => {
+      const t = $("answer");
+      if (t.value.includes(c)) return;
+      t.value = t.value.trim() ? t.value.trim() + ", " + c : c;
+      b.classList.add("used"); onInput();
+    };
+    $("chips").appendChild(b);
+  });
+  $("back").disabled = i === 0;
+  $("next").textContent = backToSummary ? "Guardar" : (i === N-1 ? "Terminar" : "Siguiente");
+  $("tip").classList.remove("on");
+  onInput();
+}
+
+function onInput(){
+  answers[i] = $("answer").value;
+  save();
+  $("next").disabled = !answers[i].trim();
+}
+$("answer").addEventListener("input", onInput);
+
+$("start").onclick = () => {
+  const first = answers.findIndex(a => !a.trim());
+  if (first === -1) { renderSummary(); show("s-summary"); return; }
+  i = first; render(); show("s-question");
+};
+$("back").onclick = () => { if (i > 0) { i--; render(); } };
+$("next").onclick = () => {
+  if (backToSummary || i === N-1) { backToSummary = false; renderSummary(); show("s-summary"); return; }
+  i++; render();
+};
+$("mode-write").onclick = () => { $("answer").focus(); };
+
+/* ---------- Resumen y envío ---------- */
+function buildMessage(){
+  let m = `Hola ${CONFIG.destinatario} 👋 Aquí van mis respuestas del diagnóstico:\n`;
+  P.forEach((p,k) => { m += `\n*${k+1}. ${p.q}*\n${answers[k].trim() || "—"}\n`; });
+  return m;
+}
+function renderSummary(){
+  const box = $("cards"); box.innerHTML = "";
+  P.forEach((p,k) => {
+    const c = document.createElement("div"); c.className = "card";
+    const a = answers[k].trim();
+    c.innerHTML = `<div><p class="q"></p><p class="a${a ? "" : " empty"}"></p></div>
+      <button class="edit" aria-label="Editar respuesta ${k+1}">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+      </button>`;
+    c.querySelector(".q").textContent = p.q;
+    c.querySelector(".a").textContent = a || "Sin respuesta";
+    c.querySelector(".edit").onclick = () => { i = k; backToSummary = true; render(); show("s-question"); };
+    box.appendChild(c);
+  });
+  $("wa").href = `https://wa.me/${CONFIG.whatsapp}?text=` + encodeURIComponent(buildMessage());
+  const n = CONFIG.whatsapp.replace(/^52/, "");
+  $("wa-note").textContent = `Se abrirá WhatsApp con tus respuestas listas; solo presiona enviar. Si no se abre, copia tus respuestas y mándalas al ${n.slice(0,2)} ${n.slice(2,6)} ${n.slice(6)}.`;
+}
+function toast(t){ const el = $("toast"); el.textContent = t; el.classList.add("on"); setTimeout(() => el.classList.remove("on"), 2200); }
+$("copy").onclick = async () => {
+  const txt = buildMessage();
+  try { await navigator.clipboard.writeText(txt); toast("Respuestas copiadas ✓"); }
+  catch(e){
+    const t = document.createElement("textarea"); t.value = txt; document.body.appendChild(t); t.select();
+    try { document.execCommand("copy"); toast("Respuestas copiadas ✓"); } catch(_){ toast("No se pudo copiar"); }
+    t.remove();
+  }
+};
+
+/* ---------- Voz ---------- */
+const bars = $("bars");
+for (let k = 0; k < 28; k++){
+  const s = document.createElement("span");
+  const d = Math.abs(k - 13.5);
+  s.style.setProperty("--h", Math.max(12, 70 - d*4 + Math.random()*20) + "px");
+  s.style.animationDelay = (Math.random()*0.8) + "s";
+  s.style.animationDuration = (0.7 + Math.random()*0.6) + "s";
+  bars.appendChild(s);
+}
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+let rec = null, listening = false, baseText = "", finalText = "";
+
+function showTip(){ $("tip").classList.add("on"); $("answer").focus(); }
+
+$("mode-voice").onclick = () => {
+  if (!SR) { showTip(); return; }
+  try {
+    rec = new SR();
+    rec.lang = "es-MX"; rec.continuous = true; rec.interimResults = true;
+    baseText = $("answer").value.trim(); finalText = "";
+    rec.onresult = e => {
+      let interim = "";
+      for (let k = e.resultIndex; k < e.results.length; k++){
+        const r = e.results[k];
+        if (r.isFinal) finalText += r[0].transcript + " "; else interim += r[0].transcript;
+      }
+      const live = $("live"); live.innerHTML = "";
+      const b = document.createElement("b"); b.textContent = finalText; live.appendChild(b);
+      live.appendChild(document.createTextNode(interim));
+      live.scrollTop = live.scrollHeight;
+    };
+    rec.onerror = e => {
+      stopVoice(false);
+      if (e.error === "not-allowed" || e.error === "service-not-allowed" || e.error === "audio-capture") showTip();
+      else if (e.error !== "no-speech" && e.error !== "aborted") toast("No te escuché bien, intenta de nuevo");
+    };
+    rec.onend = () => { if (listening) { try { rec.start(); } catch(_){} } };
+    rec.start();
+    listening = true;
+    $("live").textContent = "Habla con calma, como si mandaras un audio.";
+    $("voice").classList.add("on");
+  } catch(err){ showTip(); }
+};
+function stopVoice(apply){
+  listening = false;
+  try { rec && rec.stop(); } catch(_){}
+  $("voice").classList.remove("on");
+  if (apply && finalText.trim()){
+    let t = finalText.trim(); t = t.charAt(0).toUpperCase() + t.slice(1);
+    $("answer").value = baseText ? baseText + " " + t : t;
+    onInput();
+  }
+}
+$("done").onclick = () => {
+  // dar un momento a que llegue el último fragmento
+  listening = false;
+  try { rec && rec.stop(); } catch(_){}
+  setTimeout(() => stopVoice(true), 350);
+};
+</script>
+</body>
+</html>
