@@ -231,8 +231,11 @@ const CONFIG = {
   whatsapp: "525530337547",          // 52 + 10 dígitos, sin espacios
   destinatario: "Héctor",
   minutos: 5,
-  clave: "diag-pallevar-v1",   // nombre para guardar el avance en el celular
+  clave: "diag-pallevar-v2",   // nombre para guardar el avance en el celular
   preguntas: [
+    { q: "¿Ya tienes nombre o marca para tu cocina y tu web?",
+      help: "Si ya tienes, escríbelo; si tienes ideas, cuéntamelas todas.",
+      chips: ["Ya tengo nombre", "Tengo algunas ideas", "Todavía no", "Ya tengo logo", "Ya tengo dominio"] },
     { q: "¿Ya tienes cocina? ¿Es propia, rentada o compartida, y en qué zona está?",
       chips: ["Cocina propia", "Rentada", "Compartida", "Todavía no tengo"] },
     { q: "¿Qué tipo de comida quieres vender y a quién?",
