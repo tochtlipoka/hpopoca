@@ -99,10 +99,7 @@
   .voice.on{display:flex;animation:in .25s ease}
   .voice h2{color:var(--mint);margin-top:30px}
   .viz{position:relative;width:100%;max-width:380px;height:190px;margin-top:40px;display:flex;align-items:center;justify-content:center}
-  .bars{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 4px}
-  .bars span{width:4px;border-radius:4px;background:var(--lime);opacity:.85;height:10px;animation:eq 1s ease-in-out infinite}
-  .bars span:nth-child(n+11):nth-child(-n+18){visibility:hidden}
-  @keyframes eq{0%,100%{height:8px}50%{height:var(--h,40px)}}
+  #waves{position:absolute;inset:0;width:100%;height:100%}
   .micbig{
     position:relative;z-index:2;width:104px;height:104px;border-radius:50%;background:var(--lime);
     display:grid;place-items:center;box-shadow:0 0 50px 12px rgba(200,242,90,.35),0 0 0 12px rgba(200,242,90,.12);
@@ -213,7 +210,7 @@
 <div class="voice" id="voice" role="dialog" aria-modal="true" aria-label="Dictado por voz">
   <h2>Te escucho…</h2>
   <div class="viz">
-    <div class="bars" id="bars"></div>
+    <canvas id="waves"></canvas>
     <div class="micbig">
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#13200A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10a7 7 0 0 1-14 0M12 17v5"/></svg>
     </div>
@@ -356,64 +353,94 @@ $("copy").onclick = async () => {
 };
 
 /* ---------- Voz ---------- */
-const bars = $("bars");
-for (let k = 0; k < 28; k++){
-  const s = document.createElement("span");
-  const d = Math.abs(k - 13.5);
-  s.style.setProperty("--h", Math.max(12, 70 - d*4 + Math.random()*20) + "px");
-  s.style.animationDelay = (Math.random()*0.8) + "s";
-  s.style.animationDuration = (0.7 + Math.random()*0.6) + "s";
-  bars.appendChild(s);
+/* Ondas animadas: reaccionan cuando llega texto dictado */
+const cv = $("waves"), ctx = cv.getContext("2d");
+let energy = 0.35, t0 = 0, raf = null;
+function sizeCanvas(){ const r = cv.getBoundingClientRect(), d = window.devicePixelRatio || 1; cv.width = r.width*d; cv.height = r.height*d; ctx.setTransform(d,0,0,d,0,0); }
+function draw(t){
+  const w = cv.clientWidth, h = cv.clientHeight, mid = h/2;
+  ctx.clearRect(0,0,w,h);
+  energy = Math.max(0.35, energy*0.985);
+  const layers = [
+    {a:0.95, f:1.6, s:0.0022, c:"rgba(200,242,90,.95)", lw:2.2},
+    {a:0.70, f:2.3, s:-0.0030, c:"rgba(200,242,90,.45)", lw:1.6},
+    {a:0.55, f:1.1, s:0.0016, c:"rgba(142,219,181,.55)", lw:1.6},
+    {a:0.40, f:3.1, s:-0.0041, c:"rgba(142,219,181,.30)", lw:1.2}
+  ];
+  layers.forEach(L => {
+    ctx.beginPath(); ctx.lineWidth = L.lw; ctx.strokeStyle = L.c;
+    for (let x = 0; x <= w; x += 2){
+      const n = x/w, env = Math.pow(Math.sin(Math.PI*n), 2);
+      const y = mid + Math.sin(n*Math.PI*2*L.f + t*L.s) * env * L.a * energy * (h*0.42);
+      x ? ctx.lineTo(x,y) : ctx.moveTo(x,y);
+    }
+    ctx.stroke();
+  });
+  raf = requestAnimationFrame(draw);
 }
+function startWaves(){ sizeCanvas(); cancelAnimationFrame(raf); raf = requestAnimationFrame(draw); }
+function stopWaves(){ cancelAnimationFrame(raf); raf = null; }
+window.addEventListener("resize", () => { if (raf) sizeCanvas(); });
+
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-let rec = null, listening = false, baseText = "", finalText = "";
+let rec = null, listening = false, baseText = "", committed = "", interim = "", lastSeg = "";
 
 function showTip(){ $("tip").classList.add("on"); $("answer").focus(); }
-
+function paintLive(){
+  const live = $("live"); live.innerHTML = "";
+  if (!committed && !interim){ live.textContent = "Habla con calma, como si mandaras un audio."; return; }
+  const b = document.createElement("b"); b.textContent = committed; live.appendChild(b);
+  live.appendChild(document.createTextNode((committed && interim ? " " : "") + interim));
+  live.scrollTop = live.scrollHeight;
+}
+/* Una frase por sesión (continuous=false) y se reinicia sola:
+   así Android no repite el texto acumulado. */
+function newRec(){
+  const r = new SR();
+  r.lang = "es-MX"; r.continuous = false; r.interimResults = true; r.maxAlternatives = 1;
+  r.onresult = e => {
+    const res = e.results[e.results.length - 1];
+    const txt = res[0].transcript.trim();
+    energy = Math.min(1.6, energy + 0.5);
+    if (res.isFinal){
+      if (txt && txt !== lastSeg){ committed = (committed + " " + txt).trim(); lastSeg = txt; }
+      interim = "";
+    } else interim = txt;
+    paintLive();
+  };
+  r.onerror = e => {
+    if (e.error === "not-allowed" || e.error === "service-not-allowed" || e.error === "audio-capture"){ closeVoice(false); showTip(); }
+  };
+  r.onend = () => {
+    if (interim && interim !== lastSeg){ committed = (committed + " " + interim).trim(); lastSeg = interim; interim = ""; paintLive(); }
+    if (listening){ setTimeout(() => { if (listening){ try { rec = newRec(); rec.start(); } catch(_){} } }, 150); }
+  };
+  return r;
+}
 $("mode-voice").onclick = () => {
   if (!SR) { showTip(); return; }
-  try {
-    rec = new SR();
-    rec.lang = "es-MX"; rec.continuous = true; rec.interimResults = true;
-    baseText = $("answer").value.trim(); finalText = "";
-    rec.onresult = e => {
-      let interim = "";
-      for (let k = e.resultIndex; k < e.results.length; k++){
-        const r = e.results[k];
-        if (r.isFinal) finalText += r[0].transcript + " "; else interim += r[0].transcript;
-      }
-      const live = $("live"); live.innerHTML = "";
-      const b = document.createElement("b"); b.textContent = finalText; live.appendChild(b);
-      live.appendChild(document.createTextNode(interim));
-      live.scrollTop = live.scrollHeight;
-    };
-    rec.onerror = e => {
-      stopVoice(false);
-      if (e.error === "not-allowed" || e.error === "service-not-allowed" || e.error === "audio-capture") showTip();
-      else if (e.error !== "no-speech" && e.error !== "aborted") toast("No te escuché bien, intenta de nuevo");
-    };
-    rec.onend = () => { if (listening) { try { rec.start(); } catch(_){} } };
-    rec.start();
-    listening = true;
-    $("live").textContent = "Habla con calma, como si mandaras un audio.";
-    $("voice").classList.add("on");
-  } catch(err){ showTip(); }
+  baseText = $("answer").value.trim(); committed = ""; interim = ""; lastSeg = "";
+  try { rec = newRec(); rec.start(); } catch(err){ showTip(); return; }
+  listening = true; paintLive();
+  $("voice").classList.add("on"); startWaves();
 };
-function stopVoice(apply){
+function closeVoice(apply){
   listening = false;
   try { rec && rec.stop(); } catch(_){}
-  $("voice").classList.remove("on");
-  if (apply && finalText.trim()){
-    let t = finalText.trim(); t = t.charAt(0).toUpperCase() + t.slice(1);
-    $("answer").value = baseText ? baseText + " " + t : t;
-    onInput();
+  $("voice").classList.remove("on"); stopWaves();
+  if (apply){
+    let t = (committed + " " + (interim !== lastSeg ? interim : "")).trim();
+    if (t){
+      t = t.charAt(0).toUpperCase() + t.slice(1);
+      $("answer").value = baseText ? baseText + " " + t : t;
+      onInput();
+    }
   }
 }
 $("done").onclick = () => {
-  // dar un momento a que llegue el último fragmento
   listening = false;
   try { rec && rec.stop(); } catch(_){}
-  setTimeout(() => stopVoice(true), 350);
+  setTimeout(() => closeVoice(true), 400);
 };
 </script>
 </body>
