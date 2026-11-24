@@ -243,9 +243,9 @@ footer .legal a{text-decoration:underline}
 .x-sec + .x-sec{border-top:1px solid var(--line)}
 .x-lead{font-size:1.05rem;color:var(--muted);max-width:60ch}
 .x-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:end;margin-bottom:32px}
-.x-who{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:clamp(24px,4vw,56px);align-items:start}
+.x-who{display:flex;flex-direction:column;gap:28px}
 .x-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.x-card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.x-card{background:#FBF8F1;border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:8px}
 .x-card svg{width:32px;height:32px;color:var(--forest-2)}
 .x-card h3{font-family:var(--serif);font-weight:500;font-size:1.4rem;color:var(--ink)}
 .x-card p{color:var(--muted);font-size:.95rem}
@@ -292,7 +292,7 @@ footer .legal a{text-decoration:underline}
 .x-org p{max-width:78ch;color:var(--muted)}
 .x-org p strong{color:var(--ink)}
 .x-org a{font-weight:600}
-@media (max-width:980px){.x-who,.x-hist,.x-taller .wrap,.x-head{grid-template-columns:minmax(0,1fr)}.x-svc{grid-template-columns:repeat(2,minmax(0,1fr))}.x-svc article:nth-child(2){border-right:0}.x-svc article:nth-child(3){padding-left:0}.x-svc article:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:980px){.x-hist,.x-taller .wrap,.x-head{grid-template-columns:minmax(0,1fr)}.x-svc{grid-template-columns:repeat(2,minmax(0,1fr))}.x-svc article:nth-child(2){border-right:0}.x-svc article:nth-child(3){padding-left:0}.x-svc article:nth-child(n+3){border-top:1px solid var(--line)}}
 @media (max-width:640px){.x-cards,.x-svc,.x-steps,.x-dev{grid-template-columns:minmax(0,1fr)}.x-svc article{border-right:0;padding-left:0;border-top:1px solid var(--line)}.x-svc article:first-child{border-top:0}.x-steps{gap:18px}.x-tl li{grid-template-columns:minmax(0,1fr);gap:2px}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "es", "mainEntity": [{"@type": "Question", "name": "¿Qué es una plataforma EdTech?", "acceptedAnswer": {"@type": "Answer", "text": "Es tu propio ambiente virtual de aprendizaje: un sitio donde tus alumnos o tu equipo consultan el material, practican y avanzan, con tu metodología. No es un curso genérico; está hecha a la medida de lo que enseñas."}}, {"@type": "Question", "name": "¿Con quién trabajas?", "acceptedAnswer": {"@type": "Answer", "text": "Con maestros que quieren potenciar sus clases, emprendedores que necesitan que su negocio no dependa solo de ellos y ejecutivos que buscan formar equipos de alto rendimiento. Todos tienen algo valioso que transmitir."}}, {"@type": "Question", "name": "¿Necesito saber de tecnología?", "acceptedAnswer": {"@type": "Answer", "text": "No. Si contratas el desarrollo, yo me encargo de la parte digital y te explico lo necesario con palabras sencillas. Si prefieres hacerlo tú, en el taller aprendes a construir tu plataforma con herramientas de IA, sin saber programar."}}, {"@type": "Question", "name": "¿Cómo empezamos?", "acceptedAnswer": {"@type": "Answer", "text": "Platicamos tu idea y lo que quieres enseñar. Lo ordenamos con diseño instruccional, te muestro las pantallas para que las apruebes y después construyo la plataforma y el material."}}, {"@type": "Question", "name": "¿Trabajas a distancia?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, trabajo 100% en línea. Las reuniones son por videollamada y el contacto diario por WhatsApp, así que no importa dónde estés."}}, {"@type": "Question", "name": "¿También capacitas organizaciones?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Capacito a emprendedores y organizaciones en análisis de datos, optimización de procesos operativos y uso de IA para resolver problemas."}}]}</script>
@@ -370,7 +370,7 @@ footer .legal a{text-decoration:underline}
     <div class="wrap x-who">
       <div>
         <h2 class="h2" id="who-t">¿A quién ayudo?</h2>
-        <p class="x-lead" style="margin-top:12px">Todos tienen algo valioso que transmitir. Cambia a quién.</p>
+        <p class="x-lead" style="margin-top:10px;max-width:none">Todos tienen algo valioso que transmitir. Cambia a quién.</p>
       </div>
       <div class="x-cards">
         <div class="x-card">
