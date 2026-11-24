@@ -85,8 +85,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 /* Encabezado */
 .hero{position:relative;overflow:hidden;background:var(--night);color:var(--on-night-2);min-height:560px}
 .hero picture img{position:absolute;top:0;right:0;height:100%;width:auto;max-width:none}
-.hero .wrap{position:relative;padding-top:52px;padding-bottom:92px}
-.hero-copy{max-width:520px;display:flex;flex-direction:column;gap:16px}
+.hero .wrap{position:relative;padding-top:30px;padding-bottom:70px}
+.hero-copy{max-width:520px;display:flex;flex-direction:column;gap:13px}
 .badge{align-self:flex-start;display:flex;align-items:center;gap:8px;border:1px solid #2A3A2F;background:#0F1612;border-radius:999px;padding:6px 14px 6px 10px;font-size:.76rem;color:#E8EEEA}
 .badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);flex:0 0 auto}
 .hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2rem,3.6vw,2.75rem);line-height:1.02;letter-spacing:-.03em;color:var(--on-night)}
@@ -305,7 +305,7 @@ footer .legal a{text-decoration:underline}
 .totop{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:max(18px,env(safe-area-inset-bottom,0px));z-index:6;width:48px;height:48px;border-radius:50%;background:var(--forest);color:var(--on-forest);display:grid;place-items:center;text-decoration:none;font-size:1.3rem;box-shadow:0 10px 24px -12px rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .25s}
 .totop.on{opacity:1;pointer-events:auto}
 .totop:hover{background:var(--forest-2)}
-.x-cue{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:2px;font-size:.85rem;font-weight:600;color:var(--on-night-2);text-decoration:none;z-index:2}
+.x-cue{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:2px;font-size:.85rem;font-weight:600;color:var(--on-night-2);text-decoration:none;z-index:2}
 .x-cue span{font-size:1.2rem;color:var(--lime);animation:cue 1.8s ease-in-out infinite}
 .x-cue:hover{color:var(--lime)}
 @keyframes cue{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
