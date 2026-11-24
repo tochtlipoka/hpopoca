@@ -85,7 +85,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 /* Encabezado */
 .hero{position:relative;overflow:hidden;background:var(--night);color:var(--on-night-2);min-height:560px}
 .hero picture img{position:absolute;top:0;right:0;height:100%;width:auto;max-width:none}
-.hero .wrap{position:relative;padding-top:52px;padding-bottom:60px}
+.hero .wrap{position:relative;padding-top:52px;padding-bottom:92px}
 .hero-copy{max-width:520px;display:flex;flex-direction:column;gap:16px}
 .badge{align-self:flex-start;display:flex;align-items:center;gap:8px;border:1px solid #2A3A2F;background:#0F1612;border-radius:999px;padding:6px 14px 6px 10px;font-size:.76rem;color:#E8EEEA}
 .badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);flex:0 0 auto}
@@ -99,7 +99,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 @media (max-width:900px){
   .hero{min-height:0}
   .hero picture img{position:static;width:100%;height:auto;aspect-ratio:5/4;object-fit:cover;object-position:82% 70%}
-  .hero .wrap{padding-top:36px;padding-bottom:64px}
+  .hero .wrap{padding-top:36px;padding-bottom:88px}
   .hero-copy{max-width:none}
 }
 @media (max-width:480px){.checks{grid-template-columns:minmax(0,1fr)}}
@@ -305,6 +305,13 @@ footer .legal a{text-decoration:underline}
 .totop{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:max(18px,env(safe-area-inset-bottom,0px));z-index:6;width:48px;height:48px;border-radius:50%;background:var(--forest);color:var(--on-forest);display:grid;place-items:center;text-decoration:none;font-size:1.3rem;box-shadow:0 10px 24px -12px rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .25s}
 .totop.on{opacity:1;pointer-events:auto}
 .totop:hover{background:var(--forest-2)}
+.x-cue{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:2px;font-size:.85rem;font-weight:600;color:var(--on-night-2);text-decoration:none;z-index:2}
+.x-cue span{font-size:1.2rem;color:var(--lime);animation:cue 1.8s ease-in-out infinite}
+.x-cue:hover{color:var(--lime)}
+@keyframes cue{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+@media (prefers-reduced-motion:reduce){.x-cue span{animation:none}}
+.x-card .x-go{margin-top:auto;padding-top:6px;font-weight:600;font-size:.92rem;color:var(--forest-2);text-decoration:none}
+.x-card .x-go:hover{text-decoration:underline}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "es", "mainEntity": [{"@type": "Question", "name": "¿Qué es una plataforma EdTech?", "acceptedAnswer": {"@type": "Answer", "text": "Es tu propio ambiente virtual de aprendizaje: un sitio donde tus alumnos o tu equipo consultan el material, practican y avanzan, con tu metodología. No es un curso genérico; está hecha a la medida de lo que enseñas."}}, {"@type": "Question", "name": "¿Con quién trabajas?", "acceptedAnswer": {"@type": "Answer", "text": "Con maestros que quieren potenciar sus clases, emprendedores que necesitan que su negocio no dependa solo de ellos y ejecutivos que buscan formar equipos de alto rendimiento. Todos tienen algo valioso que transmitir."}}, {"@type": "Question", "name": "¿Necesito saber de tecnología?", "acceptedAnswer": {"@type": "Answer", "text": "No. Si contratas el desarrollo, yo me encargo de la parte digital y te explico lo necesario con palabras sencillas. Si prefieres hacerlo tú, en el taller aprendes a construir tu plataforma con herramientas de IA, sin saber programar."}}, {"@type": "Question", "name": "¿Cómo empezamos?", "acceptedAnswer": {"@type": "Answer", "text": "Platicamos tu idea y lo que quieres enseñar. Lo ordenamos con diseño instruccional, te muestro las pantallas para que las apruebes y después construyo la plataforma y el material."}}, {"@type": "Question", "name": "¿Trabajas a distancia?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, trabajo 100% en línea. Las reuniones son por videollamada y el contacto diario por WhatsApp, así que no importa dónde estés."}}, {"@type": "Question", "name": "¿También capacitas organizaciones?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Capacito a emprendedores y organizaciones en análisis de datos, optimización de procesos operativos y uso de IA para resolver problemas."}}]}</script>
 </head>
@@ -349,6 +356,7 @@ footer .legal a{text-decoration:underline}
         </div>
       </div>
     </div>
+    <a class="x-cue" href="#a-quien">¿A quién ayudo? <span aria-hidden="true">↓</span></a>
   </section>
 
 
@@ -363,16 +371,19 @@ footer .legal a{text-decoration:underline}
           <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="4" y="6" width="24" height="15" rx="1"/><path d="M10 26h12M16 21v5M9 11h8M9 15h12"/></svg>
           <h3>Maestro</h3>
           <p>Crea herramientas que potencien tus clases y sigan trabajando entre una sesión y otra.</p>
+          <a class="x-go" href="#servicios">Ver cómo te ayudo →</a>
         </div>
         <div class="x-card">
           <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 13h22l-2-6H7z"/><path d="M7 13v13h18V13M13 26v-7h6v7"/></svg>
           <h3>Emprendedor</h3>
           <p>Identifico los problemas de tu negocio, te ayudo a resolverlos y te apoyo para que transmitas lo que sabes y tu negocio no dependa solo de ti.</p>
+          <a class="x-go" href="#taller">Aprender a hacerlo →</a>
         </div>
         <div class="x-card">
           <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 26V16M12 26V10M19 26v-8M26 26V6"/><path d="M3 26h26"/></svg>
           <h3>Ejecutivo</h3>
           <p>Forma equipos de alto rendimiento con conocimiento ordenado, medible y fácil de consultar.</p>
+          <a class="x-go" href="#contacto" data-interes="Convertir lo que sé en un curso para mi equipo">Hablemos de tu equipo →</a>
         </div>
       </div>
     </div>
@@ -569,6 +580,9 @@ form.addEventListener('submit', e => {
 
 <script>
 {const b=document.querySelector('.totop');const f=()=>b.classList.toggle('on',scrollY>700);addEventListener('scroll',f,{passive:true});f();}
+</script>
+<script>
+{document.querySelectorAll('[data-interes]').forEach(a=>a.addEventListener('click',()=>{const s=document.getElementById('interes');if(!s)return;const v=a.dataset.interes;for(const o of s.options){if(o.text===v){s.value=o.value;break}}}));}
 </script>
 </body>
 </html>
