@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="canonical" href="https://hpopoca.com/blog/">
+<link rel="icon" href="../img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../img/favicon.png">
+<title>Mi blog | Héctor Popoca</title>
+<meta name="description" content="Blog de Héctor Popoca: plataformas EdTech, material interactivo, inteligencia artificial aplicada a la enseñanza y a los negocios.">
+<meta name="theme-color" content="#080C0B">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Opción D · estilo A: encabezado oscuro con verde neón; contenido marfil con verde bosque y oro */
+:root{
+  --night:#080C0B; --night-line:#18221C; --lime:#B6F35A; --on-night:#F2F6F3; --on-night-2:#B7C2BC; --on-night-3:#8D9A93;
+  --bg:#F6F4EE; --band:#EFECE3; --white:#FFFFFF; --line:#E2DED3; --line-green:#B9CDBF;
+  --forest:#12352B; --forest-2:#2B5E4C; --forest-3:#1C4638; --deep:#0C2620; --deep-line:#1F4A3D;
+  --gold:#C9A15B; --gold-dark:#8A6420; --gold-num:#A9782A;
+  --ink:#12352B; --text:#3A4640; --muted:#4D5A53; --on-forest:#F6F4EE; --on-forest-2:#C9D3CC; --on-forest-3:#A9BCB1;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Inter","Segoe UI",system-ui,sans-serif;
+  --display:"Sora","Inter",system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6}
+h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--forest-2)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1180px;margin-inline:auto;padding-left:max(clamp(20px,6vw,72px),env(safe-area-inset-left,0px));padding-right:max(clamp(20px,6vw,72px),env(safe-area-inset-right,0px))}
+section[id],div[id]{scroll-margin-top:84px}
+section.block[id]{scroll-margin-top:16px}
+#casos,#preguntas{scroll-margin-top:96px}
+/* Movimiento sutil de botones */
+.btn,.top nav a.cta{transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
+.btn:hover,.top nav a.cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px -10px rgba(0,0,0,.45)}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(182,243,90,0)}50%{box-shadow:0 0 0 6px rgba(182,243,90,.18)}}
+.top nav a.cta,.hero .btn-lime{animation:glow 3s ease-in-out infinite}
+.top nav a:not(.cta):not(.lang){position:relative}
+.top nav a:not(.cta):not(.lang)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.top nav a:not(.cta):not(.lang):hover::after{transform:scaleX(1)}
+@media (prefers-reduced-motion:reduce){.btn,.top nav a.cta,.top nav a::after{transition:none;animation:none!important}}
+.eyebrow{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--forest-2)}
+.h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.7rem,3.2vw,2.3rem);line-height:1.1;color:var(--ink)}
+.center{text-align:center;align-items:center}
+.head{display:flex;flex-direction:column;gap:14px}
+.head p{color:var(--text);max-width:40rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 24px;border-radius:999px;font-family:var(--sans);font-weight:700;font-size:.95rem;text-decoration:none;border:0;cursor:pointer;white-space:nowrap}
+.btn-lime{background:var(--lime);color:#0A100C}
+.btn-gold{background:var(--lime);color:#0A100C}
+.btn-ghost{background:var(--lime);color:#0A100C}
+.btn-ghost-gold{background:var(--lime);color:#0A100C}
+.btn:hover{filter:brightness(1.06)}
+
+/* Menú */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--night)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--night);border-bottom:1px solid var(--night-line)}
+.top .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;padding-block:12px}
+.top .logo{height:50px;width:auto;color:#E8EEEA;display:block}
+.top .logo .eye{fill:var(--lime)}
+.top nav{display:flex;flex-wrap:wrap;align-items:center;gap:6px 26px;font-size:.9rem}
+.top nav a{color:#E8EEEA;text-decoration:none;padding:6px 0}
+.top nav a:hover{color:var(--lime)}
+.top nav a.lang{color:var(--on-night-3)}
+.top nav a.cta{background:var(--lime);color:#0A100C;font-weight:600;padding:11px 20px;border-radius:999px}
+@media (max-width:900px){.top{position:static}.top .wrap{justify-content:center}.top nav{justify-content:center;gap:4px 16px;font-size:.84rem}.top nav a.cta{padding:9px 16px}.top .logo{height:42px}}
+
+/* Encabezado */
+.hero{position:relative;overflow:hidden;background:var(--night);color:var(--on-night-2);min-height:560px}
+.hero picture img{position:absolute;top:0;right:0;height:100%;width:auto;max-width:none}
+.hero .wrap{position:relative;padding-top:52px;padding-bottom:60px}
+.hero-copy{max-width:520px;display:flex;flex-direction:column;gap:16px}
+.badge{align-self:flex-start;display:flex;align-items:center;gap:8px;border:1px solid #2A3A2F;background:#0F1612;border-radius:999px;padding:6px 14px 6px 10px;font-size:.76rem;color:#E8EEEA}
+.badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);flex:0 0 auto}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2rem,3.6vw,2.75rem);line-height:1.02;letter-spacing:-.03em;color:var(--on-night)}
+.hero h1 span{color:var(--lime)}
+.hero .lead{font-size:1rem;max-width:34rem}
+.checks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,max-content);gap:8px 20px;max-width:560px;font-size:.88rem;color:#E8EEEA}
+.checks li{display:flex;gap:10px;align-items:center}
+.checks svg{flex:0 0 auto}
+.actions{display:flex;flex-wrap:wrap;gap:14px}
+@media (max-width:900px){
+  .hero{min-height:0}
+  .hero picture img{position:static;width:100%;height:auto;aspect-ratio:5/4;object-fit:cover;object-position:82% 70%}
+  .hero .wrap{padding-top:36px;padding-bottom:64px}
+  .hero-copy{max-width:none}
+}
+@media (max-width:480px){.checks{grid-template-columns:minmax(0,1fr)}}
+
+/* Bloques */
+.block{padding-block:clamp(56px,6.5vw,80px)}
+.block > .wrap{display:flex;flex-direction:column;gap:28px}
+.band{background:var(--band);border-block:1px solid var(--line)}
+.grid{display:grid;gap:20px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.card-forest{background:var(--forest);color:var(--on-forest-2);border-radius:20px;padding:clamp(22px,2.6vw,30px);display:flex;flex-direction:column;gap:12px}
+.card-forest h3{font-family:var(--serif);font-weight:500;color:var(--on-forest);font-size:clamp(1.5rem,2.3vw,1.8rem);line-height:1.1}
+.card-forest .tag{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--gold)}
+.card-forest .card-note{font-size:.9rem;font-weight:600;color:var(--on-forest);border-top:1px solid var(--forest-2);padding-top:12px}
+.card-forest .btn{align-self:flex-start}
+
+.step .top-row{display:flex;justify-content:space-between;align-items:center}
+.step .num{font-family:var(--serif);font-size:2.4rem;line-height:1;color:var(--gold)}
+.step h3{font-size:1.6rem}
+.step ul{list-style:none;margin:0;padding:12px 0 0;border-top:1px solid var(--forest-2);display:flex;flex-direction:column;gap:6px;font-size:.9rem;color:var(--on-forest)}
+.step li{display:flex;gap:10px;align-items:baseline}
+.step li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);flex:0 0 auto;transform:translateY(-2px)}
+
+/* Capacitación */
+.cap-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters button{font:inherit;font-size:.88rem;font-weight:600;padding:9px 16px;border-radius:999px;border:1px solid var(--forest);background:transparent;color:var(--forest);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--forest);color:var(--on-forest)}
+.mat{border-radius:16px;padding:20px;gap:10px}
+.mat .meta{display:flex;justify-content:space-between;gap:10px;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.mat .meta span:last-child{color:var(--on-forest-3)}
+.mat h3{font-size:1.2rem;line-height:1.2}
+.mat p{font-size:.86rem;line-height:1.5;flex-grow:1}
+.mat .buy{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--forest-2);padding-top:12px;font-size:.88rem}
+.mat .price{color:var(--on-forest);font-weight:600}
+.mat .price small{color:var(--on-forest-3);font-weight:400;font-size:.8rem}
+.mat .btn{min-height:36px;padding:0 14px;font-size:.78rem;align-self:auto}
+.mat[hidden]{display:none}
+.disclaimer{font-size:.82rem;color:var(--muted)}
+.ask{background:var(--white);border:1px solid var(--line-green);border-radius:18px;padding:clamp(20px,3vw,28px);display:flex;flex-wrap:wrap;gap:32px 40px}
+.ask .intro{flex:1 1 280px;display:flex;flex-direction:column;gap:12px}
+.ask h3{font-family:var(--serif);font-weight:500;font-size:1.5rem;line-height:1.15;color:var(--ink)}
+.ask form{flex:999 1 440px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.ask fieldset{border:0;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px 24px}
+.ask legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.chk{display:flex;gap:10px;align-items:center;font-size:.95rem;color:#2E3A34}
+.chk input{width:18px;height:18px;margin:0;accent-color:var(--forest);flex:0 0 auto}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+.row label{flex:1 1 240px}
+.lbl{display:flex;flex-direction:column;gap:6px;font-size:.82rem;font-weight:600;color:#2E3A34}
+.lbl input,.lbl select,.lbl textarea{font:inherit;font-size:.95rem;font-weight:400;color:#1A2520;background:#FFFFFF;border:1px solid var(--line-green);border-radius:10px;min-height:44px;padding:8px 12px;width:100%}
+.lbl textarea{min-height:72px;resize:vertical}
+
+/* Cifras */
+.stat{background:var(--white);border:1px solid var(--line-green);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px;text-align:center}
+.stat .n{font-family:var(--serif);font-weight:500;font-size:clamp(1.8rem,2.8vw,2.2rem);color:var(--gold-num);line-height:1.1;font-variant-numeric:tabular-nums}
+.stat p{font-size:.9rem;color:var(--text)}
+
+/* Casos */
+.case{background:var(--white);border:1px solid var(--line-green);border-radius:24px;overflow:hidden;display:flex;flex-direction:column}
+.case .shot{height:200px;overflow:hidden;padding:20px 20px 0}
+.case .shot img{width:100%;border-radius:10px 10px 0 0}
+.shot-canasta{background:#E8641E}
+.shot-wrea{background:#EEF1FA}
+.case .body{padding:22px;display:flex;flex-direction:column;gap:8px}
+.case .meta{display:flex;justify-content:space-between;gap:12px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.case .meta span:first-child{color:var(--gold-dark)}
+.case .meta span:last-child{color:var(--muted)}
+.case h3{font-family:var(--serif);font-weight:500;font-size:1.45rem;color:var(--ink)}
+.case p{font-size:.95rem}
+.case a{font-weight:600;font-size:.9rem}
+
+/* Wrealispec */
+.wrea{flex-direction:row;flex-wrap:wrap;align-items:center;gap:40px;border-radius:28px}
+.wrea .txt{flex:999 1 480px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.wrea h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.6rem,2.8vw,2.1rem);line-height:1.1;color:var(--on-forest)}
+.wrea .txt p{font-size:1rem}
+.wrea .mob{flex:1 1 400px;min-width:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.wrea .mob div{background:var(--forest-3);border:1px solid var(--forest-2);border-radius:16px;padding:20px 12px;text-align:center;display:flex;flex-direction:column;gap:6px}
+.wrea .mob b{font-family:var(--serif);font-weight:500;color:var(--gold);font-size:1.15rem}
+.wrea .mob span{font-size:.82rem}
+@media (max-width:420px){.wrea .mob{grid-template-columns:minmax(0,1fr)}}
+
+/* Historia */
+.story{display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start}
+.story .pic{flex:0 0 160px;height:160px;border-radius:50%;overflow:hidden;border:3px solid var(--gold);margin-inline:auto}
+.story .pic img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.story .txt{flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:12px;font-size:.98rem;line-height:1.65}
+.story h2{font-family:var(--serif);font-weight:500;font-size:1.7rem;color:var(--ink)}
+.story .last{color:#17211D}
+
+/* Contacto */
+.contact{background:var(--forest);color:var(--on-forest);border-radius:22px;padding:clamp(24px,3.5vw,40px);display:flex;flex-wrap:wrap;gap:28px 40px;max-width:1040px;margin-inline:auto}
+.contact .intro{flex:1 1 300px;display:flex;flex-direction:column;gap:16px}
+.contact h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.8rem,3vw,2.2rem);line-height:1.04;color:var(--on-forest)}
+.contact .intro p{color:var(--on-forest-2)}
+.contact .intro a{color:var(--gold);font-weight:600}
+.contact form{flex:999 1 460px;min-width:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 12px}
+@media (max-width:600px){.contact form{grid-template-columns:minmax(0,1fr)}}
+.contact .lbl{color:var(--on-forest)}
+.contact .lbl input,.contact .lbl select,.contact .lbl textarea{border-color:transparent}
+.full{grid-column:1/-1}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;line-height:1.5;color:var(--on-forest-2)}
+.consent input{width:18px;height:18px;margin:2px 0 0;accent-color:var(--gold);flex:0 0 auto}
+.consent a{color:var(--gold)}
+.contact .btn{justify-self:start}
+.note{font-size:.92rem;padding:12px 14px;border-left:2px solid var(--gold);background:rgba(201,161,91,.16)}
+.ask .note{color:var(--ink)}
+.contact .note{color:var(--on-forest)}
+
+
+/* Preguntas frecuentes */
+.faq{max-width:820px;margin-inline:auto;width:100%;border-top:1px solid var(--line-green)}
+.faq details{border-bottom:1px solid var(--line-green)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 2px;font-weight:600;color:var(--ink);font-size:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:0 0 auto;width:28px;height:28px;border-radius:50%;display:grid;place-content:center;background:var(--forest);color:var(--gold);font-weight:500;font-size:1.1rem;line-height:1;transition:transform .2s ease}
+.faq details[open] summary::after{content:"−"}
+.faq summary:hover{color:var(--forest-2)}
+.faq details p{color:var(--text);padding:0 44px 18px 2px;font-size:.95rem}
+
+/* Pie */
+footer .logo-full{display:block;width:100%;max-width:300px;height:auto;color:var(--on-night)}
+footer .logo-full .eye{fill:var(--lime)}
+footer .brand{grid-column:1/-1;padding-bottom:12px;border-bottom:1px solid var(--night-line)}
+@media (min-width:700px){footer .cols{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+footer{background:var(--night);color:var(--on-night-2);font-size:.9rem;margin-top:72px}
+footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));align-items:start;gap:36px;padding-block:56px 36px}
+footer .name{font-family:var(--serif);font-weight:500;font-size:1.4rem;color:var(--on-night)}
+footer h2{font-family:var(--sans);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--lime);margin-bottom:4px}
+footer nav,footer .brand{display:flex;flex-direction:column;gap:10px}
+footer a{color:var(--on-night-2);text-decoration:none}
+footer a:hover{color:var(--lime);text-decoration:underline}
+footer .legal{border-top:1px solid var(--night-line);padding-block:18px 32px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;font-size:.84rem;color:var(--on-night-3)}
+footer .legal nav{flex-direction:row;flex-wrap:wrap;gap:8px 22px}
+footer .legal a{text-decoration:underline}
+/* ===== Secciones nuevas (propuesta) ===== */
+.x-gray{background:var(--band)}
+.x-sec{padding-block:clamp(48px,6vw,84px)}
+.x-sec + .x-sec{border-top:1px solid var(--line)}
+.x-lead{font-size:1.05rem;color:var(--muted);max-width:60ch}
+.x-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:end;margin-bottom:32px}
+.x-who{display:flex;flex-direction:column;gap:28px}
+.x-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.x-card{background:#FBF8F1;border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.x-card svg{width:32px;height:32px;color:var(--forest-2)}
+.x-card h3{font-family:var(--serif);font-weight:500;font-size:1.4rem;color:var(--ink)}
+.x-card p{color:var(--muted);font-size:.95rem}
+.x-svc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--ink)}
+.x-svc article{padding:24px 22px 8px;display:flex;flex-direction:column;gap:10px;border-right:1px solid var(--line)}
+.x-svc article:first-child{padding-left:0}
+.x-svc article:last-child{border-right:0}
+.x-svc .n{font-family:var(--serif);font-size:2.6rem;line-height:1;color:var(--gold-num)}
+.x-svc h3{font-family:var(--serif);font-weight:500;font-size:1.35rem;color:var(--ink);line-height:1.15}
+.x-svc p{color:var(--muted);font-size:.95rem}
+.x-svc .eg{font-size:.85rem;font-weight:600;color:var(--forest-2)}
+.x-taller{background:var(--forest);color:var(--on-forest)}
+.x-taller .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,4vw,64px);align-items:center}
+.x-taller h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.8rem,3.2vw,2.4rem);line-height:1.1;color:var(--on-forest)}
+.x-taller p{color:var(--on-forest-2)}
+.x-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.x-steps li{position:relative;padding:22px 16px 0 0;border-top:2px solid var(--forest-2);display:flex;flex-direction:column;gap:6px}
+.x-steps li::before{content:"";position:absolute;top:-8px;left:0;width:14px;height:14px;border-radius:50%;background:var(--gold)}
+.x-steps b{font-family:var(--serif);font-weight:500;font-size:1.4rem;color:var(--on-forest)}
+.x-steps span{font-size:.92rem;color:var(--on-forest-2)}
+.x-dev{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.x-proj{background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.x-proj .top{position:relative;overflow:hidden;padding:22px;min-height:130px;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;color:#F6F4EE}
+.x-proj .top svg{position:absolute;right:-10px;top:-10px;width:130px;height:130px;opacity:.22}
+.x-proj .top small{font-size:.8rem;font-weight:600;opacity:.9}
+.x-proj .top h3{font-family:var(--serif);font-weight:500;font-size:1.8rem;line-height:1.1;color:#F6F4EE}
+.x-proj .body{padding:22px;display:flex;flex-direction:column;gap:12px}
+.x-proj .body p{color:var(--muted);font-size:.95rem}
+.x-proj .body a{font-weight:600;color:var(--forest-2);text-decoration:none}
+.x-proj .body .st{font-size:.88rem;color:var(--muted)}
+.x-hist{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(28px,4vw,64px);align-items:start}
+.x-hist .txt{display:flex;flex-direction:column;gap:14px}
+.x-hist .txt p{color:var(--muted)}
+.x-hist .txt p strong{color:var(--ink)}
+.x-hist .pic{width:180px;aspect-ratio:1;object-fit:cover;border-radius:14px}
+.x-tl{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.x-tl li{position:relative;display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:16px;padding:0 0 20px 24px}
+.x-tl li::before{content:"";position:absolute;left:-8px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--forest-2)}
+.x-tl li:last-child::before{background:var(--gold);border-color:var(--gold)}
+.x-tl time{font-family:var(--serif);font-weight:500;font-size:1.05rem;color:var(--forest-2);white-space:nowrap}
+.x-tl b{display:block;color:var(--ink)}
+.x-tl span{color:var(--muted);font-size:.93rem}
+.x-org{display:flex;flex-wrap:wrap;gap:12px 32px;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:14px;padding:22px 26px;background:var(--white)}
+.x-org p{max-width:78ch;color:var(--muted)}
+.x-org p strong{color:var(--ink)}
+.x-org a{font-weight:600}
+@media (max-width:980px){.x-hist,.x-taller .wrap,.x-head{grid-template-columns:minmax(0,1fr)}.x-svc{grid-template-columns:repeat(2,minmax(0,1fr))}.x-svc article:nth-child(2){border-right:0}.x-svc article:nth-child(3){padding-left:0}.x-svc article:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:640px){.x-cards,.x-svc,.x-steps,.x-dev{grid-template-columns:minmax(0,1fr)}.x-svc article{border-right:0;padding-left:0;border-top:1px solid var(--line)}.x-svc article:first-child{border-top:0}.x-steps{gap:18px}.x-tl li{grid-template-columns:minmax(0,1fr);gap:2px}}
+.x-compact{padding-block:clamp(32px,4vw,48px)}
+.x-me{display:flex;align-items:center;gap:18px}
+.x-me .pic{width:96px;flex:none}
+.x-compact .x-hist .txt{gap:10px}
+.x-compact .x-hist .txt p{font-size:.95rem;line-height:1.55}
+.x-compact .x-tl li{padding-bottom:12px;grid-template-columns:6.2em minmax(0,1fr);gap:12px;line-height:1.4}
+.x-compact .x-tl li::before{top:3px}
+.x-compact .x-tl time{font-size:.98rem}
+.x-compact .x-tl span{font-size:.86rem}
+.totop{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:max(18px,env(safe-area-inset-bottom,0px));z-index:6;width:48px;height:48px;border-radius:50%;background:var(--forest);color:var(--on-forest);display:grid;place-items:center;text-decoration:none;font-size:1.3rem;box-shadow:0 10px 24px -12px rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .25s}
+.totop.on{opacity:1;pointer-events:auto}
+.totop:hover{background:var(--forest-2)}
+@media (max-width:980px){.x-me .pic{width:84px}}
+</style>
+
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="../#inicio" aria-label="hpopoca, inicio"><svg class="logo" viewBox="-900 -900 99893 31515" role="img" aria-label="hpopoca"><path fill="currentColor" d="M5886.2 28544.73c-20.97,-164.21 117.78,-230.04 210.44,-324.13l7390.51 -7390.66c149.56,-149.01 944.82,-1020.38 1132.91,-1062.75 438.11,297.15 874.09,1396.16 969.02,2038.89 174.97,1184.62 -188.56,2557.93 -1039.88,3366.25 -260.22,247.08 -465.14,489.75 -754.18,727.62 -438.4,360.77 -1697.19,1005.85 -1758.13,1205.21 1351.53,3.69 2715.25,-1.57 4065.58,19.93 980.8,15.62 1520.43,-0.44 2246.93,774.49 107.54,114.71 373.57,469.2 300.57,648.52 -433.72,47.57 -2617.55,20.33 -3218.52,19.99l-9545.25 -23.36zm5604.24 -10013.97c709.66,-94.82 2282.13,206.33 2148.78,544.6 -26.4,66.95 -1242.3,1255.86 -1405.73,1418.04l-7054.98 7056.18c-436.2,446.78 -880.3,917.6 -1816.11,1003.85 -2387.03,220 -3000.86,-2849.81 -1049.99,-3658.17 457.42,-189.54 747.56,-160.9 1265.73,-145.85 530.21,15.4 376.18,66.81 948.45,-462.45l4293.35 -4173.18c203.43,-251.31 644.74,-619.09 916.08,-847.21 447.03,-375.85 1146.65,-654.6 1754.42,-735.81zm15278.3 10009.43c-127.99,47.3 -3059.91,61.6 -3285.73,13.23 -258.88,-55.44 -608.74,-429.5 -702.87,-568.51l-1433.24 -2235.88c-1160.44,-1840.82 -2221.17,-3947.62 -1460.4,-6245.97 214.97,-649.44 548.45,-1054.68 931.95,-1537.7 531.02,-668.81 1616.76,-1311.5 2406.45,-1684.09 543.41,-256.38 2258.03,-694.46 2665.57,-579.42 69.23,142.83 1.47,408.75 -22.82,572.16 -29.07,195.58 -66.63,337.83 -115.07,524.58 -399.67,1540.81 -1028.12,3046.53 -2037.49,4240.59 -309.73,366.41 -898.53,1059.63 -1233.7,1267.38 -20.69,595.64 620.17,2508 893.09,3108.6 147.38,324.31 260.16,578.37 386.4,917.85 457.45,1230.19 793.9,569.59 1751.13,895.25 462.81,157.44 915.27,488.85 1108.65,866.84l162.19 331.32c25.06,196.78 4.04,-169.28 -1.31,56.3l-12.8 57.47zm-22576.57 -5568.66c-119.63,-783.05 104.53,-2109.5 319.65,-2827.09 553.15,-1845.18 1345.66,-3194.97 2741.66,-4419.11 1696.54,-1487.68 3937.2,-2297.74 6414.23,-2233.93 1507.26,38.82 2755.87,375.46 4377.57,-97.4 322.21,-93.95 1049.35,-391.45 1148.08,-378.93 21.24,238.15 -253.72,695.24 -364.44,844.41 -230.65,310.75 -2622.69,2684.37 -3042.03,3096.37 -1666.84,1637.66 -996.14,1238.9 -1940.2,840.7 -928.32,-391.56 -1610.05,-480.09 -2648.48,-356.5 -592.31,70.49 -1122.49,299.72 -1560.13,563.96 -539.47,325.72 -759.18,515.95 -1171.88,909.12l-1336.12 1309.51c-92.82,95.58 -173.67,166.12 -270.6,258.85l-2386.48 2306.12c-101.38,96.64 -130.87,199.46 -280.83,183.92zm11257.35 -4042.61c96.9,-148.03 312.65,-336.01 436.71,-462.39 148.15,-150.92 271.67,-276 420.44,-426.27 289.27,-292.21 551.79,-559.73 840.65,-852.73 572.05,-580.24 1117.89,-1155.39 1698.65,-1723.43 180.44,-176.49 288.24,-241.53 442.24,-439.25 126.92,-162.97 258.78,-286.36 392.56,-454.38 486.74,-611.36 804.37,-1716.24 877.64,-2534.96 96.56,-1079.07 3.13,-1860.06 559.1,-2871.7 1181.47,-2149.81 4106.94,-2360.11 5929.7,-1144.56 615.97,410.77 1327.82,1023.13 1743.24,1642.98 203.87,304.19 497.27,740.49 647.64,1080.23 577.65,1305.12 -223.71,2693.22 -1479.13,3285.6 -1380.73,651.52 -3409.47,439.07 -5468.74,1340.16 -372.73,163.1 -1281.08,708.38 -1604.43,971.47 -797.43,648.82 -1413.74,1288.5 -1900.43,2369.8 -366.57,814.45 -523.42,1985.92 -440.14,2970.1 121.25,1432.69 706.5,2373.99 719.48,2646.83 -285.71,307.5 -2868.92,1253.11 -3491.27,1287.49 5.7,-163.52 235.1,-481.69 388.46,-768.84 687.34,-1286.99 811.06,-3241.17 146.71,-4536.79 -130.18,-253.88 -251.17,-508.59 -399.32,-727.81l-459.76 -651.55zm-955.02 -15676.87c1141.89,265.44 2011.69,742.44 2867.71,1363.59 388.36,281.8 1042.22,835.89 1344.8,1195 680.22,807.32 546.67,616.95 1079.89,1460.76 52.37,82.88 314.06,451.79 278.16,533.15 -71.42,161.84 -1393.94,71.54 -1601.26,53.5 -524.84,-45.66 -984.54,-116.47 -1481.64,-218.94 -1553.96,-320.33 -3174.4,-1406.91 -4211.85,-2558.22 -355.85,-394.91 -1359.16,-1586.46 -1372.83,-2031.08 706.15,-181.61 2369.78,33.19 3097.02,202.24zm7650.82 2930.14c96.34,236.5 225.85,403.79 6.69,523.9 -230,126.04 -863.92,534.02 -1005.56,538.91 -125.21,-93.68 -487.66,-746.33 -629.96,-950.22 -437.49,-626.8 -914,-1153.51 -1420.85,-1684.03l-404.79 -370.65c-930.97,-771.68 -1245.34,-961.74 -2347.29,-1534.81 -235.72,-122.59 -232.46,-190.43 -310.15,-465.54 -286.65,-1015.05 -303.04,-1033.4 108.23,-955.97 1630.18,306.91 3044.28,922.28 4157.18,2088.99 70.52,73.94 115.81,130.07 188.02,200.05 413.39,400.63 535.06,611.1 860.36,1079.99 274.05,395.04 603.41,1051.42 798.12,1529.38zm940.25 -622.02c-82.71,-230.76 -195.98,-434.2 -303.45,-649.25 -292.46,-585.23 -1053.4,-1739.14 -1537.31,-2202.32l-1554.05 -1267.74c-190.47,-121.94 -406.78,-228.02 -609.59,-343.1 -335.69,-190.49 -886.5,-448.27 -1296.79,-574.28 -661.84,-203.28 -2520.38,-622.67 -3230.77,-502.07 -50.07,274.61 62.28,836.51 101.74,1128.33 35.65,263.68 193.21,807.68 168.87,1014.72 -236.85,38.82 -907.21,-157.07 -1201.65,-196.66 -411.56,-55.32 -913.67,-97.33 -1330.84,-96.58 -445.84,0.81 -2233.11,76.97 -2521.26,288.32 -55.96,223.86 498.03,1234.57 620.41,1488.06 284.16,588.62 860.65,1394.81 1286.79,1890.04 215.18,250.07 807.35,889.09 1043.18,1073.17 110.06,85.9 171.34,165.18 277.92,250.98 1433.3,1153.76 2917.04,1799.06 4849.55,2067.36 332.93,46.22 628.81,78.73 968.91,93.86 187.16,8.32 896.23,-22.71 996.61,39.74 66.33,58.65 32.28,-17.1 43.61,86.66 2.24,20.45 -5.69,55.55 -11.13,77.67 -10.7,43.52 -48.45,135.17 -66.19,186.48 -435.27,1259.11 -29.42,1636.52 -924.45,2391.23 -687.77,579.94 -2005.87,720.09 -3106.73,706.87 -1612.28,-19.35 -1808.55,-265.54 -3647.36,-50.92 -2081.94,243 -3779.45,961.68 -5359.84,2223.81 -912.34,728.6 -1181.05,1096.48 -1827.77,1946.17 -993.28,1305.04 -1814.02,3590.88 -1885.5,5720.14 -53.88,1604.74 287.43,1167.14 -560.53,1329.14 -498.95,95.32 -1003.14,350.24 -1288.31,612.12 -763.89,701.51 -1244.71,1461.92 -1172.48,2611.6 51.15,814.1 590.3,1705.6 1205.42,2152.28 105.38,76.51 162.87,135.92 265.62,193.68 1022.85,575.05 2052.96,414.23 3334.64,417.61 1524.41,4.01 14912.82,105.25 15146.86,-0.41 91.82,-90.54 -86.24,-1145.19 -107.29,-1224.07 -118.09,-442.43 -192.1,-635.96 -408.71,-967.27 -292.13,-446.83 -609.79,-738.33 -1081.71,-999.62 -129.72,-71.83 -339.49,-155.99 -426.73,-244.5 81.94,-157.96 734.04,-330.06 924.46,-416.56 226.98,-103.11 690.96,-371.94 925.1,-394.01l1851.15 2860.28c988.98,1520.49 1140.14,1416.92 3285.2,1416.92 180.33,0 2875.95,28.61 3058.79,-17.43l54.94 -23.46c117.08,-325.05 -47.42,-1193.12 -152.73,-1517.06 -135.88,-417.98 -382.75,-861.55 -630.74,-1099 -302.26,-289.4 -525.73,-505.56 -1007.56,-721.14 -1728.34,-773.3 -1024.65,639.59 -2034.4,-1881.71 -178.1,-444.7 -496.9,-1209.66 -527.12,-1710.82 169.15,-131.86 195.6,-192.75 322.51,-341.4l320.07 -349.87c1523.43,-1682.55 2107.08,-3258.24 2600.8,-5443.49 51.86,-229.54 113.77,-992.09 182.67,-1120.37 109.34,-80.29 796.05,-229.89 996.13,-309.67 327.52,-130.6 594.15,-244.8 849.97,-419.39 1175.93,-802.56 1814.15,-1783.39 1794.54,-3293.5 -12.85,-989.29 -816.71,-2308.45 -1490.15,-2996.07 -601.45,-614.1 -945.71,-970.03 -1727.18,-1448.65 -1021.7,-625.77 -1779.41,-814.14 -2963.31,-851.45 -442.38,-13.94 -799.92,85.38 -1199.45,81.5 -135.79,-157.45 -204.65,-455.22 -283.38,-674.9z"/><path class="eye" d="M25487.61 9322.29c-487.86,137.04 -671.02,526.26 -567.95,922.41 221.07,849.69 1684.98,612.58 1455.11,-391.05 -77.36,-337.78 -440.18,-656.9 -887.16,-531.36z"/><g transform="translate(0,2600)"><path fill="currentColor" d="M66819.45 8940.84c1837.28,-129.27 3048.21,1060.57 3148.77,2789.99 98.63,1696.3 -714.79,3295.81 -2575.28,3453.9 -1825.99,155.15 -3090.33,-1149.4 -3184.72,-2844.31 -96.93,-1740.55 868.94,-3276.99 2611.23,-3399.58zm-2616.62 906.94l-8.76 -1679.8 -985.63 2.28 -0.35 11453.69 986.44 12.8 0.14 -5357.73c114.25,140.01 173.57,307.98 298.7,461.32 384.57,471.28 699.67,758.51 1321.8,1042.93 751.69,343.65 1846.82,374.26 2663.64,102.9 1509,-501.33 2504.04,-1842.82 2519.65,-3801.14 7.55,-946.49 -248.65,-1842.38 -669.5,-2475.36 -1407.57,-2117.06 -4924.6,-2124.94 -6126.13,238.11z"/><path fill="currentColor" d="M47793.69 8972.67c882.65,-164.18 1831.43,105.3 2353.05,570.11 587.88,523.86 919.37,1137 1016.51,1982.69 218.83,1905.13 -732.86,3385.23 -2357.24,3626.78 -1887.38,280.66 -3129.82,-947.05 -3364.82,-2561.22 -276.9,-1902.07 776.42,-3325.19 2352.5,-3618.36zm-2389.27 841.57l0 -1631.9 -986.06 -15.66 0 11469.01 986.1 -2.69 0.15 -5330.06c161.72,138.15 197.48,406.57 698.16,872.5 1965.93,1829.45 6075.14,907.79 6106.35,-3090.42 15.17,-1943.81 -969.96,-3337.65 -2434.69,-3828.14 -815.95,-273.24 -1916.91,-280.14 -2695.36,56.18 -445.52,192.48 -631.77,355.2 -948.44,604.41 -167.34,131.69 -414.16,420.59 -540.34,623.59l-185.87 273.18z"/><path fill="currentColor" d="M94004.35 8933.69c1781.41,-113.79 2974.95,1198.13 3073.87,2882.04 251.71,4285 -5549.45,4566.92 -5765.28,481.95 -100.33,-1898.92 909.41,-3250.16 2691.41,-3363.99zm3088.34 5330.36l1 1692.96 988.09 -0.01 10.92 -7788.62 -1000.63 0 -0.97 1678.75c-259.62,-626.06 -970.82,-1257.3 -1603.71,-1512.44 -2278.86,-918.64 -5210.98,348.13 -5199.37,3715.07 15.75,4570.59 5153.19,5024.5 6641.74,2475.58 65.34,-111.88 96.81,-183.29 162.93,-261.29z"/><path fill="currentColor" d="M35387.99 15957l989.64 0c117.95,-1076.7 -88.78,-3428.91 28.98,-4691.51 130.38,-1397.98 926.31,-2345.02 2378.67,-2370.89 1493.26,-26.59 2347.13,876.65 2427.2,2313.42 74.63,1339.02 -80.75,3693.09 18.64,4745.95l967.58 3.29c41.86,-380.87 10.35,-3142.21 10.05,-3766.4 -0.63,-1278.93 11.26,-2251.85 -706.39,-3104.21 -282.33,-335.32 -591.3,-625.12 -1085.04,-821.86 -955.98,-380.94 -2229.8,-314.52 -3097.39,238.61 -484.43,308.85 -596.93,495.15 -919.66,960.28l-12.91 -4064.59 -999.71 0 0.34 10557.91z"/><path fill="currentColor" d="M73402.82 12190.86c-181.39,-4241.85 5602.67,-4397.44 5737.79,-283.4 118.85,3618.81 -3635.04,3916.31 -4917.04,2486.74 -491.77,-548.38 -777.51,-1191.92 -820.75,-2203.34zm2411.88 -4115.45c-2188.27,175.59 -3622.04,2059.02 -3410.38,4469.07 188.79,2149.68 1939.18,3790.28 4340.69,3492.48 2189.8,-271.55 3623.49,-1971.29 3406.17,-4444.48 -196.52,-2236.44 -1887.29,-3713.6 -4336.48,-3517.07z"/><path fill="currentColor" d="M57115.53 8940.51c1826.78,-224.01 3068.5,1051.75 3218.13,2686.23 96.1,1049.69 -101.04,1726.34 -560.07,2431.38 -375.72,577.08 -1158.69,1022.11 -1878.51,1115.48 -1867.43,242.22 -3144.73,-1017.89 -3268.06,-2700.01 -141.93,-1935.77 752.64,-3320.21 2488.51,-3533.08zm-208.69 -844.9c-2366.61,374.86 -3543.17,2248.82 -3278.93,4569.98 243.21,2136.45 1997.84,3684.13 4440.04,3355.06 2145.98,-289.14 3563.3,-2080.88 3280.75,-4560.25 -142.18,-1247.63 -703,-2023.26 -1365.13,-2581.86 -672.2,-567.1 -1919.17,-966.28 -3076.73,-782.93z"/><path fill="currentColor" d="M88897.4 13416.18l-1005.39 0c-75.69,41.83 -30.71,1.75 -73.46,76.43 -19.78,34.57 -32.44,92.23 -44.73,132.34 -65.63,214.24 -193.94,461.85 -316.93,635.46 -1063.58,1501.28 -4823.98,1603.54 -4898.31,-2140.09 -31.73,-1598.12 699.88,-2783.03 2005.42,-3114.74 708.33,-179.98 1596.38,-92.86 2157.78,227.97 591.01,337.75 865.23,700.37 1114.57,1460.75l1049.75 6.84c-27.39,-555.01 -402,-1087.54 -688.34,-1461.16 -1504.56,-1963.2 -6654.37,-1796.34 -6655.41,2809.78 -1.15,5115.57 6605.24,5129.83 7355.05,1366.42z"/></g></svg></a>
+    <nav aria-label="Principal">
+      <a href="../#inicio">Inicio</a>
+      <a href="../#servicios">Servicios</a>
+      <a href="../#casos">Desarrollos</a>
+      <a href="../#quien-soy">Quién soy</a>
+      <a href="./" aria-current="page" style="color:var(--lime)">Mi blog</a>
+      <a href="../#preguntas">Preguntas</a>
+      <a class="lang" href="../en/" hreflang="en" lang="en" aria-label="English version">EN</a>
+      <a class="cta" href="../#contacto">Hablemos</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="x-sec x-gray" aria-labelledby="blog-t" style="min-height:60vh">
+    <div class="wrap" style="display:flex;flex-direction:column;gap:22px;max-width:860px">
+      <span class="eyebrow">Mi blog</span>
+      <h1 class="h2" id="blog-t" style="font-size:clamp(2rem,4vw,2.8rem)">Lo que voy aprendiendo y construyendo</h1>
+      <p class="x-lead">Aquí voy a compartir lo que aprendo al desarrollar plataformas EdTech y material interactivo: métodos de enseñanza, inteligencia artificial aplicada a la educación y a los negocios, y lo que funciona (y lo que no) en mis propios proyectos.</p>
+      <div class="x-card" style="background:#FBF8F1">
+        <h3>Primeras publicaciones muy pronto</h3>
+        <p>Mientras tanto, conoce mis servicios o escríbeme si quieres que escriba sobre algún tema.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
+          <a class="btn btn-lime" href="../#servicios">Ver servicios</a>
+          <a class="btn btn-ghost-gold" href="../#contacto" style="color:var(--forest)">Escríbeme</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div class="brand"><svg class="logo-full" role="img" aria-label="hpopoca, plataformas EdTech" viewBox="-900 -900 99893 31515"><path fill="currentColor" d="M5886.2 28544.73c-20.97,-164.21 117.78,-230.04 210.44,-324.13l7390.51 -7390.66c149.56,-149.01 944.82,-1020.38 1132.91,-1062.75 438.11,297.15 874.09,1396.16 969.02,2038.89 174.97,1184.62 -188.56,2557.93 -1039.88,3366.25 -260.22,247.08 -465.14,489.75 -754.18,727.62 -438.4,360.77 -1697.19,1005.85 -1758.13,1205.21 1351.53,3.69 2715.25,-1.57 4065.58,19.93 980.8,15.62 1520.43,-0.44 2246.93,774.49 107.54,114.71 373.57,469.2 300.57,648.52 -433.72,47.57 -2617.55,20.33 -3218.52,19.99l-9545.25 -23.36zm5604.24 -10013.97c709.66,-94.82 2282.13,206.33 2148.78,544.6 -26.4,66.95 -1242.3,1255.86 -1405.73,1418.04l-7054.98 7056.18c-436.2,446.78 -880.3,917.6 -1816.11,1003.85 -2387.03,220 -3000.86,-2849.81 -1049.99,-3658.17 457.42,-189.54 747.56,-160.9 1265.73,-145.85 530.21,15.4 376.18,66.81 948.45,-462.45l4293.35 -4173.18c203.43,-251.31 644.74,-619.09 916.08,-847.21 447.03,-375.85 1146.65,-654.6 1754.42,-735.81zm15278.3 10009.43c-127.99,47.3 -3059.91,61.6 -3285.73,13.23 -258.88,-55.44 -608.74,-429.5 -702.87,-568.51l-1433.24 -2235.88c-1160.44,-1840.82 -2221.17,-3947.62 -1460.4,-6245.97 214.97,-649.44 548.45,-1054.68 931.95,-1537.7 531.02,-668.81 1616.76,-1311.5 2406.45,-1684.09 543.41,-256.38 2258.03,-694.46 2665.57,-579.42 69.23,142.83 1.47,408.75 -22.82,572.16 -29.07,195.58 -66.63,337.83 -115.07,524.58 -399.67,1540.81 -1028.12,3046.53 -2037.49,4240.59 -309.73,366.41 -898.53,1059.63 -1233.7,1267.38 -20.69,595.64 620.17,2508 893.09,3108.6 147.38,324.31 260.16,578.37 386.4,917.85 457.45,1230.19 793.9,569.59 1751.13,895.25 462.81,157.44 915.27,488.85 1108.65,866.84l162.19 331.32c25.06,196.78 4.04,-169.28 -1.31,56.3l-12.8 57.47zm-22576.57 -5568.66c-119.63,-783.05 104.53,-2109.5 319.65,-2827.09 553.15,-1845.18 1345.66,-3194.97 2741.66,-4419.11 1696.54,-1487.68 3937.2,-2297.74 6414.23,-2233.93 1507.26,38.82 2755.87,375.46 4377.57,-97.4 322.21,-93.95 1049.35,-391.45 1148.08,-378.93 21.24,238.15 -253.72,695.24 -364.44,844.41 -230.65,310.75 -2622.69,2684.37 -3042.03,3096.37 -1666.84,1637.66 -996.14,1238.9 -1940.2,840.7 -928.32,-391.56 -1610.05,-480.09 -2648.48,-356.5 -592.31,70.49 -1122.49,299.72 -1560.13,563.96 -539.47,325.72 -759.18,515.95 -1171.88,909.12l-1336.12 1309.51c-92.82,95.58 -173.67,166.12 -270.6,258.85l-2386.48 2306.12c-101.38,96.64 -130.87,199.46 -280.83,183.92zm11257.35 -4042.61c96.9,-148.03 312.65,-336.01 436.71,-462.39 148.15,-150.92 271.67,-276 420.44,-426.27 289.27,-292.21 551.79,-559.73 840.65,-852.73 572.05,-580.24 1117.89,-1155.39 1698.65,-1723.43 180.44,-176.49 288.24,-241.53 442.24,-439.25 126.92,-162.97 258.78,-286.36 392.56,-454.38 486.74,-611.36 804.37,-1716.24 877.64,-2534.96 96.56,-1079.07 3.13,-1860.06 559.1,-2871.7 1181.47,-2149.81 4106.94,-2360.11 5929.7,-1144.56 615.97,410.77 1327.82,1023.13 1743.24,1642.98 203.87,304.19 497.27,740.49 647.64,1080.23 577.65,1305.12 -223.71,2693.22 -1479.13,3285.6 -1380.73,651.52 -3409.47,439.07 -5468.74,1340.16 -372.73,163.1 -1281.08,708.38 -1604.43,971.47 -797.43,648.82 -1413.74,1288.5 -1900.43,2369.8 -366.57,814.45 -523.42,1985.92 -440.14,2970.1 121.25,1432.69 706.5,2373.99 719.48,2646.83 -285.71,307.5 -2868.92,1253.11 -3491.27,1287.49 5.7,-163.52 235.1,-481.69 388.46,-768.84 687.34,-1286.99 811.06,-3241.17 146.71,-4536.79 -130.18,-253.88 -251.17,-508.59 -399.32,-727.81l-459.76 -651.55zm-955.02 -15676.87c1141.89,265.44 2011.69,742.44 2867.71,1363.59 388.36,281.8 1042.22,835.89 1344.8,1195 680.22,807.32 546.67,616.95 1079.89,1460.76 52.37,82.88 314.06,451.79 278.16,533.15 -71.42,161.84 -1393.94,71.54 -1601.26,53.5 -524.84,-45.66 -984.54,-116.47 -1481.64,-218.94 -1553.96,-320.33 -3174.4,-1406.91 -4211.85,-2558.22 -355.85,-394.91 -1359.16,-1586.46 -1372.83,-2031.08 706.15,-181.61 2369.78,33.19 3097.02,202.24zm7650.82 2930.14c96.34,236.5 225.85,403.79 6.69,523.9 -230,126.04 -863.92,534.02 -1005.56,538.91 -125.21,-93.68 -487.66,-746.33 -629.96,-950.22 -437.49,-626.8 -914,-1153.51 -1420.85,-1684.03l-404.79 -370.65c-930.97,-771.68 -1245.34,-961.74 -2347.29,-1534.81 -235.72,-122.59 -232.46,-190.43 -310.15,-465.54 -286.65,-1015.05 -303.04,-1033.4 108.23,-955.97 1630.18,306.91 3044.28,922.28 4157.18,2088.99 70.52,73.94 115.81,130.07 188.02,200.05 413.39,400.63 535.06,611.1 860.36,1079.99 274.05,395.04 603.41,1051.42 798.12,1529.38zm940.25 -622.02c-82.71,-230.76 -195.98,-434.2 -303.45,-649.25 -292.46,-585.23 -1053.4,-1739.14 -1537.31,-2202.32l-1554.05 -1267.74c-190.47,-121.94 -406.78,-228.02 -609.59,-343.1 -335.69,-190.49 -886.5,-448.27 -1296.79,-574.28 -661.84,-203.28 -2520.38,-622.67 -3230.77,-502.07 -50.07,274.61 62.28,836.51 101.74,1128.33 35.65,263.68 193.21,807.68 168.87,1014.72 -236.85,38.82 -907.21,-157.07 -1201.65,-196.66 -411.56,-55.32 -913.67,-97.33 -1330.84,-96.58 -445.84,0.81 -2233.11,76.97 -2521.26,288.32 -55.96,223.86 498.03,1234.57 620.41,1488.06 284.16,588.62 860.65,1394.81 1286.79,1890.04 215.18,250.07 807.35,889.09 1043.18,1073.17 110.06,85.9 171.34,165.18 277.92,250.98 1433.3,1153.76 2917.04,1799.06 4849.55,2067.36 332.93,46.22 628.81,78.73 968.91,93.86 187.16,8.32 896.23,-22.71 996.61,39.74 66.33,58.65 32.28,-17.1 43.61,86.66 2.24,20.45 -5.69,55.55 -11.13,77.67 -10.7,43.52 -48.45,135.17 -66.19,186.48 -435.27,1259.11 -29.42,1636.52 -924.45,2391.23 -687.77,579.94 -2005.87,720.09 -3106.73,706.87 -1612.28,-19.35 -1808.55,-265.54 -3647.36,-50.92 -2081.94,243 -3779.45,961.68 -5359.84,2223.81 -912.34,728.6 -1181.05,1096.48 -1827.77,1946.17 -993.28,1305.04 -1814.02,3590.88 -1885.5,5720.14 -53.88,1604.74 287.43,1167.14 -560.53,1329.14 -498.95,95.32 -1003.14,350.24 -1288.31,612.12 -763.89,701.51 -1244.71,1461.92 -1172.48,2611.6 51.15,814.1 590.3,1705.6 1205.42,2152.28 105.38,76.51 162.87,135.92 265.62,193.68 1022.85,575.05 2052.96,414.23 3334.64,417.61 1524.41,4.01 14912.82,105.25 15146.86,-0.41 91.82,-90.54 -86.24,-1145.19 -107.29,-1224.07 -118.09,-442.43 -192.1,-635.96 -408.71,-967.27 -292.13,-446.83 -609.79,-738.33 -1081.71,-999.62 -129.72,-71.83 -339.49,-155.99 -426.73,-244.5 81.94,-157.96 734.04,-330.06 924.46,-416.56 226.98,-103.11 690.96,-371.94 925.1,-394.01l1851.15 2860.28c988.98,1520.49 1140.14,1416.92 3285.2,1416.92 180.33,0 2875.95,28.61 3058.79,-17.43l54.94 -23.46c117.08,-325.05 -47.42,-1193.12 -152.73,-1517.06 -135.88,-417.98 -382.75,-861.55 -630.74,-1099 -302.26,-289.4 -525.73,-505.56 -1007.56,-721.14 -1728.34,-773.3 -1024.65,639.59 -2034.4,-1881.71 -178.1,-444.7 -496.9,-1209.66 -527.12,-1710.82 169.15,-131.86 195.6,-192.75 322.51,-341.4l320.07 -349.87c1523.43,-1682.55 2107.08,-3258.24 2600.8,-5443.49 51.86,-229.54 113.77,-992.09 182.67,-1120.37 109.34,-80.29 796.05,-229.89 996.13,-309.67 327.52,-130.6 594.15,-244.8 849.97,-419.39 1175.93,-802.56 1814.15,-1783.39 1794.54,-3293.5 -12.85,-989.29 -816.71,-2308.45 -1490.15,-2996.07 -601.45,-614.1 -945.71,-970.03 -1727.18,-1448.65 -1021.7,-625.77 -1779.41,-814.14 -2963.31,-851.45 -442.38,-13.94 -799.92,85.38 -1199.45,81.5 -135.79,-157.45 -204.65,-455.22 -283.38,-674.9z"/><path class="eye" d="M25487.61 9322.29c-487.86,137.04 -671.02,526.26 -567.95,922.41 221.07,849.69 1684.98,612.58 1455.11,-391.05 -77.36,-337.78 -440.18,-656.9 -887.16,-531.36z"/><path fill="currentColor" d="M66819.45 8940.84c1837.28,-129.27 3048.21,1060.57 3148.77,2789.99 98.63,1696.3 -714.79,3295.81 -2575.28,3453.9 -1825.99,155.15 -3090.33,-1149.4 -3184.72,-2844.31 -96.93,-1740.55 868.94,-3276.99 2611.23,-3399.58zm-2616.62 906.94l-8.76 -1679.8 -985.63 2.28 -0.35 11453.69 986.44 12.8 0.14 -5357.73c114.25,140.01 173.57,307.98 298.7,461.32 384.57,471.28 699.67,758.51 1321.8,1042.93 751.69,343.65 1846.82,374.26 2663.64,102.9 1509,-501.33 2504.04,-1842.82 2519.65,-3801.14 7.55,-946.49 -248.65,-1842.38 -669.5,-2475.36 -1407.57,-2117.06 -4924.6,-2124.94 -6126.13,238.11z"/><path fill="currentColor" d="M47793.69 8972.67c882.65,-164.18 1831.43,105.3 2353.05,570.11 587.88,523.86 919.37,1137 1016.51,1982.69 218.83,1905.13 -732.86,3385.23 -2357.24,3626.78 -1887.38,280.66 -3129.82,-947.05 -3364.82,-2561.22 -276.9,-1902.07 776.42,-3325.19 2352.5,-3618.36zm-2389.27 841.57l0 -1631.9 -986.06 -15.66 0 11469.01 986.1 -2.69 0.15 -5330.06c161.72,138.15 197.48,406.57 698.16,872.5 1965.93,1829.45 6075.14,907.79 6106.35,-3090.42 15.17,-1943.81 -969.96,-3337.65 -2434.69,-3828.14 -815.95,-273.24 -1916.91,-280.14 -2695.36,56.18 -445.52,192.48 -631.77,355.2 -948.44,604.41 -167.34,131.69 -414.16,420.59 -540.34,623.59l-185.87 273.18z"/><path fill="currentColor" d="M94004.35 8933.69c1781.41,-113.79 2974.95,1198.13 3073.87,2882.04 251.71,4285 -5549.45,4566.92 -5765.28,481.95 -100.33,-1898.92 909.41,-3250.16 2691.41,-3363.99zm3088.34 5330.36l1 1692.96 988.09 -0.01 10.92 -7788.62 -1000.63 0 -0.97 1678.75c-259.62,-626.06 -970.82,-1257.3 -1603.71,-1512.44 -2278.86,-918.64 -5210.98,348.13 -5199.37,3715.07 15.75,4570.59 5153.19,5024.5 6641.74,2475.58 65.34,-111.88 96.81,-183.29 162.93,-261.29z"/><path fill="currentColor" d="M35387.99 15957l989.64 0c117.95,-1076.7 -88.78,-3428.91 28.98,-4691.51 130.38,-1397.98 926.31,-2345.02 2378.67,-2370.89 1493.26,-26.59 2347.13,876.65 2427.2,2313.42 74.63,1339.02 -80.75,3693.09 18.64,4745.95l967.58 3.29c41.86,-380.87 10.35,-3142.21 10.05,-3766.4 -0.63,-1278.93 11.26,-2251.85 -706.39,-3104.21 -282.33,-335.32 -591.3,-625.12 -1085.04,-821.86 -955.98,-380.94 -2229.8,-314.52 -3097.39,238.61 -484.43,308.85 -596.93,495.15 -919.66,960.28l-12.91 -4064.59 -999.71 0 0.34 10557.91z"/><path fill="currentColor" d="M73402.82 12190.86c-181.39,-4241.85 5602.67,-4397.44 5737.79,-283.4 118.85,3618.81 -3635.04,3916.31 -4917.04,2486.74 -491.77,-548.38 -777.51,-1191.92 -820.75,-2203.34zm2411.88 -4115.45c-2188.27,175.59 -3622.04,2059.02 -3410.38,4469.07 188.79,2149.68 1939.18,3790.28 4340.69,3492.48 2189.8,-271.55 3623.49,-1971.29 3406.17,-4444.48 -196.52,-2236.44 -1887.29,-3713.6 -4336.48,-3517.07z"/><path fill="currentColor" d="M57115.53 8940.51c1826.78,-224.01 3068.5,1051.75 3218.13,2686.23 96.1,1049.69 -101.04,1726.34 -560.07,2431.38 -375.72,577.08 -1158.69,1022.11 -1878.51,1115.48 -1867.43,242.22 -3144.73,-1017.89 -3268.06,-2700.01 -141.93,-1935.77 752.64,-3320.21 2488.51,-3533.08zm-208.69 -844.9c-2366.61,374.86 -3543.17,2248.82 -3278.93,4569.98 243.21,2136.45 1997.84,3684.13 4440.04,3355.06 2145.98,-289.14 3563.3,-2080.88 3280.75,-4560.25 -142.18,-1247.63 -703,-2023.26 -1365.13,-2581.86 -672.2,-567.1 -1919.17,-966.28 -3076.73,-782.93z"/><path fill="currentColor" d="M88897.4 13416.18l-1005.39 0c-75.69,41.83 -30.71,1.75 -73.46,76.43 -19.78,34.57 -32.44,92.23 -44.73,132.34 -65.63,214.24 -193.94,461.85 -316.93,635.46 -1063.58,1501.28 -4823.98,1603.54 -4898.31,-2140.09 -31.73,-1598.12 699.88,-2783.03 2005.42,-3114.74 708.33,-179.98 1596.38,-92.86 2157.78,227.97 591.01,337.75 865.23,700.37 1114.57,1460.75l1049.75 6.84c-27.39,-555.01 -402,-1087.54 -688.34,-1461.16 -1504.56,-1963.2 -6654.37,-1796.34 -6655.41,2809.78 -1.15,5115.57 6605.24,5129.83 7355.05,1366.42z"/><text x="35380" y="24330" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="2750" font-weight="400" textLength="62700" lengthAdjust="spacing" fill="currentColor">PLATAFORMAS EDTECH</text></svg></div>
+      <nav aria-labelledby="f-mapa"><h2 id="f-mapa">Mapa del sitio</h2><a href="../#inicio">Inicio</a><a href="../#servicios">Servicios</a><a href="../#taller">Taller</a><a href="../#casos">Desarrollos</a><a href="../#quien-soy">Quién soy</a><a href="./">Mi blog</a><a href="../#preguntas">Preguntas frecuentes</a><a href="../#contacto">Contacto</a></nav>
+      <nav aria-labelledby="f-proy"><h2 id="f-proy">Desarrollos</h2><a href="https://wrealispec.com" target="_blank" rel="noopener">Wrealispec</a><a href="../#casos">Deepleap</a><a href="https://decanasta.com" target="_blank" rel="noopener">De Canasta</a></nav>
+      <nav aria-labelledby="f-cont"><h2 id="f-cont">Contacto</h2><a href="mailto:contacto@hpopoca.com">contacto@hpopoca.com</a><span>100% en línea</span></nav>
+    </div>
+    <div class="legal">
+      <span>© 2026 Héctor Popoca. Todos los derechos reservados.</span>
+      <nav aria-label="Legal"><a href="../privacidad.html">Aviso de privacidad</a><a href="../sitemap.xml">Mapa del sitio (XML)</a><a href="../en/" hreflang="en" lang="en">English</a></nav>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
