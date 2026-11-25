@@ -313,6 +313,32 @@ footer .legal a{text-decoration:underline}
 @media (prefers-reduced-motion:reduce){.x-cue span{animation:none}}
 .x-card .x-go{margin-top:auto;padding-top:6px;font-weight:600;font-size:.92rem;color:var(--forest-2);text-decoration:none}
 .x-card .x-go:hover{text-decoration:underline}
+
+/* Contacto · estilo panel oscuro (25 nov 2026) */
+#contacto .contact{background:radial-gradient(120% 90% at 0% 0%,#123A2E 0%,var(--deep) 45%,#07140F 100%);border:1px solid var(--deep-line);border-radius:24px;padding:0;gap:0;max-width:1120px;overflow:hidden;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);box-shadow:0 24px 60px -30px rgba(6,20,15,.55)}
+#contacto .intro{flex:1 1 340px;padding:clamp(28px,4.5vw,60px);gap:22px;justify-content:center;border-right:1px solid var(--deep-line)}
+@media (max-width:860px){#contacto .contact{grid-template-columns:minmax(0,1fr)}#contacto .intro{border-right:0;border-bottom:1px solid var(--deep-line)}}
+#contacto h2{font-family:var(--display);font-weight:700;font-size:clamp(2rem,4vw,2.9rem);letter-spacing:-.02em;line-height:1.02;color:#fff}
+#contacto .intro p{color:var(--on-forest-2);font-size:1.08rem;line-height:1.55;max-width:30ch}
+#contacto .c-checks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+#contacto .c-checks li{display:flex;align-items:center;gap:12px;color:#fff;font-size:1.02rem}
+#contacto .c-checks li::before{content:"";flex:0 0 24px;height:24px;border-radius:50%;background:var(--lime) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%230A100C' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+#contacto .intro a{color:var(--lime);font-weight:600;text-underline-offset:3px}
+#contacto form{flex:999 1 480px;margin:clamp(16px,2.5vw,28px);padding:clamp(20px,3vw,32px);background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);border-radius:18px;gap:14px 14px;align-content:start}
+#contacto .lbl{color:var(--on-forest-2);font-size:.78rem;font-weight:600;letter-spacing:.02em;gap:7px}
+#contacto .lbl input,#contacto .lbl select,#contacto .lbl textarea{background:#fff;border:2px solid transparent;border-radius:12px;min-height:48px;padding:10px 14px;color:#0F1A15;transition:border-color .15s,box-shadow .15s}
+#contacto .lbl textarea{min-height:110px}
+#contacto .lbl input::placeholder{color:#7C8A83}
+#contacto .lbl input:focus,#contacto .lbl select:focus,#contacto .lbl textarea:focus{outline:none;border-color:var(--lime);box-shadow:0 0 0 4px rgba(182,243,90,.25)}
+#contacto .consent{color:var(--on-forest-2)}
+#contacto .consent input{accent-color:var(--lime)}
+#contacto .consent a{color:var(--lime)}
+#contacto .btn{border-radius:999px;padding:14px 28px;font-weight:700;font-size:1rem;display:inline-flex;align-items:center;gap:10px;box-shadow:0 10px 24px -12px rgba(182,243,90,.6);transition:transform .15s,box-shadow .15s}
+#contacto .btn:hover{transform:translateY(-1px);box-shadow:0 14px 28px -12px rgba(182,243,90,.75)}
+#contacto .btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+#contacto .btn span{font-size:1.1em;line-height:1}
+#contacto .note{color:#fff;border-left-color:var(--lime);background:rgba(182,243,90,.12);border-radius:0 8px 8px 0}
+@media (prefers-reduced-motion:reduce){#contacto .btn,#contacto .lbl input{transition:none}#contacto .btn:hover{transform:none}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "What is an EdTech platform?", "acceptedAnswer": {"@type": "Answer", "text": "It’s your own online learning environment: a place where your students or your team review the material, practice and move forward, using your methodology. It isn’t a generic course; it’s built around what you teach."}}, {"@type": "Question", "name": "Who do you work with?", "acceptedAnswer": {"@type": "Answer", "text": "With teachers who want to boost their classes, entrepreneurs who need their business not to depend only on them, and executives who want to build high-performing teams. Everyone has something valuable to pass on."}}, {"@type": "Question", "name": "Do I need to know about technology?", "acceptedAnswer": {"@type": "Answer", "text": "No. If you hire me to build it, I handle the digital side and explain what you need in plain words. If you’d rather do it yourself, the workshop teaches you to build your platform with AI tools, no coding required."}}, {"@type": "Question", "name": "How do we start?", "acceptedAnswer": {"@type": "Answer", "text": "We talk about your idea and what you want to teach. We structure it with instructional design, I show you the screens for your approval, and then I build the platform and the materials."}}, {"@type": "Question", "name": "Do you work remotely?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, I work 100% online. Meetings are by video call and day-to-day contact is on WhatsApp, so it doesn’t matter where you are."}}, {"@type": "Question", "name": "Do you also train organizations?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. I train entrepreneurs and organizations in data analysis, operational process improvement and using AI to solve problems."}}]}</script>
 </head>
@@ -495,6 +521,7 @@ footer .legal a{text-decoration:underline}
         <div class="intro">
           <h2 id="cont-t">How can I help you?</h2>
           <p>Leave your details and I’ll get back to you within 24 hours to talk about what you want to teach or build.</p>
+          <ul class="c-checks"><li>I reply within 24 hours</li><li>No commitment</li><li>100% online, wherever you are</li></ul>
           <a href="mailto:contacto@hpopoca.com">contacto@hpopoca.com</a>
         </div>
         <form id="form" novalidate>
@@ -515,7 +542,7 @@ footer .legal a{text-decoration:underline}
           </label>
           <label class="lbl full">Tell me a bit more<textarea id="mensaje"></textarea></label>
           <label class="consent full"><input type="checkbox" id="acepto"><span>I agree to be contacted by WhatsApp or email about my request, as described in the <a href="../privacidad.html#english">privacy policy</a>.</span></label>
-          <button class="btn btn-gold full" type="submit">Send my details</button>
+          <button class="btn btn-gold full" type="submit">Send my details <span aria-hidden="true">↗</span></button>
           <p class="note full" id="note" role="status" hidden></p>
         </form>
       </div>
