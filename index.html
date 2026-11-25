@@ -205,7 +205,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .contact .lbl{color:var(--on-forest)}
 .contact .lbl input,.contact .lbl select,.contact .lbl textarea{border-color:transparent}
 .full{grid-column:1/-1}
-.consent{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;line-height:1.5;color:var(--on-forest-2)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.8rem;line-height:1.5;color:var(--on-forest-2)}
 .consent input{width:18px;height:18px;margin:2px 0 0;accent-color:var(--gold);flex:0 0 auto}
 .consent a{color:var(--gold)}
 .contact .btn{justify-self:start}
@@ -315,25 +315,26 @@ footer .legal a{text-decoration:underline}
 .x-card .x-go:hover{text-decoration:underline}
 
 /* Contacto · estilo panel oscuro (25 nov 2026) */
+#contacto{scroll-margin-top:96px}
 #contacto .contact{background:radial-gradient(120% 90% at 0% 0%,#123A2E 0%,var(--deep) 45%,#07140F 100%);border:1px solid var(--deep-line);border-radius:24px;padding:0;gap:0;max-width:1120px;overflow:hidden;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);box-shadow:0 24px 60px -30px rgba(6,20,15,.55)}
-#contacto .intro{flex:1 1 340px;padding:clamp(28px,4.5vw,60px);gap:22px;justify-content:center;border-right:1px solid var(--deep-line)}
+#contacto .intro{flex:1 1 340px;padding:clamp(24px,3.2vw,40px);gap:16px;justify-content:center;border-right:1px solid var(--deep-line)}
 @media (max-width:860px){#contacto .contact{grid-template-columns:minmax(0,1fr)}#contacto .intro{border-right:0;border-bottom:1px solid var(--deep-line)}}
-#contacto h2{font-family:var(--display);font-weight:700;font-size:clamp(2rem,4vw,2.9rem);letter-spacing:-.02em;line-height:1.02;color:#fff}
-#contacto .intro p{color:var(--on-forest-2);font-size:1.08rem;line-height:1.55;max-width:30ch}
-#contacto .c-checks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-#contacto .c-checks li{display:flex;align-items:center;gap:12px;color:#fff;font-size:1.02rem}
-#contacto .c-checks li::before{content:"";flex:0 0 24px;height:24px;border-radius:50%;background:var(--lime) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%230A100C' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+#contacto h2{font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,2.3vw,1.9rem);letter-spacing:-.015em;line-height:1.1;color:#fff}
+#contacto .intro p{color:var(--on-forest-2);font-size:.96rem;line-height:1.5;max-width:32ch}
+#contacto .c-checks{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+#contacto .c-checks li{display:flex;align-items:center;gap:10px;color:#fff;font-size:.92rem}
+#contacto .c-checks li::before{content:"";flex:0 0 20px;height:20px;border-radius:50%;background:var(--lime) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%230A100C' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat}
 #contacto .intro a{color:var(--lime);font-weight:600;text-underline-offset:3px}
-#contacto form{flex:999 1 480px;margin:clamp(16px,2.5vw,28px);padding:clamp(20px,3vw,32px);background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);border-radius:18px;gap:14px 14px;align-content:start}
-#contacto .lbl{color:var(--on-forest-2);font-size:.78rem;font-weight:600;letter-spacing:.02em;gap:7px}
-#contacto .lbl input,#contacto .lbl select,#contacto .lbl textarea{background:#fff;border:2px solid transparent;border-radius:12px;min-height:48px;padding:10px 14px;color:#0F1A15;transition:border-color .15s,box-shadow .15s}
-#contacto .lbl textarea{min-height:110px}
+#contacto form{flex:999 1 480px;margin:clamp(12px,1.6vw,18px);padding:clamp(16px,2vw,22px);background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);border-radius:16px;gap:10px 12px;align-content:start}
+#contacto .lbl{color:var(--on-forest-2);font-size:.74rem;font-weight:600;letter-spacing:.02em;gap:5px}
+#contacto .lbl input,#contacto .lbl select,#contacto .lbl textarea{background:#fff;border:2px solid transparent;border-radius:10px;min-height:40px;padding:7px 12px;font-size:.92rem;color:#0F1A15;transition:border-color .15s,box-shadow .15s}
+#contacto .lbl textarea{min-height:58px}
 #contacto .lbl input::placeholder{color:#7C8A83}
 #contacto .lbl input:focus,#contacto .lbl select:focus,#contacto .lbl textarea:focus{outline:none;border-color:var(--lime);box-shadow:0 0 0 4px rgba(182,243,90,.25)}
 #contacto .consent{color:var(--on-forest-2)}
 #contacto .consent input{accent-color:var(--lime)}
 #contacto .consent a{color:var(--lime)}
-#contacto .btn{border-radius:999px;padding:14px 28px;font-weight:700;font-size:1rem;display:inline-flex;align-items:center;gap:10px;box-shadow:0 10px 24px -12px rgba(182,243,90,.6);transition:transform .15s,box-shadow .15s}
+#contacto .btn{border-radius:999px;padding:10px 22px;font-weight:700;font-size:.94rem;display:inline-flex;align-items:center;gap:10px;box-shadow:0 10px 24px -12px rgba(182,243,90,.6);transition:transform .15s,box-shadow .15s}
 #contacto .btn:hover{transform:translateY(-1px);box-shadow:0 14px 28px -12px rgba(182,243,90,.75)}
 #contacto .btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
 #contacto .btn span{font-size:1.1em;line-height:1}
