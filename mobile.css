@@ -30,6 +30,21 @@ html{-webkit-tap-highlight-color:transparent}
   main [id]{scroll-margin-top:72px!important}
 }
 
+/* Pie de página en celular: mapa del sitio en dos columnas, Desarrollos y Contacto lado a lado */
+@media (max-width:640px){
+  footer{margin-top:56px}
+  footer .cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 20px;padding-block:40px 28px}
+  footer .brand{grid-column:1/-1;align-items:flex-start}
+  footer .logo-full{max-width:220px}
+  footer nav[aria-labelledby="f-mapa"]{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 20px}
+  footer nav[aria-labelledby="f-mapa"] h2{grid-column:1/-1}
+  footer .cols nav{gap:12px}
+  footer .cols a,footer .cols span{font-size:.92rem}
+  footer nav[aria-labelledby="f-cont"] a{font-size:.84rem;white-space:nowrap}
+  footer .legal{flex-direction:column;align-items:flex-start;gap:10px;padding-bottom:max(84px,env(safe-area-inset-bottom,0px))}
+  footer .legal nav{gap:8px 18px}
+}
+
 @media (prefers-reduced-motion:reduce){
   .top.m nav,.top.m .m-btn i,.top.m .m-btn i::before,.top.m .m-btn i::after{transition:none}
 }
