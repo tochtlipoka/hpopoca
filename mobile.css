@@ -1,5 +1,5 @@
 /* ===== Experiencia móvil (27 nov 2026) =====
-   Menú compacto con botón hamburguesa, encabezado más corto y secciones tipo app.
+   Menú compacto con botón hamburguesa.
    Solo aplica en pantallas chicas; el escritorio queda igual. */
 html{-webkit-tap-highlight-color:transparent}
 .top .m-right{display:none}
@@ -28,73 +28,7 @@ html{-webkit-tap-highlight-color:transparent}
   .top.m nav a.lang{color:var(--on-night-2);border-bottom:0}
   .top.m nav a.cta{display:none}
   main [id]{scroll-margin-top:72px!important}
-
-  /* Encabezado: imagen más corta que se funde con el texto */
-  .hero picture{display:block;position:relative}
-  .hero picture::after{content:"";position:absolute;left:0;right:0;bottom:0;height:55%;background:linear-gradient(to bottom,rgba(8,12,11,0),var(--night) 92%);pointer-events:none}
-  .hero picture img{aspect-ratio:4/3;object-position:72% 30%}
-  .hero .wrap{margin-top:-96px;padding-top:0;padding-bottom:84px}
-  .hero-copy{gap:14px}
-  .hero h1{font-size:clamp(2.05rem,9vw,2.7rem);line-height:1.04}
-  .hero .lead{font-size:1rem;line-height:1.55}
-  .checks{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px;font-size:.82rem}
-  .checks li{align-items:flex-start;line-height:1.3;background:#0F1612;border:1px solid #1E2A23;border-radius:12px;padding:10px 11px}
-  .checks svg{width:16px;height:16px;margin-top:1px}
-  .actions{flex-direction:column;gap:10px}
-  .actions .btn{width:100%;min-height:52px;font-size:1rem}
-  .x-cue{bottom:14px}
 }
-
-@media (max-width:640px){
-  .x-head{gap:12px;margin-bottom:22px}
-  .x-lead{font-size:1rem}
-
-  /* ¿A quién ayudo?: tarjetas compactas con ícono a la izquierda */
-  .x-cards{gap:12px}
-  .x-card{display:grid;grid-template-columns:48px minmax(0,1fr);column-gap:14px;row-gap:4px;padding:18px 18px 16px;border-radius:16px;background:#fff}
-  .x-card > svg{grid-row:1 / span 3;width:48px;height:48px;padding:11px;border-radius:14px;background:var(--band);color:var(--forest-2)}
-  .x-card > :not(svg){grid-column:2}
-  .x-card h3{font-size:1.3rem;line-height:1.15}
-  .x-card .x-go{padding-top:4px}
-
-  /* Servicios: tarjetas numeradas */
-  .x-svc{border-top:0;gap:12px}
-  .x-svc article,.x-svc article:first-child{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:14px;row-gap:6px;align-content:start;background:#fff;border:1px solid var(--line);border-top:1px solid var(--line);border-radius:16px;padding:18px!important}
-  .x-svc .n{grid-row:1 / span 3;width:44px;height:44px;border-radius:50%;background:var(--forest);color:var(--lime);display:grid;place-items:center;font-size:1.35rem}
-  .x-svc article > :not(.n){grid-column:2}
-  .x-svc h3{font-size:1.25rem}
-
-  /* Taller: pasos como línea de tiempo vertical */
-  .x-taller .btn{width:100%;min-height:52px}
-  .x-steps{gap:0;border-left:2px solid var(--forest-2);margin-left:7px}
-  .x-steps li{border-top:0;padding:0 0 20px 24px}
-  .x-steps li:last-child{padding-bottom:0}
-  .x-steps li::before{top:6px;left:-8px}
-
-  /* Desarrollos: carrusel deslizable */
-  .x-dev{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin-inline:calc(-1 * max(20px,6vw));padding:2px max(20px,6vw) 6px;scroll-padding-inline:max(20px,6vw)}
-  .x-dev::-webkit-scrollbar{display:none}
-  .x-proj{flex:0 0 84%;scroll-snap-align:start}
-  .m-hint{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:12px;font-size:.84rem;font-weight:600;color:var(--muted)}
-
-  /* Historia */
-  .x-hist .pic{width:120px;border-radius:50%;border:3px solid var(--gold)}
-  .x-org{padding:18px}
-
-  /* Preguntas */
-  .faq summary{padding:16px 2px;font-size:.98rem}
-  .faq details p{padding-right:8px}
-
-  /* Formulario: 16px evita el zoom automático del iPhone */
-  #contacto .wrap{padding-inline:12px}
-  #contacto .lbl input,#contacto .lbl select,#contacto .lbl textarea{font-size:16px;min-height:48px}
-  #contacto .btn{min-height:52px;justify-content:center}
-  #contacto form{margin:10px}
-
-  footer .cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px;padding-block:44px 28px}
-  footer .brand{grid-column:1/-1}
-}
-.m-hint{display:none}
 
 @media (prefers-reduced-motion:reduce){
   .top.m nav,.top.m .m-btn i,.top.m .m-btn i::before,.top.m .m-btn i::after{transition:none}
