@@ -230,15 +230,18 @@
 const CONFIG = {
   whatsapp: "525530337547",          // 52 + 10 dígitos, sin espacios
   destinatario: "Héctor",
-  minutos: 6,
+  minutos: 7,
   clave: "diag-aguas-v1",   // nombre para guardar el avance en el celular
   preguntas: [
     { q: "¿Qué productos vendes y en qué presentaciones?",
       help: "Sabores, tamaños, garrafón, botella… todo lo que sale de tus bodegas.",
       chips: ["Aguas de sabor", "Garrafón", "Botella de 1 L", "Botella de 500 ml", "Hielo"] },
+    { q: "¿Qué insumos usas y cómo los compras?",
+      help: "Por ejemplo: qué pulpas de fruta manejas, cada cuánto las compras y cuánto te dura cada una.",
+      chips: ["Pulpas de fruta", "Azúcar", "Botellas vacías", "Tapas y etiquetas", "Compro por semana", "Compro por mes"] },
     { q: "Además del agua, ¿qué cosas se mueven y deben regresar?",
       help: "Lo que prestas a tus clientes o les das a tus empleados para trabajar.",
-      chips: ["Botellas retornables", "Pulpos", "Garrafones", "Hieleras", "Dispensadores"] },
+      chips: ["Botellas retornables", "Garrafones", "Hieleras", "Dispensadores", "Nada regresa"] },
     { q: "¿Qué pasa en cada una de tus bodegas?",
       help: "Cuéntame qué se guarda en cada una y si mueves mercancía de una a otra.",
       chips: ["Una produce y otra almacena", "Las dos venden", "Paso mercancía entre ellas", "Cada una tiene sus clientes"] },
