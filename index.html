@@ -341,6 +341,7 @@ footer .legal a{text-decoration:underline}
 #contacto .note{color:#fff;border-left-color:var(--lime);background:rgba(182,243,90,.12);border-radius:0 8px 8px 0}
 @media (prefers-reduced-motion:reduce){#contacto .btn,#contacto .lbl input{transition:none}#contacto .btn:hover{transform:none}}
 </style>
+<link rel="stylesheet" href="mobile.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "es", "mainEntity": [{"@type": "Question", "name": "¿Qué es una plataforma EdTech?", "acceptedAnswer": {"@type": "Answer", "text": "Es tu propio ambiente virtual de aprendizaje: un sitio donde tus alumnos o tu equipo consultan el material, practican y avanzan, con tu metodología. No es un curso genérico; está hecha a la medida de lo que enseñas."}}, {"@type": "Question", "name": "¿Con quién trabajas?", "acceptedAnswer": {"@type": "Answer", "text": "Con maestros que quieren potenciar sus clases, emprendedores que necesitan que su negocio no dependa solo de ellos y ejecutivos que buscan formar equipos de alto rendimiento. Todos tienen algo valioso que transmitir."}}, {"@type": "Question", "name": "¿Necesito saber de tecnología?", "acceptedAnswer": {"@type": "Answer", "text": "No. Si contratas el desarrollo, yo me encargo de la parte digital y te explico lo necesario con palabras sencillas. Si prefieres hacerlo tú, en el taller aprendes a construir tu plataforma con herramientas de IA, sin saber programar."}}, {"@type": "Question", "name": "¿Cómo empezamos?", "acceptedAnswer": {"@type": "Answer", "text": "Platicamos tu idea y lo que quieres enseñar. Lo ordenamos con diseño instruccional, te muestro las pantallas para que las apruebes y después construyo la plataforma y el material."}}, {"@type": "Question", "name": "¿Trabajas a distancia?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, trabajo 100% en línea. Las reuniones son por videollamada y el contacto diario por WhatsApp, así que no importa dónde estés."}}, {"@type": "Question", "name": "¿También capacitas organizaciones?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Capacito a emprendedores y organizaciones en análisis de datos, optimización de procesos operativos y uso de IA para resolver problemas."}}]}</script>
 </head>
 <body id="top">
@@ -469,6 +470,7 @@ footer .legal a{text-decoration:underline}
           <div class="body"><p>Catering de tacos de canasta por mayoreo: sitio, pedidos y posicionamiento local.</p><a href="https://decanasta.com" target="_blank" rel="noopener">decanasta.com</a></div>
         </article>
       </div>
+      <p class="m-hint">Desliza para ver más <span aria-hidden="true">→</span></p>
     </div>
   </section>
 
@@ -613,5 +615,6 @@ form.addEventListener('submit', e => {
 <script>
 {document.querySelectorAll('[data-interes]').forEach(a=>a.addEventListener('click',()=>{const s=document.getElementById('interes');if(!s)return;const v=a.dataset.interes;for(const o of s.options){if(o.text===v){s.value=o.value;break}}}));}
 </script>
+<script src="mobile.js" defer></script>
 </body>
 </html>
